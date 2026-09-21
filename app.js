@@ -1,65 +1,70 @@
-const q=(s,p=document)=>p.querySelector(s);
-const qa=(s,p=document)=>[...p.querySelectorAll(s)];
+const shows={
+  cdmx12:{label:"12 FEB · CDMX",venue:"Palacio de los Deportes",date:"2027-02-12T20:00:00-06:00"},
+  cdmx13:{label:"13 FEB · CDMX",venue:"Palacio de los Deportes",date:"2027-02-13T20:00:00-06:00"},
+  gdl15:{label:"15 FEB · GDL",venue:"Auditorio Telmex",date:"2027-02-15T20:00:00-06:00"}
+};
 
-const cursor=q(".cursor");
-if(cursor){
-  window.addEventListener("pointermove",e=>{
-    cursor.style.left=e.clientX+"px";
-    cursor.style.top=e.clientY+"px";
-  });
-  qa("a,button").forEach(el=>{
-    el.addEventListener("mouseenter",()=>document.body.classList.add("is-link"));
-    el.addEventListener("mouseleave",()=>document.body.classList.remove("is-link"));
-  });
-}
+const $=(s,p=document)=>p.querySelector(s);
+const $$=(s,p=document)=>[...p.querySelectorAll(s)];
+const night=$("[data-your-night]");
+let timer=null;
 
-const observer=new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add("in");
-      observer.unobserve(entry.target);
-    }
-  });
-},{threshold:.12});
-qa(".reveal").forEach(el=>observer.observe(el));
-
-const countdown=q("[data-countdown]");
-if(countdown){
-  const target=new Date(countdown.dataset.countdown).getTime();
-  const render=()=>{
+function renderCountdown(key){
+  if(timer) clearInterval(timer);
+  if(!shows[key]) return;
+  const target=new Date(shows[key].date).getTime();
+  const tick=()=>{
     const diff=Math.max(0,target-Date.now());
-    const d=Math.floor(diff/86400000);
-    const h=Math.floor((diff%86400000)/3600000);
-    const m=Math.floor((diff%3600000)/60000);
-    q("[data-days]",countdown).textContent=String(d).padStart(3,"0");
-    q("[data-hours]",countdown).textContent=String(h).padStart(2,"0");
-    q("[data-minutes]",countdown).textContent=String(m).padStart(2,"0");
+    const days=Math.floor(diff/86400000);
+    const hours=Math.floor((diff%86400000)/3600000);
+    const minutes=Math.floor((diff%3600000)/60000);
+    $("[data-days]").textContent=String(days).padStart(3,"0");
+    $("[data-hours]").textContent=String(hours).padStart(2,"0");
+    $("[data-minutes]").textContent=String(minutes).padStart(2,"0");
   };
-  render();
-  setInterval(render,30000);
+  tick();
+  timer=setInterval(tick,30000);
 }
 
-const menu=q(".menu-toggle");
-const nav=q(".site-nav");
-if(menu&&nav){
-  const close=()=>{
-    nav.classList.remove("open");
-    menu.setAttribute("aria-expanded","false");
-  };
-  menu.addEventListener("click",()=>{
-    const open=nav.classList.toggle("open");
-    menu.setAttribute("aria-expanded",String(open));
-  });
-  qa("a",nav).forEach(a=>a.addEventListener("click",close));
+function chooseDate(key,scroll=false){
+  $$("[data-date]").forEach(b=>b.classList.toggle("active",b.dataset.date===key));
+  if(key==="none"){
+    localStorage.removeItem("hdm-show");
+    night.hidden=true;
+    return;
+  }
+  const show=shows[key];
+  if(!show) return;
+  localStorage.setItem("hdm-show",key);
+  $("[data-selected-date]").textContent=show.label;
+  $("[data-selected-venue]").textContent=show.venue;
+  night.hidden=false;
+  renderCountdown(key);
+  if(scroll) night.scrollIntoView({behavior:"smooth",block:"nearest"});
 }
 
-const media=q(".hero-media");
-const title=q(".hero-title");
-if(media&&title&&matchMedia("(pointer:fine)").matches){
-  window.addEventListener("pointermove",e=>{
-    const x=(e.clientX/window.innerWidth-.5);
-    const y=(e.clientY/window.innerHeight-.5);
-    media.style.transform=`rotate(${2.2+x*2}deg) translate(${x*10}px,${y*8}px)`;
-    title.style.transform=`translateX(${x*-5}px)`;
-  });
-}
+$$("[data-date]").forEach(button=>{
+  button.addEventListener("click",()=>chooseDate(button.dataset.date,true));
+});
+
+$$("[data-select-show]").forEach(button=>{
+  button.addEventListener("click",()=>chooseDate(button.dataset.selectShow,true));
+});
+
+$("[data-change-date]")?.addEventListener("click",()=>{
+  $("#inicio").scrollIntoView({behavior:"smooth"});
+});
+
+const saved=localStorage.getItem("hdm-show");
+if(saved && shows[saved]) chooseDate(saved);
+
+const menuButton=$(".menu-button");
+const mobileMenu=$(".mobile-menu");
+menuButton?.addEventListener("click",()=>{
+  const open=mobileMenu.classList.toggle("open");
+  menuButton.setAttribute("aria-expanded",String(open));
+});
+$$(".mobile-menu a").forEach(a=>a.addEventListener("click",()=>{
+  mobileMenu.classList.remove("open");
+  menuButton?.setAttribute("aria-expanded","false");
+}));
