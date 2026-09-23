@@ -322,6 +322,13 @@ if(finePointer&&!interactionReduce){
     hero.style.setProperty("--hero-ry",(nx*7)+"deg");
     hero.style.setProperty("--hero-x",(nx*18)+"px");
     hero.style.setProperty("--hero-y",(ny*14)+"px");
+    const lizzie=$(".chip-lizzie"),mxChip=$(".chip-mx"),dignity=$(".chip-dignity");
+    lizzie?.style.setProperty("--chip-x",(nx*-14)+"px");
+    lizzie?.style.setProperty("--chip-y",(ny*-10)+"px");
+    mxChip?.style.setProperty("--chip-x",(nx*12)+"px");
+    mxChip?.style.setProperty("--chip-y",(ny*9)+"px");
+    dignity?.style.setProperty("--chip-x",(nx*16)+"px");
+    dignity?.style.setProperty("--chip-y",(ny*12)+"px");
   },{passive:true});
   hero?.addEventListener("pointerleave",()=>{
     ["--hero-rx","--hero-ry"].forEach(v=>hero.style.setProperty(v,"0deg"));
