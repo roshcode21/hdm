@@ -46,7 +46,7 @@
       <div class="hero-copy">
         <span class="hero-kicker">FAN CLUB OFICIAL · MÉXICO</span>
         <h1><span>Hilary Duff</span><em>México</em></h1>
-        <p class="hero-intro">Música, pantalla, noticias, México y todo lo que seguimos viviendo alrededor de Hilary.</p>
+        <p class="hero-intro">Música, películas, series, noticias, México y comunidad.</p>
 
         <div class="hero-now">
           <span>AHORA</span>
@@ -55,7 +55,7 @@
         </div>
 
         <div class="hero-ctas">
-          <a class="cta cta-solid" href="#ahora">Entrar</a>
+          <a class="cta cta-solid" href="#ahora">Ver lo nuevo</a>
           <a class="cta cta-ghost" href="#mexico">México 2027</a>
         </div>
       </div>
@@ -150,7 +150,7 @@
           <p class="section-kicker">PANTALLA</p>
           <h2>El universo de Hilary.</h2>
         </div>
-        <p class="section-intro">No es una filmografía: son personajes, escenas y etapas que siguen apareciendo en la cultura pop.</p>
+        <p class="section-intro">Personajes, películas y series de 2001 a hoy.</p>
       </div>
 
       <div class="character-experience">
@@ -218,11 +218,14 @@
 
           <div class="album-actions">
             <a class="cta cta-light" href="https://open.spotify.com/artist/2S9W9aSAd7e5mp8WqWxN2h" target="_blank" rel="noreferrer">Spotify ↗</a>
-            <button class="cta cta-outline" type="button" data-random-song>Descubrir una canción ✦</button>
+            <button class="cta cta-outline song-pick-btn" type="button" data-random-song>Pon una de Hilary ✦</button>
           </div>
 
           <aside class="song-result" data-song-result>
-            <span>SELECCIÓN HDM</span><strong>Come Clean</strong><small>Metamorphosis · 2003</small>
+            <span>AHORA</span>
+            <strong data-song-title>Come Clean</strong>
+            <small data-song-meta>Metamorphosis · 2003</small>
+            <a data-song-link href="https://open.spotify.com/search/Hilary%20Duff%20Come%20Clean" target="_blank" rel="noreferrer">Escuchar ↗</a>
           </aside>
         </div>
 
@@ -324,8 +327,8 @@
       <div class="hdm-story">
         <div class="hdm-statement">
           <span>HILARY DUFF MÉXICO</span>
-          <h3>Fans para fans.</h3>
-          <p>Noticias verificadas, cobertura, listening parties, dinámicas y proyectos para conciertos.</p>
+          <h3>Noticias, comunidad y proyectos en México.</h3>
+          <p>Seguimos lanzamientos, cubrimos eventos, organizamos actividades y coordinamos proyectos para las visitas de Hilary a México.</p>
         </div>
 
         <div class="hdm-timeline">
@@ -351,7 +354,7 @@
             <span>INSTAGRAM</span><b>@hilaryduffmexico ↗</b>
           </a>
           <a href="./unete.html">
-            <span>FAN CLUB</span><b>Únete a HDM →</b>
+            <span>FAN CLUB</span><b>Hazte miembro de HDM →</b>
           </a>
           <a href="mailto:contacto@hilaryduffmexico.com">
             <span>CONTACTO</span><b>Escríbenos ↗</b>
@@ -361,23 +364,25 @@
     </section>
 
     <section class="newsletter section" id="newsletter">
-      <div class="newsletter-orbit" aria-hidden="true">
+      <div class="newsletter-orbit" aria-hidden="true" data-depth="1.2">
         <i></i><i></i><i></i>
         <div class="newsletter-mail">
-          <span>HDM</span>
-          <b>Come Clean → México 2027</b>
+          <div class="mail-preview-top"><span>HILARY DUFF MÉXICO</span><b>HDM</b></div>
+          <div class="mail-preview-subject">Lo nuevo de Hilary, reunido aquí.</div>
+          <div class="mail-preview-tags"><span>MÚSICA</span><span>PANTALLA</span><span>MÉXICO</span><span>HDM</span></div>
         </div>
       </div>
 
       <div class="newsletter-copy">
         <span>HDM POR CORREO</span>
-        <h2>De <em>Come Clean</em> a lo que viene.</h2>
-        <p>Lanzamientos, México 2027, actividades del fan club y especiales del archivo. Un resumen directo al correo.</p>
+        <h2>Hilary, directo a tu correo.</h2>
+        <p>Lo nuevo de Hilary, México 2027, actividades de HDM y especiales del archivo. Todo reunido en un solo correo.</p>
         <form data-newsletter-form>
           <label class="sr-only" for="newsletter-email">Correo</label>
           <input id="newsletter-email" type="email" required placeholder="tu correo">
-          <button type="submit">Suscribirme →</button>
+          <button type="submit">Quiero recibirlo →</button>
         </form>
+        <div class="newsletter-promise"><span>música</span><span>pantalla</span><span>México 2027</span><span>HDM</span></div>
         <small data-newsletter-note>Demo visual. La lista se conectará antes del lanzamiento.</small>
       </div>
     </section>
