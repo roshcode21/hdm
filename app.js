@@ -70,8 +70,49 @@ function setAlbum(key){
 $$("[data-album]").forEach(b=>b.addEventListener("click",()=>setAlbum(b.dataset.album)));
 $$("[data-open-album]").forEach(a=>a.addEventListener("click",()=>setAlbum(a.dataset.openAlbum)));
 
-const songs=[["Come Clean","Metamorphosis · 2003"],["With Love","Dignity · 2007"],["Fly","Hilary Duff · 2004"],["Sparks","Breathe In. Breathe Out. · 2015"],["Mature","luck… or something · 2026"],["Why Not","Metamorphosis · 2003"],["Roommates","luck… or something · 2026"],["My Kind","Breathe In. Breathe Out. · 2015"]];
-$("[data-random-song]")?.addEventListener("click",()=>{const [song,era]=songs[Math.floor(Math.random()*songs.length)];$("[data-song-result]").innerHTML=`<span>SELECCIÓN HDM</span><strong>${song}</strong><small>${era}</small>`;});
+const songs=[
+  {title:"Come Clean",meta:"Metamorphosis · 2003",query:"Hilary Duff Come Clean"},
+  {title:"With Love",meta:"Dignity · 2007",query:"Hilary Duff With Love"},
+  {title:"Fly",meta:"Hilary Duff · 2004",query:"Hilary Duff Fly"},
+  {title:"Sparks",meta:"Breathe In. Breathe Out. · 2015",query:"Hilary Duff Sparks"},
+  {title:"Mature",meta:"luck… or something · 2026",query:"Hilary Duff Mature"},
+  {title:"Why Not",meta:"Metamorphosis · 2003",query:"Hilary Duff Why Not"},
+  {title:"Roommates",meta:"luck… or something · 2026",query:"Hilary Duff Roommates"},
+  {title:"My Kind",meta:"Breathe In. Breathe Out. · 2015",query:"Hilary Duff My Kind"},
+  {title:"Stranger",meta:"Dignity · 2007",query:"Hilary Duff Stranger"},
+  {title:"Wake Up",meta:"Most Wanted · 2005",query:"Hilary Duff Wake Up"},
+  {title:"So Yesterday",meta:"Metamorphosis · 2003",query:"Hilary Duff So Yesterday"},
+  {title:"Future Tripping",meta:"luck… or something · 2026",query:"Hilary Duff Future Tripping"}
+];
+let lastSong=-1;
+$("[data-random-song]")?.addEventListener("click",e=>{
+  const btn=e.currentTarget,result=$("[data-song-result]"),world=$("[data-music-world]");
+  if(btn.disabled)return;
+  btn.disabled=true;world?.classList.add("song-spinning");result?.classList.add("is-picking");
+  let ticks=0;
+  const reel=setInterval(()=>{
+    const temp=songs[Math.floor(Math.random()*songs.length)];
+    $("[data-song-title]").textContent=temp.title;
+    $("[data-song-meta]").textContent=temp.meta;
+    ticks++;
+    if(ticks<7)return;
+    clearInterval(reel);
+    let pick;
+    do{pick=Math.floor(Math.random()*songs.length);}while(pick===lastSong&&songs.length>1);
+    lastSong=pick;
+    const song=songs[pick];
+    $("[data-song-title]").textContent=song.title;
+    $("[data-song-meta]").textContent=song.meta;
+    const link=$("[data-song-link]");
+    link.href="https://open.spotify.com/search/"+encodeURIComponent(song.query);
+    link.textContent="Escuchar "+song.title+" ↗";
+    result?.classList.remove("is-picking");
+    world?.classList.remove("song-spinning");
+    result?.classList.add("song-landed");
+    setTimeout(()=>result?.classList.remove("song-landed"),650);
+    btn.disabled=false;
+  },85);
+});
 
 const shows={
   cdmx12:{date:"2027-02-12T20:00:00-06:00",label:"12 FEB 2027 · CDMX",venue:"Palacio de los Deportes",city:"Ciudad de México",title:"Hilary Duff - the lucky me tour · CDMX 12 Feb"},
@@ -165,3 +206,158 @@ const navObserver=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(
 $$("section[id]").forEach(s=>navObserver.observe(s));
 
 if("serviceWorker" in navigator)window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js").catch(()=>{}));
+
+
+/* V11 interaction system */
+const finePointer=matchMedia("(pointer:fine)").matches;
+const interactionReduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+const progress=document.createElement("div");
+progress.className="scroll-progress";
+progress.innerHTML="<i></i>";
+document.body.appendChild(progress);
+
+function clamp(v,min,max){return Math.min(max,Math.max(min,v));}
+
+let scrollTick=0,lastScrollY=scrollY,scrollVelocity=0;
+const parallaxMap=[
+  [$(".hero-copy"),.22],
+  [$(".hero-photo"),-.16],
+  [$(".chip-lizzie"),.42],
+  [$(".chip-mx"),-.32],
+  [$(".chip-dignity"),.28],
+  [$(".lead-orb"),-.22],
+  [$(".character-stage-glow"),-.2],
+  [$(".cd-disc"),-.24],
+  [$(".cd-case"),.15],
+  [$(".lp-a"),-.16],
+  [$(".lp-b"),.24],
+  [$(".lizzie-spark"),-.34],
+  [$(".newsletter-orbit"),-.12],
+  [$(".phone-shell"),.18],
+  [$(".footer-title"),.08]
+].filter(([el])=>el);
+
+function updateDepth(){
+  scrollTick=0;
+  const max=document.documentElement.scrollHeight-innerHeight;
+  const p=max>0?scrollY/max:0;
+  progress.style.setProperty("--progress",p);
+  scrollVelocity+=(scrollY-lastScrollY-scrollVelocity)*.18;
+  lastScrollY=scrollY;
+  const mobile=innerWidth<820;
+  parallaxMap.forEach(([el,depth])=>{
+    const r=el.getBoundingClientRect();
+    const center=(r.top+r.height/2)-innerHeight/2;
+    const norm=clamp(center/innerHeight,-1.4,1.4);
+    const amount=(mobile?18:34)*depth;
+    el.style.setProperty("--scroll-y",(norm*amount)+"px");
+  });
+  document.documentElement.style.setProperty("--scroll-velocity",clamp(scrollVelocity,-40,40));
+}
+function requestDepth(){if(!scrollTick)scrollTick=requestAnimationFrame(updateDepth);}
+addEventListener("scroll",requestDepth,{passive:true});
+addEventListener("resize",requestDepth,{passive:true});
+requestDepth();
+
+const sheenTargets=$$(".surface,.character-stage,.music-world,.show-option,.countdown-panel,.show-panel,.hdm-statement,.hdm-actions a,.newsletter-mail,.phone-shell");
+sheenTargets.forEach(el=>{
+  if(!el.querySelector(":scope > .surface-sheen")){
+    const sheen=document.createElement("span");
+    sheen.className="surface-sheen";
+    sheen.setAttribute("aria-hidden","true");
+    el.appendChild(sheen);
+  }
+  el.addEventListener("pointermove",e=>{
+    if(!finePointer)return;
+    const r=el.getBoundingClientRect();
+    el.style.setProperty("--spot-x",((e.clientX-r.left)/r.width*100)+"%");
+    el.style.setProperty("--spot-y",((e.clientY-r.top)/r.height*100)+"%");
+  },{passive:true});
+});
+
+if(finePointer&&!interactionReduce){
+  document.body.classList.add("has-hdm-cursor");
+  const cursor=document.createElement("div");
+  cursor.className="hdm-cursor";
+  cursor.innerHTML='<i></i><span></span>';
+  document.body.appendChild(cursor);
+  const label=cursor.querySelector("span");
+  let x=innerWidth/2,y=innerHeight/2,cx=x,cy=y,raf=0;
+  function cursorFrame(){
+    raf=0;cx+=(x-cx)*.2;cy+=(y-cy)*.2;
+    cursor.style.transform=`translate3d(${cx}px,${cy}px,0)`;
+    if(Math.abs(x-cx)>.1||Math.abs(y-cy)>.1)raf=requestAnimationFrame(cursorFrame);
+  }
+  addEventListener("pointermove",e=>{x=e.clientX;y=e.clientY;if(!raf)raf=requestAnimationFrame(cursorFrame);},{passive:true});
+
+  const cursorLabelFor=el=>{
+    if(el.matches("[data-random-song]"))return"OÍR";
+    if(el.matches("[data-show]"))return"ELEGIR";
+    if(el.matches("[data-album]"))return"ERA";
+    if(el.matches("[data-character]"))return"VER";
+    if(el.matches("button"))return"";
+    if(el.matches("a"))return"ABRIR";
+    return"";
+  };
+  $$("a,button,input,.surface,.newsletter-mail").forEach(el=>{
+    el.addEventListener("pointerenter",()=>{const t=cursorLabelFor(el);cursor.classList.add("is-active");label.textContent=t;cursor.classList.toggle("has-label",!!t);});
+    el.addEventListener("pointerleave",()=>{cursor.classList.remove("is-active","has-label");label.textContent="";});
+  });
+
+  $$(".cta,.icon-btn,.search-btn,.hdm-actions a,.footer-bottom button,.show-option").forEach(el=>{
+    el.classList.add("magnetic");
+    el.addEventListener("pointermove",e=>{
+      const r=el.getBoundingClientRect(),dx=e.clientX-(r.left+r.width/2),dy=e.clientY-(r.top+r.height/2);
+      el.style.setProperty("--mag-x",(dx*.08)+"px");
+      el.style.setProperty("--mag-y",(dy*.11)+"px");
+    });
+    el.addEventListener("pointerleave",()=>{el.style.setProperty("--mag-x","0px");el.style.setProperty("--mag-y","0px");});
+  });
+
+  const hero=$(".hero");
+  hero?.addEventListener("pointermove",e=>{
+    const r=hero.getBoundingClientRect(),nx=(e.clientX-r.left)/r.width-.5,ny=(e.clientY-r.top)/r.height-.5;
+    hero.style.setProperty("--hero-rx",(-ny*5)+"deg");
+    hero.style.setProperty("--hero-ry",(nx*7)+"deg");
+    hero.style.setProperty("--hero-x",(nx*18)+"px");
+    hero.style.setProperty("--hero-y",(ny*14)+"px");
+  },{passive:true});
+  hero?.addEventListener("pointerleave",()=>{
+    ["--hero-rx","--hero-ry"].forEach(v=>hero.style.setProperty(v,"0deg"));
+    ["--hero-x","--hero-y"].forEach(v=>hero.style.setProperty(v,"0px"));
+  });
+
+  [$(".music-world"),$(".newsletter-orbit"),$(".phone-shell")].filter(Boolean).forEach(el=>{
+    el.addEventListener("pointermove",e=>{
+      const r=el.getBoundingClientRect(),nx=(e.clientX-r.left)/r.width-.5,ny=(e.clientY-r.top)/r.height-.5;
+      el.style.setProperty("--object-rx",(-ny*5)+"deg");
+      el.style.setProperty("--object-ry",(nx*7)+"deg");
+    },{passive:true});
+    el.addEventListener("pointerleave",()=>{el.style.setProperty("--object-rx","0deg");el.style.setProperty("--object-ry","0deg");});
+  });
+}
+
+document.addEventListener("pointerdown",e=>{
+  const target=e.target.closest("a,button,.surface,.character-row,.show-option");
+  if(!target||interactionReduce)return;
+  const burst=document.createElement("span");
+  burst.className="tap-burst";
+  burst.style.left=e.clientX+"px";burst.style.top=e.clientY+"px";
+  burst.innerHTML="<i></i><i></i><i></i>";
+  document.body.appendChild(burst);
+  setTimeout(()=>burst.remove(),700);
+},{passive:true});
+
+if(!interactionReduce){
+  const mobileDepth=()=>{
+    if(innerWidth>=820)return;
+    const hero=$(".hero");
+    if(!hero)return;
+    const r=hero.getBoundingClientRect();
+    const n=clamp(-r.top/Math.max(1,r.height),0,1);
+    hero.style.setProperty("--mobile-depth",n);
+  };
+  addEventListener("scroll",mobileDepth,{passive:true});
+  mobileDepth();
+}
