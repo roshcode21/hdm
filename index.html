@@ -3,136 +3,131 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#ff77b8">
-  <meta name="description" content="Hilary Duff México — Fan Club Oficial. Música, pantalla, México 2027, actualidad y comunidad.">
+  <meta name="theme-color" content="#ff72b5">
+  <meta name="description" content="Hilary Duff México — música, pantalla, México 2027 y comunidad HDM.">
   <meta property="og:title" content="Hilary Duff México">
   <meta property="og:description" content="Fan Club Oficial de Hilary Duff en México.">
   <meta property="og:type" content="website">
   <title>Hilary Duff México · HDM</title>
+
   <link rel="manifest" href="./manifest.webmanifest">
   <link rel="icon" href="./icon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Onest:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Onest:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css">
 </head>
-<body data-portal="ahora">
-  <a class="skip" href="#main">Ir al contenido</a>
 
-  <header class="topbar">
-    <a class="brand" href="#inicio" aria-label="Hilary Duff México">
-      <span class="brand-orb">HDM</span>
-      <span class="brand-copy">Hilary Duff<br>México</span>
+<body data-hero="now">
+  <a class="skip-link" href="#main">Ir al contenido</a>
+
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="Hilary Duff México, inicio">
+      <span class="brand-mark">HDM</span>
+      <span class="brand-name">Hilary Duff México</span>
     </a>
 
     <nav class="desktop-nav" aria-label="Navegación principal">
-      <a href="#universo">Hilary</a>
+      <a href="#hilary">Hilary</a>
       <a href="#lizzie">Lizzie 25</a>
       <a href="#mexico">México</a>
-      <a href="#fanclub">HDM</a>
+      <a href="#hdm">HDM</a>
+      <a class="nav-join" href="#unete">Únete</a>
     </nav>
 
-    <div class="top-actions">
-      <button class="install-mini" type="button" data-install>+ inicio</button>
-      <button class="search-open" type="button" data-search-open aria-label="Buscar">Buscar <kbd>/</kbd></button>
-    </div>
+    <button class="search-button" type="button" data-search-open aria-label="Buscar en HDM">
+      <span>Buscar</span><kbd>/</kbd>
+    </button>
   </header>
 
   <main id="main">
-    <section class="hero-v6" id="inicio">
-  <div class="hero-v6-bg" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <div class="hero-bg" aria-hidden="true"><i></i><i></i><i></i></div>
 
-  <div class="hero-v6-top">
-    <span class="micro">HILARY DUFF MÉXICO · FAN CLUB OFICIAL</span>
-    <div class="hero-v6-title">
-      <h1>Hilary Duff</h1>
-      <strong>México</strong>
-    </div>
-  </div>
-
-  <div class="hero-v6-worlds" role="tablist" aria-label="Explorar momentos de Hilary">
-    <button class="active" type="button" data-hero-world="ahora"><span>01</span>Ahora</button>
-    <button type="button" data-hero-world="meta"><span>02</span>Metamorphosis</button>
-    <button type="button" data-hero-world="dignity"><span>03</span>Dignity</button>
-    <button type="button" data-hero-world="lizzie"><span>04</span>Lizzie · 25</button>
-    <button type="button" data-hero-world="mexico"><span>05</span>México 2027</button>
-  </div>
-
-  <div class="hero-v6-stage" data-hero-stage="ahora">
-    <div class="hero-v6-visual">
-      <figure class="hero-v6-photo">
-        <img data-hero-main-image
-          src="https://press.atlanticrecords.com/sites/g/files/g2000014001/files/styles/artist_detail/public/2026-02/Hilary%20Duff%20Album%20Press%20Photo%201%20-%20Credit%20Alfred%20Marroquin_0.jpg?itok=d3_kRNm5"
-          alt="Hilary Duff en 2026" fetchpriority="high">
-      </figure>
-
-      <div class="hero-v6-ghost" aria-hidden="true">HDM</div>
-      <div class="hero-v6-ring r1" aria-hidden="true"></div>
-      <div class="hero-v6-ring r2" aria-hidden="true"></div>
-      <span class="hero-v6-star s1" aria-hidden="true">✦</span>
-      <span class="hero-v6-star s2" aria-hidden="true">✦</span>
-
-      <div class="hero-v6-mini mini-lizzie">
-        <img src="https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/FC5C3AA105E2E4F7DA0510B918269D19663591203F49676D10AE2E2C976790CB/compose?format=webp&width=1200" alt="">
-        <span>LIZZIE · 25</span>
+      <div class="hero-brandline">
+        <span>FAN CLUB OFICIAL · MÉXICO</span>
+        <span>HILARY DUFF · 2026</span>
       </div>
 
-      <div class="hero-v6-mini mini-disc" aria-hidden="true">
-        <i></i><span>2003 → 2026</span>
+      <div class="hero-tabs-wrap">
+        <div class="hero-tabs" role="tablist" aria-label="Explorar">
+          <button class="active" type="button" role="tab" aria-selected="true" data-hero-tab="now">Ahora</button>
+          <button type="button" role="tab" aria-selected="false" data-hero-tab="meta">Metamorphosis</button>
+          <button type="button" role="tab" aria-selected="false" data-hero-tab="dignity">Dignity</button>
+          <button type="button" role="tab" aria-selected="false" data-hero-tab="lizzie">Lizzie · 25</button>
+          <button type="button" role="tab" aria-selected="false" data-hero-tab="mexico">México 2027</button>
+        </div>
+        <span class="swipe-cue mobile-only" aria-hidden="true">Desliza para explorar →</span>
       </div>
-    </div>
 
-    <div class="hero-v6-copy">
-      <span class="micro" data-hero-eyebrow>AHORA · 2026</span>
-      <h2 data-hero-title>luck… or something</h2>
-      <p data-hero-copy>Nuevo álbum, una gira mundial en marcha y tres noches confirmadas en México para febrero de 2027.</p>
-      <div class="hero-v6-tags" data-hero-tags>
-        <span>Weather For Tennis</span><span>Roommates</span><span>Future Tripping</span>
+      <div class="hero-stage" data-hero-stage="now">
+        <div class="hero-visual">
+          <figure class="hero-main-photo">
+            <img data-hero-image
+              src="https://press.atlanticrecords.com/sites/g/files/g2000014001/files/styles/artist_detail/public/2026-02/Hilary%20Duff%20Album%20Press%20Photo%201%20-%20Credit%20Alfred%20Marroquin_0.jpg?itok=d3_kRNm5"
+              alt="Hilary Duff en 2026" fetchpriority="high">
+          </figure>
+
+          <figure class="hero-small-photo">
+            <img src="https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/FC5C3AA105E2E4F7DA0510B918269D19663591203F49676D10AE2E2C976790CB/compose?format=webp&width=1200"
+              alt="Lizzie McGuire y su versión animada">
+            <figcaption>Lizzie · 25 años</figcaption>
+          </figure>
+
+          <div class="hero-record" aria-hidden="true"><i></i></div>
+          <div class="hero-outline" aria-hidden="true">HDM</div>
+          <span class="hero-star star-one" aria-hidden="true">✦</span>
+          <span class="hero-star star-two" aria-hidden="true">✦</span>
+        </div>
+
+        <div class="hero-copy">
+          <span class="eyebrow" data-hero-kicker>AHORA · 2026</span>
+          <h1 id="hero-title" data-hero-title>luck… or something</h1>
+          <p data-hero-copy>Nuevo álbum, gira mundial y tres fechas confirmadas en México para febrero de 2027.</p>
+
+          <div class="hero-pills" data-hero-pills>
+            <span>Weather For Tennis</span>
+            <span>Roommates</span>
+            <span>Future Tripping</span>
+          </div>
+
+          <div class="hero-actions" data-hero-actions>
+            <a class="button button-dark" href="#actualidad">Escuchar y ver</a>
+            <a class="button button-line" href="https://www.hilaryduff.com/live" target="_blank" rel="noreferrer">Tour oficial ↗</a>
+          </div>
+        </div>
       </div>
-      <div class="hero-v6-actions" data-hero-actions>
-        <a href="#pulso">Escuchar y ver ↓</a>
-        <a href="https://www.hilaryduff.com/live" target="_blank" rel="noreferrer">Tour oficial ↗</a>
+
+      <div class="hero-marquee" aria-hidden="true">
+        <div>
+          <span>COME CLEAN</span><b>✦</b><span>WITH LOVE</span><b>✦</b><span>THIS IS WHAT DREAMS ARE MADE OF</span><b>✦</b><span>SPARKS</span><b>✦</b><span>FUTURE TRIPPING</span><b>✦</b><span>COME CLEAN</span><b>✦</b><span>WITH LOVE</span><b>✦</b>
+        </div>
       </div>
-    </div>
-  </div>
+    </section>
 
-  <div class="hero-v6-bottom">
-    <span>METAMORPHOSIS</span><i>✦</i><span>LIZZIE MCGUIRE</span><i>✦</i><span>DIGNITY</span><i>✦</i><span>YOUNGER</span><i>✦</i><span>MÉXICO</span><i>✦</i><span>LUCK… OR SOMETHING</span>
-  </div>
-</section>
-
-    <section class="pulso section" id="pulso">
+    <section class="section section-paper" id="actualidad">
       <header class="section-head">
         <div>
-          <span class="section-no">01</span>
-          <h2>Pulso</h2>
+          <span class="section-index">01</span>
+          <h2>Ahora</h2>
         </div>
-        <p>Escuchar, ver y seguir lo que está pasando sin salir a buscarlo en cinco lugares.</p>
+        <p>Música, video y lecturas recientes en un solo lugar.</p>
       </header>
 
-      <div class="pulse-grid">
-        <article class="spotify-module media-module">
-          <div class="module-top">
-            <span>SPOTIFY</span>
-            <a href="https://open.spotify.com/album/71t4M602DGtkhsy1RtNAME" target="_blank" rel="noreferrer">abrir ↗</a>
-          </div>
+      <div class="now-grid">
+        <article class="media-card media-spotify">
+          <div class="card-label"><span>SPOTIFY</span><span>ÁLBUM</span></div>
           <iframe
             title="luck... or something en Spotify"
             src="https://open.spotify.com/embed/album/71t4M602DGtkhsy1RtNAME?utm_source=generator&theme=0"
-            width="100%" height="352" frameborder="0" allowfullscreen
+            width="100%" height="352" frameborder="0"
             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
             loading="lazy"></iframe>
-          <div class="module-caption">
-            <b>luck… or something</b>
-            <span>11 canciones · 20 FEB 2026</span>
-          </div>
+          <div class="media-caption"><strong>luck… or something</strong><span>20 FEB 2026</span></div>
         </article>
 
-        <article class="video-module media-module">
-          <div class="module-top">
-            <span>VIDEO</span>
-            <span>FUTURE TRIPPING</span>
-          </div>
+        <article class="media-card media-video">
+          <div class="card-label"><span>VIDEO</span><span>2026</span></div>
           <div class="video-frame">
             <iframe
               title="Hilary Duff - Future Tripping"
@@ -140,260 +135,195 @@
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowfullscreen loading="lazy"></iframe>
           </div>
-          <div class="module-caption">
-            <b>Future Tripping</b>
-            <span>video oficial · 2026</span>
-          </div>
+          <div class="media-caption"><strong>Future Tripping</strong><span>VIDEO OFICIAL</span></div>
         </article>
 
-        <article class="instagram-module">
-          <div class="ig-phone">
-            <div class="ig-bar"><span>HDM</span><i></i><i></i></div>
-            <div class="ig-canvas">
-              <div class="ig-tile ig-one"><span>MÉXICO<br>2027</span></div>
-              <div class="ig-tile ig-two"><span>HILARY<br>AHORA</span></div>
-              <div class="ig-tile ig-three"><span>25<br>LIZZIE</span></div>
-              <div class="ig-tile ig-four"><span>HDM</span></div>
-            </div>
-            <a href="https://www.instagram.com/hilaryduffmexico/" target="_blank" rel="noreferrer">@hilaryduffmexico ↗</a>
+        <article class="social-card">
+          <span class="eyebrow">INSTAGRAM</span>
+          <h3>@hilaryduffmexico</h3>
+          <p>Noticias, stories, dinámicas y conversación diaria del fan club.</p>
+          <div class="social-tiles" aria-hidden="true">
+            <i>MX</i><i>HD</i><i>25</i><i>...</i>
           </div>
-          <div class="ig-copy">
-            <span class="micro">INSTAGRAM</span>
-            <h3>La conversación sigue ahí.</h3>
-            <p>Noticias, stories, dinámicas y comentarios. Todo lo nuevo del fan club empieza en @hilaryduffmexico.</p>
-          </div>
+          <a class="button button-light" href="https://www.instagram.com/hilaryduffmexico/" target="_blank" rel="noreferrer">Abrir Instagram ↗</a>
         </article>
 
-        <article class="radar-module">
-          <div class="module-top"><span>RADAR</span><span>2026</span></div>
-          <a class="radar-row" href="https://www.vogue.com/slideshow/on-the-road-with-hilary-duff-lucky-me-tour" target="_blank" rel="noreferrer">
-            <small>04 SEP</small><b>On the Road With Hilary Duff</b><span>Vogue ↗</span>
-          </a>
-          <a class="radar-row" href="https://time.com/collection/100-most-influential-people/2026/" target="_blank" rel="noreferrer">
-            <small>15 ABR</small><b>TIME100 · Icons</b><span>TIME ↗</span>
-          </a>
-          <a class="radar-row" href="https://corporate.authentic.com/press-releases" target="_blank" rel="noreferrer">
-            <small>31 AGO</small><b>Hilary x Reebok</b><span>Reebok ↗</span>
-          </a>
-          <a class="radar-row" href="https://press.atlanticrecords.com/hilary-duff" target="_blank" rel="noreferrer">
-            <small>AHORA</small><b>Fotos y materiales oficiales</b><span>Atlantic ↗</span>
-          </a>
+        <article class="read-card">
+          <span class="eyebrow">EN ESPAÑOL</span>
+          <h3>El regreso, contado por Hilary.</h3>
+          <p>Vogue México habló con ella sobre volver a grabar, el nuevo disco y la relación con sus éxitos anteriores.</p>
+          <a href="https://www.vogue.mx/articulo/hilary-duff-entrevista-2026" target="_blank" rel="noreferrer">Vogue México ↗</a>
         </article>
+      </div>
+
+      <div class="reading-row">
+        <div class="row-title">
+          <span class="eyebrow">PARA LEER EN ESPAÑOL</span>
+          <span class="swipe-cue">Desliza →</span>
+        </div>
+
+        <div class="carousel" data-carousel>
+          <a class="reading-card pink" href="https://www.vogue.mx/articulo/hilary-duff-entrevista-2026" target="_blank" rel="noreferrer">
+            <span>VOGUE MÉXICO · 04 MAR 2026</span>
+            <strong>Hilary vuelve al pop sin intentar repetir el pasado.</strong>
+            <em>Leer ↗</em>
+          </a>
+          <a class="reading-card purple" href="https://www.disneyplus.com/es-mx/explore/articles/lizzie-mcguire-anniversary" target="_blank" rel="noreferrer">
+            <span>DISNEY+ MÉXICO · 23 ABR 2026</span>
+            <strong>Lizzie McGuire cumplió 25 años.</strong>
+            <em>Leer ↗</em>
+          </a>
+          <a class="reading-card lime" href="https://los40.com.mx/2026/04/28/hilary-duff-anuncia-nueva-fecha-de-concierto-en-mexico-que-ciudad-cuando-donde-preventa-y-mas/" target="_blank" rel="noreferrer">
+            <span>LOS40 MÉXICO · 28 ABR 2026</span>
+            <strong>Guadalajara se suma a the lucky me tour.</strong>
+            <em>Leer ↗</em>
+          </a>
+        </div>
+        <div class="carousel-dots" data-carousel-dots aria-hidden="true"></div>
       </div>
     </section>
 
-    <section class="en-espanol section" id="en-espanol">
-  <header class="section-head">
-    <div>
-      <span class="section-no">EN ESPAÑOL</span>
-      <h2>Hilary, leída desde acá</h2>
-    </div>
-    <p>Entrevistas, aniversarios y noticias en español que vale la pena guardar.</p>
-  </header>
-
-  <div class="spanish-grid">
-    <a class="spanish-card sp-vogue" href="https://www.vogue.mx/articulo/hilary-duff-entrevista-2026" target="_blank" rel="noreferrer">
-      <span>VOGUE MÉXICO · 04 MAR 2026</span>
-      <h3>El regreso, contado por Hilary.</h3>
-      <p>Habla de volver a grabar, dejar de compararse con sus éxitos anteriores y construir un disco con un sonido más onírico y personal.</p>
-      <b>Leer entrevista ↗</b>
-    </a>
-
-    <a class="spanish-card sp-disney" href="https://www.disneyplus.com/es-mx/explore/articles/lizzie-mcguire-anniversary" target="_blank" rel="noreferrer">
-      <span>DISNEY+ MÉXICO · 23 ABR 2026</span>
-      <h3>Lizzie McGuire · 25 años.</h3>
-      <p>Dos temporadas, 65 episodios, la película y un recorrido oficial por personajes, momentos y curiosidades de la serie.</p>
-      <b>Volver a Lizzie ↗</b>
-    </a>
-
-    <a class="spanish-card sp-los40" href="https://los40.com.mx/2026/04/28/hilary-duff-anuncia-nueva-fecha-de-concierto-en-mexico-que-ciudad-cuando-donde-preventa-y-mas/" target="_blank" rel="noreferrer">
-      <span>LOS40 MÉXICO · 28 ABR 2026</span>
-      <h3>Guadalajara entró al tour.</h3>
-      <p>La tercera fecha mexicana llegó después de la demanda por los conciertos de Ciudad de México.</p>
-      <b>Leer nota ↗</b>
-    </a>
-
-    <a class="spanish-card sp-pop" href="https://los40.com/2026/01/19/tenemos-que-hablar-de-hilary-duff-y-por-que-los-millennials-gays-estamos-tan-orgullosos-de-ella/" target="_blank" rel="noreferrer">
-      <span>LOS40 · 19 ENE 2026</span>
-      <h3>Hilary y una generación entera.</h3>
-      <p>Una lectura pop sobre por qué canciones, películas y eras de Hilary siguen teniendo una relación tan particular con los millennials.</p>
-      <b>Leer artículo ↗</b>
-    </a>
-  </div>
-</section>
-
-    <section class="pop-universe section" id="cultura-pop">
-  <header class="section-head pop-head">
-    <div>
-      <span class="section-no">CULTURA POP</span>
-      <h2>Una Hilary distinta en cada puerta.</h2>
-    </div>
-    <p>Personajes, discos y etapas que terminaron viviendo mucho más allá de su estreno.</p>
-  </header>
-
-  <div class="pop-deck" data-pop-deck>
-    <button class="pop-card pc-lizzie active" type="button" data-pop="lizzie">
-      <span>2001</span><strong>Lizzie McGuire</strong><em>Disney Channel</em><b>LM</b>
-    </button>
-    <button class="pop-card pc-kelly" type="button" data-pop="kelly">
-      <span>2002</span><strong>Kelly Collins</strong><em>La cadete Kelly</em><b>KC</b>
-    </button>
-    <button class="pop-card pc-rome" type="button" data-pop="rome">
-      <span>2003</span><strong>Lizzie / Isabella</strong><em>Estrella pop</em><b>ROMA</b>
-    </button>
-    <button class="pop-card pc-sam" type="button" data-pop="sam">
-      <span>2004</span><strong>Sam Montgomery</strong><em>A Cinderella Story</em><b>SM</b>
-    </button>
-    <button class="pop-card pc-terri" type="button" data-pop="terri">
-      <span>2004</span><strong>Terri Fletcher</strong><em>Raise Your Voice</em><b>TF</b>
-    </button>
-    <button class="pop-card pc-dignity" type="button" data-pop="dignity">
-      <span>2007</span><strong>Dignity</strong><em>With Love · Stranger</em><b>D</b>
-    </button>
-    <button class="pop-card pc-kelsey" type="button" data-pop="kelsey">
-      <span>2015</span><strong>Kelsey Peters</strong><em>Younger</em><b>KP</b>
-    </button>
-    <button class="pop-card pc-sophie" type="button" data-pop="sophie">
-      <span>2022</span><strong>Sophie</strong><em>How I Met Your Father</em><b>S</b>
-    </button>
-    <button class="pop-card pc-luck" type="button" data-pop="luck">
-      <span>2026</span><strong>luck… or something</strong><em>La etapa actual</em><b>...</b>
-    </button>
-  </div>
-
-  <article class="pop-focus" data-pop-focus data-pop-theme="lizzie">
-    <div class="pop-focus-index" data-pop-year>2001</div>
-    <div class="pop-focus-copy">
-      <span class="micro" data-pop-type>SERIE · DISNEY CHANNEL</span>
-      <h3 data-pop-title>Lizzie McGuire</h3>
-      <p data-pop-copy>La puerta de entrada para muchísimos fans. Lizzie, Miranda, Gordo y su alter ego animado cumplen 25 años en 2026.</p>
-      <a data-pop-link href="#lizzie">Abrir Lizzie ↓</a>
-    </div>
-    <div class="pop-focus-names" aria-hidden="true">
-      <span data-pop-name-1>GORDO</span>
-      <span data-pop-name-2>MIRANDA</span>
-      <span data-pop-name-3>ETHAN</span>
-    </div>
-  </article>
-</section>
-
-    <section class="universe section" id="universo">
-      <header class="section-head universe-head">
+    <section class="section section-dark" id="hilary">
+      <header class="section-head section-head-light">
         <div>
-          <span class="section-no">02</span>
+          <span class="section-index">02</span>
           <h2>Hilary</h2>
         </div>
-        <p>Música, pantalla, conciertos y todo lo demás. Una carrera para explorar, no una biografía interminable.</p>
+        <p>Música y pantalla. Cambia de etapa y sigue explorando.</p>
       </header>
 
-      <div class="universe-tabs" role="tablist" aria-label="Explorar a Hilary">
-        <button class="active" type="button" data-universe-tab="music" aria-selected="true">Música</button>
-        <button type="button" data-universe-tab="screen" aria-selected="false">Pantalla</button>
-        <button type="button" data-universe-tab="live" aria-selected="false">En vivo</button>
-        <button type="button" data-universe-tab="more" aria-selected="false">Más Hilary</button>
+      <div class="subnav" role="tablist" aria-label="Explorar a Hilary">
+        <button class="active" type="button" data-hilary-tab="music" aria-selected="true">Música</button>
+        <button type="button" data-hilary-tab="screen" aria-selected="false">Pantalla</button>
+        <button type="button" data-hilary-tab="pop" aria-selected="false">Cultura pop</button>
       </div>
 
-      <div class="universe-panel" data-universe-panel>
-        <div class="music-browser">
-          <div class="album-strip" role="list">
-            <button class="album-chip" data-album="santa" type="button"><span>2002</span><b>Santa Claus Lane</b></button>
-            <button class="album-chip active" data-album="meta" type="button"><span>2003</span><b>Metamorphosis</b></button>
-            <button class="album-chip" data-album="self" type="button"><span>2004</span><b>Hilary Duff</b></button>
-            <button class="album-chip" data-album="dignity" type="button"><span>2007</span><b>Dignity</b></button>
-            <button class="album-chip" data-album="bibo" type="button"><span>2015</span><b>Breathe In. Breathe Out.</b></button>
-            <button class="album-chip" data-album="luck" type="button"><span>2026</span><b>luck… or something</b></button>
+      <div class="hilary-panel" data-hilary-panel="music">
+        <div class="album-carousel-wrap">
+          <span class="swipe-cue">Desliza entre eras →</span>
+          <div class="carousel carousel-dark" data-carousel data-album-carousel>
+            <button class="album-card" type="button" data-album="santa"><span>2002</span><strong>Santa Claus Lane</strong></button>
+            <button class="album-card active" type="button" data-album="meta"><span>2003</span><strong>Metamorphosis</strong></button>
+            <button class="album-card" type="button" data-album="self"><span>2004</span><strong>Hilary Duff</strong></button>
+            <button class="album-card" type="button" data-album="dignity"><span>2007</span><strong>Dignity</strong></button>
+            <button class="album-card" type="button" data-album="bibo"><span>2015</span><strong>Breathe In. Breathe Out.</strong></button>
+            <button class="album-card" type="button" data-album="luck"><span>2026</span><strong>luck… or something</strong></button>
           </div>
-
-          <article class="album-stage" data-album-stage data-album-theme="meta">
-            <div class="album-art-object" aria-hidden="true">
-              <div class="album-vinyl"></div>
-              <div class="album-year-big" data-album-year-big>2003</div>
-              <span class="album-star">✦</span>
-            </div>
-            <div class="album-copy">
-              <span class="micro" data-album-year>2003</span>
-              <h3 data-album-title>Metamorphosis</h3>
-              <p data-album-text>El disco que convirtió a Hilary en una estrella pop global. “So Yesterday” y “Come Clean” siguen ocupando un lugar central en su repertorio.</p>
-              <div class="album-songs" data-album-songs>
-                <span>So Yesterday</span><span>Come Clean</span><span>Why Not</span>
-              </div>
-              <div class="album-actions">
-                <a href="https://open.spotify.com/artist/2S9W9aSAd7e5mp8WqWxN2h" target="_blank" rel="noreferrer">Spotify ↗</a>
-                <button type="button" data-random-song>Descubrir una canción ✦</button>
-              </div>
-            </div>
-            <aside class="random-song" data-random-song-result>
-              <small>SELECCIÓN HDM</small>
-              <strong>Come Clean</strong>
-              <span>Metamorphosis · 2003</span>
-            </aside>
-          </article>
+          <div class="carousel-dots carousel-dots-light" data-carousel-dots aria-hidden="true"></div>
         </div>
-      </div>
-    </section>
 
-    <section class="lizzie section" id="lizzie">
-      <div class="lizzie-blob b1" aria-hidden="true"></div>
-      <div class="lizzie-blob b2" aria-hidden="true"></div>
-      <div class="lizzie-blob b3" aria-hidden="true"></div>
+        <article class="album-focus" data-album-focus data-theme="meta">
+          <div class="record-object" aria-hidden="true"><i></i><b data-album-year-big>2003</b></div>
 
-      <header class="lizzie-title">
-        <span class="micro">2001 — 2026</span>
-        <h2>Lizzie McGuire<br><em>25 años</em></h2>
-      </header>
-
-      <div class="lizzie-gallery">
-        <figure class="lizzie-shot shot-a">
-          <img src="https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/FC5C3AA105E2E4F7DA0510B918269D19663591203F49676D10AE2E2C976790CB/compose?format=webp&width=2560" alt="Lizzie McGuire con su alter ego animado" loading="lazy">
-        </figure>
-        <figure class="lizzie-shot shot-b">
-          <img src="https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/A0A45CA19DF2DB90204BB47139ED27376240A7FED8F441BFEFE24D0DA782C764/compose?format=webp&width=2560" alt="Miranda, Lizzie y Gordo" loading="lazy">
-        </figure>
-        <figure class="lizzie-shot shot-c">
-          <img src="https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/BCA2346E8FACBE35F92D2A1D0F18A61EC030A655B5569CBD80476CAAF6F8A8AF/compose?format=webp&width=2560" alt="Lizzie y Miranda en el centro comercial" loading="lazy">
-        </figure>
-        <div class="lizzie-animated" aria-hidden="true">
-          <div class="head"></div><div class="hair"></div><div class="body"></div>
-          <span>!</span>
-        </div>
-      </div>
-
-      <div class="lizzie-facts">
-        <article><b>2</b><span>temporadas</span></article>
-        <article><b>65</b><span>episodios</span></article>
-        <article><b>2003</b><span>Lizzie McGuire: Estrella pop</span></article>
-        <article class="lizzie-watch">
-          <span class="micro">DISNEY+</span>
-          <p>La serie y la película están disponibles en Disney+ México.</p>
-          <a href="https://www.disneyplus.com/es-mx/series/lizzie-mcguire/3RlptgsoNczX" target="_blank" rel="noreferrer">Ver en Disney+ ↗</a>
+          <div class="album-focus-copy">
+            <span class="eyebrow" data-album-year>2003</span>
+            <h3 data-album-title>Metamorphosis</h3>
+            <p data-album-copy>El disco que convirtió a Hilary en una estrella pop global y dejó canciones que siguen formando parte de sus shows.</p>
+            <div class="album-tracks" data-album-tracks>
+              <span>So Yesterday</span><span>Come Clean</span><span>Why Not</span>
+            </div>
+            <a class="button button-ink" href="https://open.spotify.com/artist/2S9W9aSAd7e5mp8WqWxN2h" target="_blank" rel="noreferrer">Escuchar en Spotify ↗</a>
+          </div>
         </article>
       </div>
+    </section>
 
-      <div class="lizzie-tags" aria-hidden="true">
-        <span>GORDO</span><i>✿</i><span>MIRANDA</span><i>✦</i><span>ETHAN</span><i>★</i><span>ROME</span><i>✿</i><span>ISABELLA</span><i>✦</i><span>PAOLO?</span>
+    <section class="section section-pop" id="cultura-pop">
+      <header class="section-head">
+        <div>
+          <span class="section-index">03</span>
+          <h2>Personajes y momentos</h2>
+        </div>
+        <p>Una carrera que también vive en personajes, películas, series y escenas que se volvieron cultura pop.</p>
+      </header>
+
+      <div class="row-title">
+        <span class="eyebrow">ELIGE UNA TARJETA</span>
+        <span class="swipe-cue">Desliza →</span>
+      </div>
+
+      <div class="carousel pop-carousel" data-carousel>
+        <button class="pop-card lilac active" type="button" data-pop="lizzie"><span>2001</span><strong>Lizzie McGuire</strong><em>Disney Channel</em></button>
+        <button class="pop-card lime" type="button" data-pop="kelly"><span>2002</span><strong>Kelly Collins</strong><em>La cadete Kelly</em></button>
+        <button class="pop-card orange" type="button" data-pop="rome"><span>2003</span><strong>Lizzie / Isabella</strong><em>Estrella pop</em></button>
+        <button class="pop-card pink" type="button" data-pop="sam"><span>2004</span><strong>Sam Montgomery</strong><em>A Cinderella Story</em></button>
+        <button class="pop-card sky" type="button" data-pop="terri"><span>2004</span><strong>Terri Fletcher</strong><em>Raise Your Voice</em></button>
+        <button class="pop-card gold" type="button" data-pop="kelsey"><span>2015</span><strong>Kelsey Peters</strong><em>Younger</em></button>
+        <button class="pop-card coral" type="button" data-pop="sophie"><span>2022</span><strong>Sophie</strong><em>How I Met Your Father</em></button>
+      </div>
+      <div class="carousel-dots" data-carousel-dots aria-hidden="true"></div>
+
+      <article class="pop-focus" data-pop-focus data-theme="lizzie">
+        <div class="pop-year" data-pop-year>2001</div>
+        <div class="pop-copy">
+          <span class="eyebrow" data-pop-type>SERIE · DISNEY CHANNEL</span>
+          <h3 data-pop-title>Lizzie McGuire</h3>
+          <p data-pop-copy>La puerta de entrada para muchísimos fans. Lizzie, Miranda, Gordo y su alter ego animado cumplen 25 años en 2026.</p>
+          <a class="button button-ink" data-pop-link href="#lizzie">Abrir Lizzie</a>
+        </div>
+        <div class="pop-words" aria-hidden="true">
+          <span data-pop-word-one>GORDO</span><span data-pop-word-two>MIRANDA</span><span data-pop-word-three>ETHAN</span>
+        </div>
+      </article>
+    </section>
+
+    <section class="section section-lizzie" id="lizzie">
+      <div class="lizzie-shape one" aria-hidden="true"></div>
+      <div class="lizzie-shape two" aria-hidden="true"></div>
+
+      <header class="lizzie-header">
+        <span class="eyebrow">2001 — 2026</span>
+        <h2>Lizzie McGuire <em>25 años</em></h2>
+        <p>Dos temporadas, 65 episodios y una película que siguen siendo parte central de la historia de Hilary.</p>
+      </header>
+
+      <div class="row-title">
+        <span class="eyebrow">LIZZIE · MIRANDA · GORDO</span>
+        <span class="swipe-cue">Desliza las fotos →</span>
+      </div>
+
+      <div class="carousel lizzie-carousel" data-carousel>
+        <figure class="lizzie-photo">
+          <img src="https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/FC5C3AA105E2E4F7DA0510B918269D19663591203F49676D10AE2E2C976790CB/compose?format=webp&width=1800" alt="Lizzie McGuire con su alter ego animado" loading="lazy">
+        </figure>
+        <figure class="lizzie-photo">
+          <img src="https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/A0A45CA19DF2DB90204BB47139ED27376240A7FED8F441BFEFE24D0DA782C764/compose?format=webp&width=1800" alt="Miranda, Lizzie y Gordo" loading="lazy">
+        </figure>
+        <figure class="lizzie-photo">
+          <img src="https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/BCA2346E8FACBE35F92D2A1D0F18A61EC030A655B5569CBD80476CAAF6F8A8AF/compose?format=webp&width=1800" alt="Lizzie y Miranda" loading="lazy">
+        </figure>
+      </div>
+      <div class="carousel-dots" data-carousel-dots aria-hidden="true"></div>
+
+      <div class="lizzie-facts">
+        <article><strong>2</strong><span>temporadas</span></article>
+        <article><strong>65</strong><span>episodios</span></article>
+        <article><strong>2003</strong><span>Lizzie McGuire: Estrella pop</span></article>
+        <article class="fact-link"><span>Serie + película</span><a href="https://www.disneyplus.com/es-mx/explore/articles/lizzie-mcguire-anniversary" target="_blank" rel="noreferrer">Ver en Disney+ ↗</a></article>
       </div>
     </section>
 
-    <section class="mexico section" id="mexico">
-      <header class="section-head mexico-head">
+    <section class="section section-mexico" id="mexico">
+      <header class="section-head section-head-light">
         <div>
-          <span class="section-no">03</span>
-          <h2>México</h2>
+          <span class="section-index">04</span>
+          <h2>México 2027</h2>
         </div>
-        <p>Las tres fechas, tu show y la información que irá apareciendo conforme se acerque febrero.</p>
+        <p>Fechas confirmadas y una guía que crecerá conforme se acerquen los conciertos.</p>
       </header>
 
-      <div class="my-show">
-        <div class="show-count">
-          <span class="micro">PRIMER SHOW · 12 FEB 2027</span>
+      <div class="mexico-top">
+        <div class="countdown-card">
+          <span class="eyebrow">12 FEB · PRIMERA NOCHE</span>
           <strong data-days>---</strong>
           <b>días</b>
           <p>Palacio de los Deportes · Ciudad de México</p>
         </div>
-        <div class="show-select">
-          <span class="micro">MI FECHA</span>
-          <h3 data-my-show-title>¿A cuál vas?</h3>
-          <p data-my-show-place>Guarda tu show en este dispositivo.</p>
+
+        <div class="my-show-card">
+          <span class="eyebrow">MI FECHA</span>
+          <h3 data-my-show-title>Elige tu concierto</h3>
+          <p data-my-show-place>Se guarda en este dispositivo.</p>
           <div class="show-buttons">
             <button type="button" data-show="cdmx12">12 FEB <span>CDMX</span></button>
             <button type="button" data-show="cdmx13">13 FEB <span>CDMX</span></button>
@@ -403,254 +333,134 @@
       </div>
 
       <div class="show-list">
-        <a href="https://www.ocesa.com.mx/todos-los-eventos/hilary-duff-boletos-ae1632382" target="_blank" rel="noreferrer">
-          <b>12.02</b><span>Palacio de los Deportes · CDMX</span><em>OCESA ↗</em>
-        </a>
-        <a href="https://www.ocesa.com.mx/todos-los-eventos/hilary-duff-boletos-ae1632382" target="_blank" rel="noreferrer">
-          <b>13.02</b><span>Palacio de los Deportes · CDMX</span><em>OCESA ↗</em>
-        </a>
-        <a href="https://www.ocesa.com.mx/todos-los-eventos/hilary-duff-boletos-ae1632382" target="_blank" rel="noreferrer">
-          <b>15.02</b><span>Auditorio Telmex · Guadalajara</span><em>OCESA ↗</em>
-        </a>
+        <a href="https://www.ocesa.com.mx/todos-los-eventos/hilary-duff-boletos-ae1632382" target="_blank" rel="noreferrer"><b>12.02</b><span>Palacio de los Deportes · CDMX</span><em>OCESA ↗</em></a>
+        <a href="https://www.ocesa.com.mx/todos-los-eventos/hilary-duff-boletos-ae1632382" target="_blank" rel="noreferrer"><b>13.02</b><span>Palacio de los Deportes · CDMX</span><em>OCESA ↗</em></a>
+        <a href="https://www.ocesa.com.mx/todos-los-eventos/hilary-duff-boletos-ae1632382" target="_blank" rel="noreferrer"><b>15.02</b><span>Auditorio Telmex · Guadalajara</span><em>OCESA ↗</em></a>
       </div>
 
-      <div class="mexico-tools">
-        <article class="ready"><span>AHORA</span><h3>Boletos</h3><p>Fechas y enlace oficial de venta.</p><a href="https://www.ocesa.com.mx/todos-los-eventos/hilary-duff-boletos-ae1632382" target="_blank" rel="noreferrer">Abrir OCESA ↗</a></article>
-        <article><span>DESPUÉS</span><h3>Horarios</h3><p>Puertas, inicio y cualquier cambio del venue.</p><em>Cuando se publiquen</em></article>
+      <div class="tool-grid">
+        <article><span>AHORA</span><h3>Boletos</h3><p>Fechas y enlace oficial de venta.</p><a href="https://www.ocesa.com.mx/todos-los-eventos/hilary-duff-boletos-ae1632382" target="_blank" rel="noreferrer">OCESA ↗</a></article>
+        <article><span>DESPUÉS</span><h3>Horarios</h3><p>Puertas, inicio y cambios del venue.</p><em>Cuando se publiquen</em></article>
         <article><span>DESPUÉS</span><h3>Accesos</h3><p>Entradas, transporte y objetos permitidos.</p><em>Más cerca del show</em></article>
-        <article><span>DESPUÉS</span><h3>Merch</h3><p>Qué llega a México y precios dentro del recinto.</p><em>Cuando se confirme</em></article>
-        <article><span>HDM</span><h3>Fan project</h3><p>Una sola guía cuando el proyecto esté definido.</p><em>Por anunciar</em></article>
-        <article><span>TOUR</span><h3>Setlist</h3><p>El repertorio más reciente antes de México.</p><button type="button" data-search-query="setlist">Consultar</button></article>
+        <article><span>HDM</span><h3>Fan project</h3><p>Una guía clara cuando el proyecto esté definido.</p><em>Por anunciar</em></article>
       </div>
     </section>
 
-    <section class="fanclub section" id="fanclub">
-      <header class="section-head inverse">
+    <section class="section section-hdm" id="hdm">
+      <header class="section-head section-head-light">
         <div>
-          <span class="section-no">04</span>
+          <span class="section-index">05</span>
           <h2>HDM</h2>
         </div>
-        <p>Fans para fans. Noticias, actividades, proyectos y todo lo que hacemos alrededor de Hilary en México.</p>
+        <p>Hilary Duff México es un fan club hecho por fans: información, actividades y proyectos alrededor de Hilary en México.</p>
       </header>
 
-      <div class="fanclub-grid">
-        <article class="fanclub-card identity-card">
-          <div class="hdm-orbit"><span>HDM</span><i></i></div>
-          <div>
-            <span class="micro">HILARY DUFF MÉXICO</span>
-            <h3>Fan Club Oficial</h3>
-            <p>Una comunidad mexicana activa en redes, eventos y proyectos para acompañar cada etapa de Hilary.</p>
-          </div>
+      <div class="hdm-grid">
+        <article class="hdm-card hdm-main">
+          <span class="eyebrow">HILARY DUFF MÉXICO</span>
+          <strong>HDM</strong>
+          <p>Noticias verificadas, eventos, listening parties, dinámicas, cobertura y proyectos para los conciertos.</p>
         </article>
-
-        <article class="fanclub-card work-card">
-          <span class="micro">LO QUE HACEMOS</span>
-          <div class="work-list">
-            <span>Noticias verificadas</span>
-            <span>Eventos y listening parties</span>
-            <span>Dinámicas</span>
-            <span>Fan projects</span>
-            <span>Cobertura</span>
-            <span>Colaboraciones</span>
-          </div>
-        </article>
-
-        <article class="fanclub-card social-card">
-          <span class="micro">COMUNIDAD</span>
-          <h3>Instagram es el punto de encuentro.</h3>
-          <p>Ahí viven los comentarios, respuestas, stories y la conversación diaria.</p>
+        <article class="hdm-card hdm-instagram">
+          <span class="eyebrow">COMUNIDAD</span>
+          <h3>Instagram</h3>
+          <p>La conversación diaria del fan club vive en @hilaryduffmexico.</p>
           <a href="https://www.instagram.com/hilaryduffmexico/" target="_blank" rel="noreferrer">@hilaryduffmexico ↗</a>
         </article>
-
-        <article class="fanclub-card share-card">
-          <span class="micro">PARTICIPA</span>
-          <h3>Comparte con HDM</h3>
-          <p>Fotos de eventos, colecciones, recuerdos, datos que falten o ideas para el fan club.</p>
+        <article class="hdm-card hdm-contact">
+          <span class="eyebrow">CONTACTO</span>
+          <h3>Escríbenos</h3>
+          <p>Prensa, colaboraciones, correcciones y materiales para el sitio.</p>
           <a href="mailto:contacto@hilaryduffmexico.com">contacto@hilaryduffmexico.com ↗</a>
         </article>
       </div>
-
-      <div class="hdm-ribbon" aria-hidden="true">
-        <div>
-          <span>VERY LEO OF YOU.</span><b>✦</b>
-          <span>SCORPIO TOUCH INCLUDED.</span><b>✦</b>
-          <span>WE GOT SMARTER.</span><b>✦</b>
-          <span>NO MORE PAOLOS.</span><b>✦</b>
-          <span>LUCKY ME.</span><b>✦</b>
-          <span>VERY LEO OF YOU.</span><b>✦</b>
-          <span>SCORPIO TOUCH INCLUDED.</span><b>✦</b>
-        </div>
-      </div>
     </section>
 
-    <section class="join-v7 section" id="unete">
-  <div class="join-v7-glow" aria-hidden="true"><i></i><i></i><i></i></div>
+    <section class="section section-join" id="unete">
+      <div class="join-bg" aria-hidden="true"><i></i><i></i><i></i></div>
 
-  <header class="join-v7-head">
-    <span class="micro">HILARY DUFF MÉXICO</span>
-    <h2>Únete a HDM.</h2>
-    <p>Déjanos tu nombre y correo para recibir noticias importantes, actividades del fan club y la información de México que realmente necesitas.</p>
-  </header>
+      <header class="join-head">
+        <span class="eyebrow">HILARY DUFF MÉXICO</span>
+        <h2>Únete a HDM.</h2>
+        <p>Nombre y correo para recibir noticias importantes, actividades del fan club y la información de México que elijas.</p>
+      </header>
 
-  <div class="join-v7-grid">
-    <form class="join-form" data-join-form>
-      <div class="join-step">
-        <span class="join-step-no">01</span>
-        <div class="join-fields">
-          <label>
-            <span>Nombre</span>
-            <input type="text" name="name" data-join-name required autocomplete="name" placeholder="tu nombre">
-          </label>
-          <label>
-            <span>Correo</span>
-            <input type="email" name="email" data-join-email required autocomplete="email" placeholder="tu correo">
-          </label>
-        </div>
-      </div>
+      <div class="join-grid">
+        <form class="join-form" data-join-form>
+          <div class="join-fields">
+            <label>
+              <span>Nombre</span>
+              <input type="text" data-join-name required autocomplete="name" placeholder="Tu nombre">
+            </label>
+            <label>
+              <span>Correo</span>
+              <input type="email" data-join-email required autocomplete="email" placeholder="tu@correo.com">
+            </label>
+          </div>
 
-      <div class="join-step">
-        <span class="join-step-no">02</span>
-        <div>
-          <h3>¿Por dónde llegaste?</h3>
-          <div class="join-choices era-choices" role="group" aria-label="Etapa de Hilary">
-            <button class="active" type="button" data-join-era="lizzie">Lizzie</button>
-            <button type="button" data-join-era="meta">Metamorphosis</button>
-            <button type="button" data-join-era="dignity">Dignity</button>
-            <button type="button" data-join-era="younger">Younger</button>
-            <button type="button" data-join-era="bibo">BIBO</button>
-            <button type="button" data-join-era="luck">luck…</button>
+          <fieldset>
+            <legend>Tu etapa</legend>
+            <div class="choice-row">
+              <button class="active" type="button" data-join-era="lizzie">Lizzie</button>
+              <button type="button" data-join-era="meta">Metamorphosis</button>
+              <button type="button" data-join-era="dignity">Dignity</button>
+              <button type="button" data-join-era="younger">Younger</button>
+              <button type="button" data-join-era="bibo">BIBO</button>
+              <button type="button" data-join-era="luck">luck…</button>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Quiero recibir</legend>
+            <div class="check-grid">
+              <label><input type="checkbox" checked data-interest="news"><span>Noticias importantes</span></label>
+              <label><input type="checkbox" checked data-interest="mexico"><span>México 2027</span></label>
+              <label><input type="checkbox" data-interest="events"><span>Eventos y dinámicas</span></label>
+              <label><input type="checkbox" data-interest="specials"><span>Especiales y aniversarios</span></label>
+            </div>
+          </fieldset>
+
+          <label class="consent"><input type="checkbox" required><span>Quiero recibir correos de Hilary Duff México.</span></label>
+
+          <button class="join-submit" type="submit">Unirme a HDM →</button>
+          <small data-join-note>Prototipo: el formulario todavía no envía datos a un servicio externo.</small>
+        </form>
+
+        <div class="fan-profile-wrap">
+          <div class="fan-profile" data-fan-profile data-theme="lizzie">
+            <div class="profile-top"><span>HILARY DUFF MÉXICO</span><b>HDM</b></div>
+            <div class="profile-name"><small>NOMBRE</small><strong data-profile-name>Tu nombre</strong></div>
+            <div class="profile-era"><small>ERA</small><strong data-profile-era>Lizzie McGuire</strong></div>
+            <div class="profile-reference"><span data-profile-year>2001</span><b data-profile-word>LIZZIE</b><i>✦</i></div>
+            <div class="profile-footer"><span>METAMORPHOSIS</span><span>DIGNITY</span><span>YOUNGER</span><span>LUCK…</span></div>
           </div>
         </div>
       </div>
-
-      <div class="join-step">
-        <span class="join-step-no">03</span>
-        <div>
-          <h3>¿Dónde estás?</h3>
-          <div class="join-choices city-choices" role="group" aria-label="Ciudad">
-            <button class="active" type="button" data-join-city="cdmx">CDMX</button>
-            <button type="button" data-join-city="gdl">Guadalajara</button>
-            <button type="button" data-join-city="mx">Otro lugar de México</button>
-            <button type="button" data-join-city="world">Fuera de México</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="join-step">
-        <span class="join-step-no">04</span>
-        <div>
-          <h3>Quiero recibir</h3>
-          <div class="join-switches">
-            <label><input type="checkbox" checked data-join-interest="noticias"><span>Noticias importantes</span></label>
-            <label><input type="checkbox" checked data-join-interest="mexico"><span>México 2027</span></label>
-            <label><input type="checkbox" data-join-interest="eventos"><span>Eventos y dinámicas HDM</span></label>
-            <label><input type="checkbox" data-join-interest="archivo"><span>Especiales, aniversarios y archivo</span></label>
-          </div>
-        </div>
-      </div>
-
-      <label class="join-consent">
-        <input type="checkbox" required>
-        <span>Quiero recibir correos de Hilary Duff México.</span>
-      </label>
-
-      <button class="join-submit" type="submit">Unirme a HDM →</button>
-      <small class="join-demo" data-join-note>Esta versión sigue siendo una demo visual y no envía tus datos fuera del dispositivo.</small>
-    </form>
-
-    <div class="join-pass-wrap">
-      <div class="join-pass" data-join-pass data-join-theme="lizzie">
-        <div class="pass-top">
-          <span>HILARY DUFF MÉXICO</span>
-          <b>HDM</b>
-        </div>
-
-        <div class="pass-name">
-          <small>NOMBRE</small>
-          <strong data-pass-name>Tu nombre</strong>
-        </div>
-
-        <div class="pass-middle">
-          <div>
-            <small>ERA</small>
-            <b data-pass-era>Lizzie McGuire</b>
-          </div>
-          <div>
-            <small>DESDE</small>
-            <b data-pass-city>CDMX</b>
-          </div>
-        </div>
-
-        <div class="pass-reference" data-pass-reference>
-          <span>2001</span>
-          <strong>LIZZIE</strong>
-          <i>✦</i>
-        </div>
-
-        <div class="pass-bottom">
-          <span>METAMORPHOSIS</span>
-          <span>DIGNITY</span>
-          <span>YOUNGER</span>
-          <span>LUCK…</span>
-        </div>
-      </div>
-
-      <div class="join-popwords" aria-hidden="true">
-        <span>COME CLEAN</span>
-        <span>KELLY COLLINS</span>
-        <span>SAM MONTGOMERY</span>
-        <span>KELSEY PETERS</span>
-        <span>LIZZIE</span>
-        <span>WITH LOVE</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-    <section class="app-card section">
-      <div>
-        <span class="micro">HDM EN TU PANTALLA DE INICIO</span>
-        <h2>Se puede sentir como una app.</h2>
-        <p>Añádelo a tu pantalla de inicio para volver rápido a México 2027, música y novedades de HDM.</p>
-      </div>
-      <button type="button" data-install>Agregar HDM al inicio</button>
-      <div class="app-icon" aria-hidden="true">HDM</div>
     </section>
   </main>
 
   <nav class="mobile-nav" aria-label="Navegación móvil">
-    <a href="#inicio"><span>✦</span>Inicio</a>
-    <a href="#universo"><span>HD</span>Hilary</a>
-    <a href="#mexico"><span>MX</span>México</a>
-    <a href="#fanclub"><span>◎</span>HDM</a>
-    <button type="button" data-search-open><span>⌕</span>Buscar</button>
+    <a href="#inicio"><span>✦</span><small>Inicio</small></a>
+    <a href="#hilary"><span>HD</span><small>Hilary</small></a>
+    <a href="#mexico"><span>MX</span><small>México</small></a>
+    <a href="#hdm"><span>◎</span><small>HDM</small></a>
+    <button type="button" data-search-open><span>⌕</span><small>Buscar</small></button>
   </nav>
 
   <dialog class="search-dialog" data-search-dialog>
     <form method="dialog">
       <div class="search-bar">
         <span>⌕</span>
-        <input type="search" data-search-input placeholder="Dignity, boletos, Lizzie, setlist…" autocomplete="off" aria-label="Buscar en HDM">
-        <button type="submit">ESC</button>
+        <input type="search" data-search-input autocomplete="off" placeholder="Dignity, boletos, Lizzie…">
+        <button type="submit">Cerrar</button>
       </div>
       <div class="search-results" data-search-results></div>
     </form>
   </dialog>
 
-  <dialog class="install-dialog" data-install-dialog>
-    <form method="dialog">
-      <button class="dialog-close" type="submit">×</button>
-      <span class="micro">INSTALAR HDM</span>
-      <h3>En iPhone</h3>
-      <p>Abre este sitio en Safari, toca Compartir y elige <b>Agregar a pantalla de inicio</b>.</p>
-      <h3>En Android</h3>
-      <p>Abre el menú del navegador y elige <b>Instalar aplicación</b> o <b>Agregar a pantalla principal</b>.</p>
-    </form>
-  </dialog>
-
   <footer>
     <span>Hilary Duff México · 2026</span>
-    <div><a href="https://www.instagram.com/hilaryduffmexico/" target="_blank" rel="noreferrer">Instagram ↗</a><a href="mailto:contacto@hilaryduffmexico.com">Contacto ↗</a></div>
+    <div><a href="#unete">Únete</a><a href="https://www.instagram.com/hilaryduffmexico/" target="_blank" rel="noreferrer">Instagram ↗</a></div>
   </footer>
 
   <script src="./app.js"></script>
