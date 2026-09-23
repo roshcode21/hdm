@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#161317">
+  <meta name="description" content="Inscripción al fan club Hilary Duff México.">
   <title>Únete a HDM · Hilary Duff México</title>
   <link rel="icon" href="./icon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,66 +13,112 @@
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body class="join-page">
+  <div class="join-cursor-glow" aria-hidden="true"></div>
+
   <header class="join-header">
-    <a href="./" class="join-back">← HDM</a>
+    <a href="./" class="join-back">← Hilary Duff México</a>
     <span>INSCRIPCIÓN AL FAN CLUB</span>
     <div data-join-progress>1 / 4</div>
   </header>
 
   <main class="join-main">
-    <div class="join-intro">
-      <span>HILARY DUFF MÉXICO</span>
-      <h1>Únete a <em>HDM</em>.</h1>
-      <p>Este registro es para formar parte del fan club y participar en actividades, eventos, fan projects y comunicaciones de HDM.</p>
+    <section class="join-intro">
+      <div>
+        <span>HILARY DUFF MÉXICO</span>
+        <h1>Forma parte de <em>HDM</em>.</h1>
+      </div>
+      <div class="join-intro-copy">
+        <p>Registro del fan club para participar en actividades, eventos, fan projects y convocatorias de Hilary Duff México.</p>
+        <div class="join-benefits" aria-label="Qué incluye el registro">
+          <span>actividades HDM</span><span>fan projects</span><span>convocatorias</span><span>México 2027</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="join-stepper" aria-label="Progreso del registro">
+      <button class="active" type="button" data-step-jump="1"><span>01</span>Datos de membresía</button>
+      <button type="button" data-step-jump="2"><span>02</span>Perfil de fan</button>
+      <button type="button" data-step-jump="3"><span>03</span>Participación</button>
+      <button type="button" data-step-jump="4"><span>04</span>Revisión</button>
+      <i data-progress-bar></i>
     </div>
 
     <form class="registration" data-registration>
       <section class="reg-step active" data-step="1">
         <span class="reg-number">01</span>
-        <h2>Primero, tú.</h2>
+        <h2>Datos de membresía.</h2>
+        <p class="reg-step-intro">Lo necesario para identificar tu registro y poder contactarte. No pedimos domicilio ni identificación en esta etapa.</p>
+
         <div class="reg-grid">
-          <label><span>Nombre(s)</span><input required name="first_name" autocomplete="given-name"></label>
-          <label><span>Apellidos</span><input required name="last_name" autocomplete="family-name"></label>
-          <label><span>Correo</span><input required type="email" name="email" autocomplete="email"></label>
-          <label><span>Fecha de nacimiento</span><input type="date" name="birthdate"></label>
-          <label><span>Ciudad</span><input required name="city" autocomplete="address-level2"></label>
-          <label><span>Estado / provincia</span><input name="state" autocomplete="address-level1"></label>
+          <label class="wide"><span>Nombre completo</span><input required name="full_name" autocomplete="name" placeholder="Como quieres registrar tu membresía"></label>
+          <label><span>¿Cómo quieres que te llamemos? <i>opcional</i></span><input name="preferred_name" autocomplete="nickname" placeholder="Nombre o apodo"></label>
+          <label><span>Correo</span><input required type="email" name="email" autocomplete="email" placeholder="tu@correo.com"></label>
+          <label><span>WhatsApp / teléfono <i>opcional</i></span><input type="tel" name="phone" autocomplete="tel" placeholder="+52"></label>
+          <label><span>Fecha de nacimiento</span><input required type="date" name="birthdate"></label>
+          <label><span>Ciudad</span><input required name="city" autocomplete="address-level2" placeholder="CDMX"></label>
+          <label><span>Estado</span><input required name="state" autocomplete="address-level1" placeholder="Ciudad de México"></label>
           <label><span>País</span><input required name="country" autocomplete="country-name" value="México"></label>
           <label><span>Instagram <i>opcional</i></span><input name="instagram" placeholder="@usuario"></label>
         </div>
+
+        <p class="reg-data-note">La fecha de nacimiento nos sirve para requisitos de edad en actividades. Si en el futuro una dinámica requiere envío físico o validación adicional, esos datos se pedirían aparte y sólo para ese fin.</p>
       </section>
 
       <section class="reg-step" data-step="2">
         <span class="reg-number">02</span>
-        <h2>Tu historia con Hilary.</h2>
+        <h2>Tu perfil de fan.</h2>
+        <p class="reg-step-intro">No cambia tu membresía. Nos ayuda a conocer mejor a la comunidad y a construir actividades que sí tengan sentido para fans de distintas etapas.</p>
+
         <div class="reg-grid">
-          <label><span>¿Desde qué año eres fan?</span><input name="fan_since" inputmode="numeric" placeholder="2003"></label>
-          <label><span>¿Cómo llegaste?</span>
+          <label><span>¿Desde qué año eres fan?</span><input name="fan_since" inputmode="numeric" pattern="[0-9]{4}" maxlength="4" placeholder="2003"></label>
+          <label><span>¿Por dónde llegaste a Hilary?</span>
             <select name="gateway">
-              <option>Lizzie McGuire</option><option>Metamorphosis</option><option>Películas</option><option>Dignity</option><option>Younger</option><option>Breathe In. Breathe Out.</option><option>luck… or something</option><option>Otro</option>
+              <option>Lizzie McGuire</option>
+              <option>Metamorphosis / música</option>
+              <option>Películas de los 2000</option>
+              <option>Dignity</option>
+              <option>Breathe In. Breathe Out.</option>
+              <option>Younger</option>
+              <option>How I Met Your Father</option>
+              <option>luck… or something</option>
+              <option>Otra etapa</option>
             </select>
           </label>
+
           <label><span>Álbum favorito</span>
             <select name="favorite_album">
               <option>Santa Claus Lane</option><option>Metamorphosis</option><option>Hilary Duff</option><option>Dignity</option><option>Breathe In. Breathe Out.</option><option>luck… or something</option>
             </select>
           </label>
-          <label><span>Canción favorita</span><input name="favorite_song" placeholder="Come Clean"></label>
-          <label class="wide"><span>Un personaje / proyecto que siempre regresas a ver</span><input name="favorite_screen" placeholder="Yonica Babyyeah, Lizzie, Younger…"></label>
-          <label class="wide"><span>Cuéntanos brevemente cómo conociste a Hilary</span><textarea name="story" rows="4"></textarea></label>
+          <label><span>Canción favorita</span><input name="favorite_song" placeholder="With Love"></label>
+
+          <label><span>Personaje / proyecto favorito</span>
+            <select name="favorite_screen">
+              <option>Lizzie McGuire</option><option>Kelly Collins · La cadete Kelly</option><option>Sam Montgomery · A Cinderella Story</option><option>Terri Fletcher · Raise Your Voice</option><option>Holly Hamilton · The Perfect Man</option><option>Tanzie Marchetta · Material Girls</option><option>Yonica Babyyeah · War, Inc.</option><option>Olivia Burke · Gossip Girl</option><option>Kelsey Peters · Younger</option><option>Sophie · How I Met Your Father</option><option>Otro</option>
+            </select>
+          </label>
+          <label><span>¿Cómo conociste HDM?</span>
+            <select name="hdm_source">
+              <option>Instagram</option><option>Un amigo / otra fan</option><option>Listening party o evento</option><option>Buscando información de Hilary</option><option>Otro</option>
+            </select>
+          </label>
+
+          <label class="wide"><span>Si quieres, cuéntanos algo de tu historia con Hilary <i>opcional</i></span><textarea name="story" rows="4" placeholder="Un concierto, una canción, una película, una época…"></textarea></label>
         </div>
       </section>
 
       <section class="reg-step" data-step="3">
         <span class="reg-number">03</span>
-        <h2>¿Cómo quieres participar?</h2>
+        <h2>Participación y eventos.</h2>
+        <p class="reg-step-intro">Marca sólo lo que te interesa. Esto sirve para convocatorias y actividades; no te compromete a participar.</p>
+
         <div class="reg-options">
-          <label><input type="checkbox" name="interests" value="news"><span><b>Noticias</b><small>Información verificada y actualizaciones.</small></span></label>
-          <label><input type="checkbox" name="interests" value="events"><span><b>Eventos</b><small>Listening parties, reuniones y actividades.</small></span></label>
-          <label><input type="checkbox" name="interests" value="fanprojects"><span><b>Fan projects</b><small>Proyectos alrededor de conciertos.</small></span></label>
-          <label><input type="checkbox" name="interests" value="archive"><span><b>Archivo</b><small>Materiales, recuerdos y especiales.</small></span></label>
-          <label><input type="checkbox" name="interests" value="volunteer"><span><b>Apoyar al equipo</b><small>Disponibilidad para ayudar en actividades.</small></span></label>
-          <label><input type="checkbox" name="interests" value="content"><span><b>Contenido</b><small>Fotos, video, diseño o cobertura.</small></span></label>
+          <label><input type="checkbox" name="interests" value="events"><span><b>Eventos HDM</b><small>Listening parties, reuniones y actividades presenciales.</small></span></label>
+          <label><input type="checkbox" name="interests" value="fanprojects"><span><b>Fan projects</b><small>Proyectos alrededor de conciertos y visitas.</small></span></label>
+          <label><input type="checkbox" name="interests" value="archive"><span><b>Archivo y especiales</b><small>Recuerdos, materiales y proyectos editoriales.</small></span></label>
+          <label><input type="checkbox" name="interests" value="content"><span><b>Foto / video / contenido</b><small>Cobertura y materiales del fan club.</small></span></label>
+          <label><input type="checkbox" name="interests" value="volunteer"><span><b>Apoyar en actividades</b><small>Logística, producción o apoyo presencial.</small></span></label>
+          <label><input type="checkbox" name="interests" value="member"><span><b>Ser miembro</b><small>Quiero formar parte aunque no participe en actividades.</small></span></label>
         </div>
 
         <div class="reg-grid extra">
@@ -81,16 +128,22 @@
           <label><span>¿Puedes participar presencialmente?</span>
             <select name="in_person"><option>Depende de la actividad</option><option>Sí</option><option>No</option></select>
           </label>
+          <label class="wide"><span>Si quieres apoyar al fan club, ¿en qué? <i>opcional</i></span><input name="skills" placeholder="Diseño, foto, video, logística, redacción, producción…"></label>
         </div>
       </section>
 
       <section class="reg-step" data-step="4">
         <span class="reg-number">04</span>
-        <h2>Antes de enviar.</h2>
+        <h2>Revisa tu inscripción.</h2>
+        <p class="reg-step-intro">Confirma que tus datos estén bien antes de enviarlos.</p>
+
         <div class="reg-summary" data-summary></div>
 
-        <label class="reg-consent"><input required type="checkbox" name="privacy"><span>Acepto que HDM use estos datos para gestionar mi inscripción al fan club y actividades relacionadas.</span></label>
-        <label class="reg-consent"><input type="checkbox" name="newsletter"><span>También quiero recibir HDM por correo.</span></label>
+        <div class="reg-permissions">
+          <label class="reg-consent"><input required type="checkbox" name="privacy"><span>Acepto que Hilary Duff México use estos datos para gestionar mi membresía y actividades del fan club.</span></label>
+          <label class="reg-consent"><input type="checkbox" name="newsletter"><span>También quiero suscribirme a HDM por correo.</span></label>
+          <label class="reg-consent"><input type="checkbox" name="whatsapp"><span>Si dejé teléfono, acepto recibir mensajes de logística relacionados con actividades en las que participe.</span></label>
+        </div>
 
         <button class="reg-submit" type="submit">Enviar inscripción →</button>
         <small data-registration-note>Demo visual. Los datos no salen de este dispositivo.</small>
@@ -98,7 +151,7 @@
 
       <div class="reg-nav">
         <button type="button" data-prev disabled>← Anterior</button>
-        <button type="button" data-next>Siguiente →</button>
+        <button type="button" data-next>Continuar →</button>
       </div>
     </form>
   </main>
