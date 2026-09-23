@@ -10,7 +10,7 @@
   <link rel="icon" href="./icon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
@@ -23,9 +23,8 @@
     </a>
 
     <nav class="desktop-nav" aria-label="Navegación principal">
-      <a href="#ahora">Ahora</a>
-      <a href="#musica">Música</a>
-      <a href="#pantalla">Películas y series</a>
+      <a href="#novedades">Novedades</a>
+      <a href="#musica">Hilary</a>
       <a href="#mexico">México 2027</a>
       <a href="#hdm">HDM</a>
     </nav>
@@ -39,7 +38,7 @@
       <div class="hero-copy">
         <span class="eyebrow">HILARY DUFF MÉXICO</span>
         <h1>Hilary Duff<br><em>México</em></h1>
-        <p>Noticias, música, películas, series y todo lo que necesitas para seguir a Hilary desde México.</p>
+        <p>Noticias, música, películas, series y lo que pasa con Hilary en México.</p>
 
         <div class="hero-actions">
           <a class="button button-dark" href="#novedades">Ver novedades</a>
@@ -73,13 +72,13 @@
       </div>
     </section>
 
-    <section class="section now" id="ahora">
+    <section class="section now" id="novedades">
       <header class="section-head">
         <div>
-          <span class="eyebrow">AHORA</span>
-          <h2>Hilary ahora.</h2>
+          <span class="eyebrow">NOVEDADES</span>
+          <h2>Novedades.</h2>
         </div>
-        <p>Nuevas fechas, entrevistas, lanzamientos y avisos de México.</p>
+        <p>Lanzamientos, entrevistas, tour y noticias de México.</p>
       </header>
 
       <div class="news-layout">
@@ -137,8 +136,14 @@
           <span class="eyebrow">MÚSICA</span>
           <h2>La música.</h2>
         </div>
-        <p>Discos, sencillos y videos, de Santa Claus Lane a luck… or something.</p>
+        <p>Álbumes, canciones y videos, de Santa Claus Lane a luck… or something.</p>
       </header>
+
+      <nav class="hilary-nav" aria-label="Explorar a Hilary">
+        <a class="active" href="#musica">Música</a>
+        <a href="#pantalla">Películas y series</a>
+        <a href="#lizzie">Lizzie · 25 años</a>
+      </nav>
 
       <div class="music-panel" data-music-world data-theme="meta">
         <div class="music-object" aria-hidden="true">
@@ -159,7 +164,7 @@
 
           <div class="album-actions">
             <a class="button button-light" href="https://open.spotify.com/artist/2S9W9aSAd7e5mp8WqWxN2h" target="_blank" rel="noreferrer">Spotify ↗</a>
-            <button class="button button-outline-light" type="button" data-random-song>Que HDM elija ✦</button>
+            <button class="button button-outline-light" type="button" data-random-song>Elegir una canción ✦</button>
           </div>
 
           <div class="song-result" data-song-result>
@@ -185,9 +190,9 @@
       <header class="section-head">
         <div>
           <span class="eyebrow">PELÍCULAS Y SERIES</span>
-          <h2>En pantalla.</h2>
+          <h2>Películas y series.</h2>
         </div>
-        <p>De Lizzie McGuire a How I Met Your Father.</p>
+        <p>De Lizzie McGuire a Sophie, con todo lo que hay en medio.</p>
       </header>
 
       <div class="screen-layout">
@@ -293,14 +298,14 @@
           <span class="eyebrow">FAN CLUB</span>
           <h2>Hilary Duff México.</h2>
         </div>
-        <p>El fan club en México.</p>
+        <p>Fan club en México.</p>
       </header>
 
       <div class="hdm-grid">
         <article class="hdm-main">
           <span>QUÉ HACEMOS</span>
-          <h3>Noticias, eventos y proyectos para fans de Hilary en México.</h3>
-          <p>Seguimos lanzamientos, cubrimos noticias, organizamos actividades y coordinamos proyectos alrededor de sus visitas al país.</p>
+          <h3>Noticias, actividades y proyectos en México.</h3>
+          <p>Seguimos noticias y lanzamientos, organizamos actividades y preparamos proyectos alrededor de sus visitas a México.</p>
         </article>
 
         <article class="hdm-item">
@@ -332,8 +337,8 @@
 
       <div class="newsletter-copy">
         <span class="eyebrow">HDM POR CORREO</span>
-        <h2>Recibe las novedades de HDM.</h2>
-        <p>Noticias de Hilary, México 2027, actividades del fan club y especiales por correo.</p>
+        <h2>HDM en tu correo.</h2>
+        <p>Anuncios, México 2027, actividades del fan club y noticias de Hilary.</p>
         <form data-newsletter-form>
           <label class="sr-only" for="newsletter-email">Correo</label>
           <input id="newsletter-email" type="email" required placeholder="tu correo">
@@ -346,25 +351,11 @@
 
   <nav class="mobile-nav" aria-label="Navegación móvil">
     <a href="#inicio"><span>✦</span>Inicio</a>
-    <a href="#ahora"><span>●</span>Ahora</a>
-    <a href="#musica"><span>♪</span>Música</a>
+    <a href="#novedades"><span>●</span>Novedades</a>
+    <a href="#musica"><span>HD</span>Hilary</a>
     <a href="#mexico"><span>MX</span>México</a>
-    <button type="button" data-more-open><span>•••</span>Más</button>
+    <a href="#hdm"><span>◎</span>HDM</a>
   </nav>
-
-  <dialog class="more-sheet" data-more-sheet>
-    <div class="sheet-head"><strong>Hilary Duff México</strong><button type="button" data-more-close aria-label="Cerrar">×</button></div>
-    <nav>
-      <a href="#pantalla" data-sheet-link><span>Películas y series</span><b>→</b></a>
-      <a href="#lizzie" data-sheet-link><span>Lizzie · 25 años</span><b>→</b></a>
-      <a href="#hdm" data-sheet-link><span>HDM</span><b>→</b></a>
-      <a href="#newsletter" data-sheet-link><span>HDM por correo</span><b>→</b></a>
-      <a href="./unete.html"><span>Inscríbete al fan club</span><b>→</b></a>
-      <a href="https://www.instagram.com/hilaryduffmexico/" target="_blank" rel="noreferrer"><span>Instagram</span><b>↗</b></a>
-      <button type="button" data-search-open><span>Buscar en HDM</span><b>⌕</b></button>
-      <button type="button" data-install hidden><span>Agregar HDM a inicio</span><b>＋</b></button>
-    </nav>
-  </dialog>
 
   <dialog class="search-dialog" data-search-dialog>
     <form method="dialog">
@@ -380,7 +371,7 @@
   <footer class="footer">
     <div class="footer-title">Hilary Duff <em>México</em></div>
     <div class="footer-links">
-      <div><span>EXPLORA</span><a href="#ahora">Ahora</a><a href="#musica">Música</a><a href="#pantalla">Películas y series</a><a href="#mexico">México 2027</a></div>
+      <div><span>EXPLORA</span><a href="#novedades">Novedades</a><a href="#musica">Hilary</a><a href="#pantalla">Películas y series</a><a href="#mexico">México 2027</a></div>
       <div><span>HDM</span><a href="./unete.html">Inscríbete</a><a href="#newsletter">HDM por correo</a><a href="https://www.instagram.com/hilaryduffmexico/" target="_blank" rel="noreferrer">Instagram ↗</a></div>
       <div><span>CONTACTO</span><a href="mailto:contacto@hilaryduffmexico.com">contacto@hilaryduffmexico.com ↗</a></div>
     </div>
