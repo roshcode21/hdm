@@ -222,6 +222,61 @@
   </div>
 </section>
 
+    <section class="pop-universe section" id="cultura-pop">
+  <header class="section-head pop-head">
+    <div>
+      <span class="section-no">CULTURA POP</span>
+      <h2>Una Hilary distinta en cada puerta.</h2>
+    </div>
+    <p>Personajes, discos y etapas que terminaron viviendo mucho más allá de su estreno.</p>
+  </header>
+
+  <div class="pop-deck" data-pop-deck>
+    <button class="pop-card pc-lizzie active" type="button" data-pop="lizzie">
+      <span>2001</span><strong>Lizzie McGuire</strong><em>Disney Channel</em><b>LM</b>
+    </button>
+    <button class="pop-card pc-kelly" type="button" data-pop="kelly">
+      <span>2002</span><strong>Kelly Collins</strong><em>La cadete Kelly</em><b>KC</b>
+    </button>
+    <button class="pop-card pc-rome" type="button" data-pop="rome">
+      <span>2003</span><strong>Lizzie / Isabella</strong><em>Estrella pop</em><b>ROMA</b>
+    </button>
+    <button class="pop-card pc-sam" type="button" data-pop="sam">
+      <span>2004</span><strong>Sam Montgomery</strong><em>A Cinderella Story</em><b>SM</b>
+    </button>
+    <button class="pop-card pc-terri" type="button" data-pop="terri">
+      <span>2004</span><strong>Terri Fletcher</strong><em>Raise Your Voice</em><b>TF</b>
+    </button>
+    <button class="pop-card pc-dignity" type="button" data-pop="dignity">
+      <span>2007</span><strong>Dignity</strong><em>With Love · Stranger</em><b>D</b>
+    </button>
+    <button class="pop-card pc-kelsey" type="button" data-pop="kelsey">
+      <span>2015</span><strong>Kelsey Peters</strong><em>Younger</em><b>KP</b>
+    </button>
+    <button class="pop-card pc-sophie" type="button" data-pop="sophie">
+      <span>2022</span><strong>Sophie</strong><em>How I Met Your Father</em><b>S</b>
+    </button>
+    <button class="pop-card pc-luck" type="button" data-pop="luck">
+      <span>2026</span><strong>luck… or something</strong><em>La etapa actual</em><b>...</b>
+    </button>
+  </div>
+
+  <article class="pop-focus" data-pop-focus data-pop-theme="lizzie">
+    <div class="pop-focus-index" data-pop-year>2001</div>
+    <div class="pop-focus-copy">
+      <span class="micro" data-pop-type>SERIE · DISNEY CHANNEL</span>
+      <h3 data-pop-title>Lizzie McGuire</h3>
+      <p data-pop-copy>La puerta de entrada para muchísimos fans. Lizzie, Miranda, Gordo y su alter ego animado cumplen 25 años en 2026.</p>
+      <a data-pop-link href="#lizzie">Abrir Lizzie ↓</a>
+    </div>
+    <div class="pop-focus-names" aria-hidden="true">
+      <span data-pop-name-1>GORDO</span>
+      <span data-pop-name-2>MIRANDA</span>
+      <span data-pop-name-3>ETHAN</span>
+    </div>
+  </article>
+</section>
+
     <section class="universe section" id="universo">
       <header class="section-head universe-head">
         <div>
@@ -428,64 +483,126 @@
       </div>
     </section>
 
-    <section class="newsletter-v6 section" id="correo">
-  <div class="newsletter-v6-head">
-    <span class="micro">HDM POR CORREO</span>
-    <h2>Elige qué quieres recibir.</h2>
-    <p>Noticias importantes, México, actividades del fan club y nuevas cosas para explorar en el sitio. Sin frecuencia fija.</p>
-  </div>
+    <section class="join-v7 section" id="unete">
+  <div class="join-v7-glow" aria-hidden="true"><i></i><i></i><i></i></div>
 
-  <div class="newsletter-v6-grid">
-    <div class="newsletter-builder">
-      <span class="micro">MI HDM</span>
-      <div class="mail-prefs" aria-label="Preferencias del newsletter">
-        <button class="active" type="button" data-mail-pref="mexico">México</button>
-        <button class="active" type="button" data-mail-pref="musica">Música</button>
-        <button type="button" data-mail-pref="hdm">Actividades HDM</button>
-        <button type="button" data-mail-pref="lizzie">Lizzie + archivo</button>
+  <header class="join-v7-head">
+    <span class="micro">HILARY DUFF MÉXICO</span>
+    <h2>Únete a HDM.</h2>
+    <p>Déjanos tu nombre y correo para recibir noticias importantes, actividades del fan club y la información de México que realmente necesitas.</p>
+  </header>
+
+  <div class="join-v7-grid">
+    <form class="join-form" data-join-form>
+      <div class="join-step">
+        <span class="join-step-no">01</span>
+        <div class="join-fields">
+          <label>
+            <span>Nombre</span>
+            <input type="text" name="name" data-join-name required autocomplete="name" placeholder="tu nombre">
+          </label>
+          <label>
+            <span>Correo</span>
+            <input type="email" name="email" data-join-email required autocomplete="email" placeholder="tu correo">
+          </label>
+        </div>
       </div>
 
-      <form data-mail-form>
-        <label class="sr-only" for="mail-email">Correo electrónico</label>
-        <div class="mail-input-row">
-          <input id="mail-email" type="email" required placeholder="tu correo">
-          <button type="submit">Quiero recibir HDM →</button>
+      <div class="join-step">
+        <span class="join-step-no">02</span>
+        <div>
+          <h3>¿Por dónde llegaste?</h3>
+          <div class="join-choices era-choices" role="group" aria-label="Etapa de Hilary">
+            <button class="active" type="button" data-join-era="lizzie">Lizzie</button>
+            <button type="button" data-join-era="meta">Metamorphosis</button>
+            <button type="button" data-join-era="dignity">Dignity</button>
+            <button type="button" data-join-era="younger">Younger</button>
+            <button type="button" data-join-era="bibo">BIBO</button>
+            <button type="button" data-join-era="luck">luck…</button>
+          </div>
         </div>
-        <small data-mail-note>La lista todavía no está abierta. Puedes probar cómo funcionará y elegir tus preferencias.</small>
-      </form>
-
-      <div class="mail-promises">
-        <span>No enviamos un correo por cada publicación.</span>
-        <span>Puedes cambiar tus preferencias después.</span>
-        <span>Sin contenido de relleno.</span>
       </div>
-    </div>
 
-    <div class="mail-preview-wrap">
-      <div class="mail-preview" data-mail-preview>
-        <div class="mail-preview-bar">
-          <span>HDM</span><i></i><i></i><i></i>
+      <div class="join-step">
+        <span class="join-step-no">03</span>
+        <div>
+          <h3>¿Dónde estás?</h3>
+          <div class="join-choices city-choices" role="group" aria-label="Ciudad">
+            <button class="active" type="button" data-join-city="cdmx">CDMX</button>
+            <button type="button" data-join-city="gdl">Guadalajara</button>
+            <button type="button" data-join-city="mx">Otro lugar de México</button>
+            <button type="button" data-join-city="world">Fuera de México</button>
+          </div>
         </div>
-        <div class="mail-preview-meta">
-          <span>De · Hilary Duff México</span>
-          <span>Para · tú</span>
-        </div>
-        <h3 data-mail-subject>México 2027 + música nueva</h3>
-        <div class="mail-preview-block mp-pink">
-          <span>HILARY AHORA</span>
-          <b>Una actualización que sí importa.</b>
-        </div>
-        <div class="mail-preview-block mp-blue">
-          <span>MÉXICO</span>
-          <b>Fechas, horarios y cambios confirmados.</b>
-        </div>
-        <div class="mail-preview-block mp-lime">
-          <span>PARA ABRIR DESPUÉS</span>
-          <b>Una entrevista, video o rincón del archivo.</b>
-        </div>
-        <div class="mail-signoff">Hilary Duff México · HDM ✦</div>
       </div>
-      <div class="mail-orbit" aria-hidden="true"><span>✦</span><span>HDM</span><span>MX</span></div>
+
+      <div class="join-step">
+        <span class="join-step-no">04</span>
+        <div>
+          <h3>Quiero recibir</h3>
+          <div class="join-switches">
+            <label><input type="checkbox" checked data-join-interest="noticias"><span>Noticias importantes</span></label>
+            <label><input type="checkbox" checked data-join-interest="mexico"><span>México 2027</span></label>
+            <label><input type="checkbox" data-join-interest="eventos"><span>Eventos y dinámicas HDM</span></label>
+            <label><input type="checkbox" data-join-interest="archivo"><span>Especiales, aniversarios y archivo</span></label>
+          </div>
+        </div>
+      </div>
+
+      <label class="join-consent">
+        <input type="checkbox" required>
+        <span>Quiero recibir correos de Hilary Duff México.</span>
+      </label>
+
+      <button class="join-submit" type="submit">Unirme a HDM →</button>
+      <small class="join-demo" data-join-note>Esta versión sigue siendo una demo visual y no envía tus datos fuera del dispositivo.</small>
+    </form>
+
+    <div class="join-pass-wrap">
+      <div class="join-pass" data-join-pass data-join-theme="lizzie">
+        <div class="pass-top">
+          <span>HILARY DUFF MÉXICO</span>
+          <b>HDM</b>
+        </div>
+
+        <div class="pass-name">
+          <small>NOMBRE</small>
+          <strong data-pass-name>Tu nombre</strong>
+        </div>
+
+        <div class="pass-middle">
+          <div>
+            <small>ERA</small>
+            <b data-pass-era>Lizzie McGuire</b>
+          </div>
+          <div>
+            <small>DESDE</small>
+            <b data-pass-city>CDMX</b>
+          </div>
+        </div>
+
+        <div class="pass-reference" data-pass-reference>
+          <span>2001</span>
+          <strong>LIZZIE</strong>
+          <i>✦</i>
+        </div>
+
+        <div class="pass-bottom">
+          <span>METAMORPHOSIS</span>
+          <span>DIGNITY</span>
+          <span>YOUNGER</span>
+          <span>LUCK…</span>
+        </div>
+      </div>
+
+      <div class="join-popwords" aria-hidden="true">
+        <span>COME CLEAN</span>
+        <span>KELLY COLLINS</span>
+        <span>SAM MONTGOMERY</span>
+        <span>KELSEY PETERS</span>
+        <span>LIZZIE</span>
+        <span>WITH LOVE</span>
+      </div>
     </div>
   </div>
 </section>
