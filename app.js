@@ -373,3 +373,81 @@ if(matchMedia("(pointer:fine)").matches && !matchMedia("(prefers-reduced-motion:
     document.body.appendChild(s);setTimeout(()=>s.remove(),750);
   },{passive:true});
 }
+
+
+const popData={
+  lizzie:{year:"2001",type:"SERIE · DISNEY CHANNEL",title:"Lizzie McGuire",copy:"La puerta de entrada para muchísimos fans. Lizzie, Miranda, Gordo y su alter ego animado cumplen 25 años en 2026.",theme:"lizzie",names:["GORDO","MIRANDA","ETHAN"],link:["Abrir Lizzie ↓","#lizzie"]},
+  kelly:{year:"2002",type:"DISNEY CHANNEL ORIGINAL MOVIE",title:"La cadete Kelly",copy:"Hilary interpreta a Kelly Collins, una adolescente que cambia moda y libertad por una academia militar y termina dejando su propia marca.",theme:"kelly",names:["KELLY","STONE","CADET"],link:["Disney+ ↗","https://www.disneyplus.com/es-mx/browse/entity-8b14e5bf-0c24-407b-b660-d6a031e05c60"]},
+  rome:{year:"2003",type:"PELÍCULA · ROMA",title:"Lizzie McGuire: Estrella pop",copy:"Roma, Isabella, Paolo y el cierre cinematográfico de la historia de Lizzie. La película también está disponible en Disney+ México.",theme:"rome",names:["ISABELLA","PAOLO","ROMA"],link:["Disney+ ↗","https://www.disneyplus.com/es-mx/browse/entity-cdb5deb3-5272-4078-95d9-01e866004c71"]},
+  sam:{year:"2004",type:"PELÍCULA",title:"A Cinderella Story",copy:"Sam Montgomery se convirtió en otro de los personajes que acompañaron el salto de Hilary de Disney Channel hacia el cine adolescente de los 2000.",theme:"sam",names:["SAM","AUSTIN","DINER"],link:["Explorar pantalla ↑","#universo"]},
+  terri:{year:"2004",type:"PELÍCULA · MÚSICA",title:"Raise Your Voice",copy:"Terri Fletcher mezcla drama adolescente, música y una de las etapas más intensas de la carrera cinematográfica temprana de Hilary.",theme:"terri",names:["TERRI","MÚSICA","2004"],link:["Explorar pantalla ↑","#universo"]},
+  dignity:{year:"2007",type:"ÁLBUM",title:"Dignity",copy:"El giro electrónico: With Love, Stranger y Play With Fire. Con los años terminó siendo una de las eras más celebradas por los fans.",theme:"dignity",names:["WITH LOVE","STRANGER","PLAY WITH FIRE"],link:["Abrir música ↑","#universo"]},
+  kelsey:{year:"2015",type:"SERIE · TV LAND",title:"Younger",copy:"Kelsey Peters llevó a Hilary a una nueva generación de televisión y coincidió con su regreso musical de Breathe In. Breathe Out.",theme:"kelsey",names:["KELSEY","EMPIRE","YOUNGER"],link:["Explorar pantalla ↑","#universo"]},
+  sophie:{year:"2022",type:"SERIE · HULU",title:"How I Met Your Father",copy:"Sophie volvió a colocar a Hilary al centro de una comedia televisiva, ahora desde una etapa completamente adulta.",theme:"sophie",names:["SOPHIE","NYC","HIMYF"],link:["Explorar pantalla ↑","#universo"]},
+  luck:{year:"2026",type:"ÁLBUM · ATLANTIC",title:"luck… or something",copy:"El regreso musical completo: nuevo álbum, nueva gira y una etapa construida desde una Hilary adulta que vuelve a mirar su propio catálogo.",theme:"luck",names:["MATURE","ROOMMATES","FUTURE TRIPPING"],link:["Escuchar ↓","#pulso"]}
+};
+
+function setPop(key){
+  const d=popData[key];if(!d)return;
+  const focus=$("[data-pop-focus]");
+  const apply=()=>{
+    focus.dataset.popTheme=d.theme;
+    $("[data-pop-year]").textContent=d.year;
+    $("[data-pop-type]").textContent=d.type;
+    $("[data-pop-title]").textContent=d.title;
+    $("[data-pop-copy]").textContent=d.copy;
+    const link=$("[data-pop-link]");link.textContent=d.link[0];link.href=d.link[1];
+    if(d.link[1].startsWith("http")){link.target="_blank";link.rel="noreferrer";}else{link.removeAttribute("target");link.removeAttribute("rel");}
+    $("[data-pop-name-1]").textContent=d.names[0];$("[data-pop-name-2]").textContent=d.names[1];$("[data-pop-name-3]").textContent=d.names[2];
+    $$("[data-pop]").forEach(b=>b.classList.toggle("active",b.dataset.pop===key));
+  };
+  if(document.startViewTransition && !matchMedia("(prefers-reduced-motion: reduce)").matches)document.startViewTransition(apply);else apply();
+}
+$$("[data-pop]").forEach(b=>b.addEventListener("click",()=>setPop(b.dataset.pop)));
+
+const joinState={era:"lizzie",city:"cdmx"};
+const eraJoin={
+  lizzie:{label:"Lizzie McGuire",year:"2001",ref:"LIZZIE",theme:"lizzie"},
+  meta:{label:"Metamorphosis",year:"2003",ref:"COME CLEAN",theme:"meta"},
+  dignity:{label:"Dignity",year:"2007",ref:"WITH LOVE",theme:"dignity"},
+  younger:{label:"Younger",year:"2015",ref:"KELSEY",theme:"younger"},
+  bibo:{label:"Breathe In. Breathe Out.",year:"2015",ref:"SPARKS",theme:"bibo"},
+  luck:{label:"luck… or something",year:"2026",ref:"LUCK…",theme:"luck"}
+};
+const cityJoin={cdmx:"CDMX",gdl:"Guadalajara",mx:"México",world:"Fuera de México"};
+
+function refreshJoin(){
+  const e=eraJoin[joinState.era];
+  const pass=$("[data-join-pass]");if(!pass)return;
+  pass.dataset.joinTheme=e.theme;
+  $("[data-pass-era]").textContent=e.label;
+  $("[data-pass-city]").textContent=cityJoin[joinState.city];
+  const ref=$("[data-pass-reference]");ref.querySelector("span").textContent=e.year;ref.querySelector("strong").textContent=e.ref;
+  $$("[data-join-era]").forEach(b=>b.classList.toggle("active",b.dataset.joinEra===joinState.era));
+  $$("[data-join-city]").forEach(b=>b.classList.toggle("active",b.dataset.joinCity===joinState.city));
+}
+$$("[data-join-era]").forEach(b=>b.addEventListener("click",()=>{joinState.era=b.dataset.joinEra;refreshJoin();}));
+$$("[data-join-city]").forEach(b=>b.addEventListener("click",()=>{joinState.city=b.dataset.joinCity;refreshJoin();}));
+$("[data-join-name]")?.addEventListener("input",e=>{$("[data-pass-name]").textContent=e.target.value.trim()||"Tu nombre";});
+refreshJoin();
+
+$("[data-join-form]")?.addEventListener("submit",e=>{
+  e.preventDefault();
+  const name=$("[data-join-name]")?.value.trim();
+  const email=$("[data-join-email]")?.value.trim();
+  const interests=$$("[data-join-interest]:checked").map(i=>i.dataset.joinInterest);
+  if(!name||!email)return;
+  localStorage.setItem("hdm-join-demo",JSON.stringify({name,email,era:joinState.era,city:joinState.city,interests}));
+  const pass=$("[data-join-pass]");pass.classList.remove("join-success");void pass.offsetWidth;pass.classList.add("join-success");
+  const note=$("[data-join-note]");if(note)note.textContent="Tu selección quedó guardada en este dispositivo. El alta real se conectará antes de abrir registros.";
+});
+
+document.addEventListener("pointerdown",e=>{
+  const interactive=e.target.closest("a,button,.pop-card,.join-pass");
+  if(!interactive||matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+  const bloom=document.createElement("span");bloom.className="click-bloom";
+  bloom.style.left=(e.clientX-9)+"px";bloom.style.top=(e.clientY-9)+"px";
+  const colors=["#ff77b8","#deff4a","#78dcff","#ff743e","#a98fff"];
+  bloom.style.background=colors[Math.floor(Math.random()*colors.length)];
+  document.body.appendChild(bloom);setTimeout(()=>bloom.remove(),600);
+});
