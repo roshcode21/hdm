@@ -223,13 +223,13 @@ button:disabled{cursor:wait;opacity:.62}
   transition:transform .22s cubic-bezier(.2,.8,.2,1);
 }
 .chip-lizzie{
-  translate:calc(var(--hero-x,0px) * -.55) calc(var(--scroll-y,0px) + var(--hero-y,0px) * -.45);
+  translate:var(--chip-x,0px) calc(var(--scroll-y,0px) + var(--chip-y,0px));
 }
 .chip-mx{
-  translate:calc(var(--hero-x,0px) * .48) calc(var(--scroll-y,0px) + var(--hero-y,0px) * .38);
+  translate:var(--chip-x,0px) calc(var(--scroll-y,0px) + var(--chip-y,0px));
 }
 .chip-dignity{
-  translate:calc(var(--hero-x,0px) * .64) calc(var(--scroll-y,0px) + var(--hero-y,0px) * .5);
+  translate:var(--chip-x,0px) calc(var(--scroll-y,0px) + var(--chip-y,0px));
 }
 
 .surface,
