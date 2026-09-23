@@ -219,3 +219,24 @@ var(--cream);overflow:hidden;isolation:isolate}
   html{scroll-behavior:auto}
   *,*::before,*::after{animation:none!important;transition:none!important}
 }
+
+.toast{
+  position:fixed;
+  left:50%;
+  bottom:calc(82px + env(safe-area-inset-bottom));
+  z-index:1200;
+  max-width:min(90vw,420px);
+  transform:translate(-50%,14px);
+  opacity:0;
+  background:#111;
+  color:#fff;
+  border-radius:999px;
+  padding:11px 14px;
+  font-size:9px;
+  text-align:center;
+  box-shadow:0 14px 38px rgba(0,0,0,.22);
+  transition:opacity .18s,transform .18s;
+  pointer-events:none;
+}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(min-width:821px){.toast{bottom:24px}}
