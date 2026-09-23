@@ -1,4 +1,4 @@
-const CACHE="hdm-v12-fast";
+const CACHE="hdm-v12-performance";
 const CORE=["./","./index.html","./styles.css","./app.js","./manifest.webmanifest","./icon.svg"];
 
 self.addEventListener("install",event=>{
