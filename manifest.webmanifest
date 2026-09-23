@@ -1,0 +1,12 @@
+{
+  "name":"Hilary Duff México",
+  "short_name":"HDM",
+  "description":"Fan Club Oficial de Hilary Duff en México",
+  "start_url":"./",
+  "display":"standalone",
+  "background_color":"#f6efe7",
+  "theme_color":"#ff77b8",
+  "icons":[
+    {"src":"./icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}
+  ]
+}
