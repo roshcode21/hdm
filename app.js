@@ -273,3 +273,103 @@ const io=new IntersectionObserver(entries=>{
   entries.forEach(entry=>{if(entry.isIntersecting){const id=entry.target.id;mobileLinks.forEach(a=>a.classList.toggle("active",a.getAttribute("href")==="#"+id));}});
 },{rootMargin:"-42% 0px -48% 0px"});
 sections.forEach(s=>io.observe(s));
+
+
+const heroWorlds={
+  ahora:{
+    bodyClass:"",stage:"ahora",
+    image:"https://press.atlanticrecords.com/sites/g/files/g2000014001/files/styles/artist_detail/public/2026-02/Hilary%20Duff%20Album%20Press%20Photo%201%20-%20Credit%20Alfred%20Marroquin_0.jpg?itok=d3_kRNm5",
+    alt:"Hilary Duff en 2026",eyebrow:"AHORA · 2026",title:"luck… or something",
+    copy:"Nuevo álbum, una gira mundial en marcha y tres noches confirmadas en México para febrero de 2027.",
+    tags:["Weather For Tennis","Roommates","Future Tripping"],
+    links:[["Escuchar y ver ↓","#pulso"],["Tour oficial ↗","https://www.hilaryduff.com/live"]]
+  },
+  meta:{
+    bodyClass:"hero-meta",stage:"meta",
+    image:"https://press.atlanticrecords.com/sites/g/files/g2000014001/files/styles/artist_detail/public/2026-02/Hilary%20Duff%20Album%20Press%20Photo%201%20-%20Credit%20Alfred%20Marroquin_0.jpg?itok=d3_kRNm5",
+    alt:"Hilary Duff",eyebrow:"2003",title:"Metamorphosis",
+    copy:"El disco que abrió una etapa enorme: So Yesterday, Come Clean y Why Not siguen conectando 2003 con los shows de hoy.",
+    tags:["So Yesterday","Come Clean","Why Not"],
+    links:[["Abrir música ↓","#universo"],["Spotify ↗","https://open.spotify.com/artist/2S9W9aSAd7e5mp8WqWxN2h"]]
+  },
+  dignity:{
+    bodyClass:"hero-dignity",stage:"dignity",
+    image:"https://press.atlanticrecords.com/sites/g/files/g2000014001/files/styles/artist_detail/public/2026-02/Hilary%20Duff%20Album%20Press%20Photo%201%20-%20Credit%20Alfred%20Marroquin_0.jpg?itok=d3_kRNm5",
+    alt:"Hilary Duff",eyebrow:"2007",title:"Dignity",
+    copy:"Electrónica, club y una Hilary tomando mucho más control de su sonido. Una era que no dejó de crecer con los años.",
+    tags:["With Love","Stranger","Play With Fire"],
+    links:[["Abrir Dignity ↓","#universo"],["Escuchar ↗","https://open.spotify.com/artist/2S9W9aSAd7e5mp8WqWxN2h"]]
+  },
+  lizzie:{
+    bodyClass:"hero-lizzie",stage:"lizzie",
+    image:"https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/FC5C3AA105E2E4F7DA0510B918269D19663591203F49676D10AE2E2C976790CB/compose?format=webp&width=2560",
+    alt:"Lizzie McGuire con su alter ego animado",eyebrow:"2001 — 2026",title:"Lizzie McGuire · 25 años",
+    copy:"Dos temporadas, 65 episodios, una película y el personaje que presentó a Hilary a toda una generación.",
+    tags:["Gordo","Miranda","Roma"],
+    links:[["Entrar a Lizzie ↓","#lizzie"],["Disney+ ↗","https://www.disneyplus.com/es-mx/series/lizzie-mcguire/3RlptgsoNczX"]]
+  },
+  mexico:{
+    bodyClass:"hero-mexico",stage:"mexico",
+    image:"https://press.atlanticrecords.com/sites/g/files/g2000014001/files/styles/artist_detail/public/2026-02/Hilary%20Duff%20Album%20Press%20Photo%201%20-%20Credit%20Alfred%20Marroquin_0.jpg?itok=d3_kRNm5",
+    alt:"Hilary Duff",eyebrow:"FEBRERO · 2027",title:"México",
+    copy:"12 y 13 en Ciudad de México. 15 en Guadalajara. Tres noches de the lucky me tour en el país.",
+    tags:["12 FEB · CDMX","13 FEB · CDMX","15 FEB · GDL"],
+    links:[["Abrir México ↓","#mexico"],["OCESA ↗","https://www.ocesa.com.mx/todos-los-eventos/hilary-duff-boletos-ae1632382"]]
+  }
+};
+
+function setHeroWorld(key){
+  const data=heroWorlds[key]; if(!data)return;
+  const apply=()=>{
+    document.body.classList.remove("hero-meta","hero-dignity","hero-lizzie","hero-mexico");
+    if(data.bodyClass)document.body.classList.add(data.bodyClass);
+    const stage=$(".hero-v6-stage"); if(stage)stage.dataset.heroStage=data.stage;
+    const image=$("[data-hero-main-image]"); if(image){image.src=data.image;image.alt=data.alt;}
+    $("[data-hero-eyebrow]").textContent=data.eyebrow;
+    $("[data-hero-title]").textContent=data.title;
+    $("[data-hero-copy]").textContent=data.copy;
+    const tags=$("[data-hero-tags]");tags.innerHTML="";
+    data.tags.forEach(t=>{const s=document.createElement("span");s.textContent=t;tags.appendChild(s);});
+    const actions=$("[data-hero-actions]");actions.innerHTML="";
+    data.links.forEach(([label,href])=>{const a=document.createElement("a");a.textContent=label;a.href=href;if(href.startsWith("http")){a.target="_blank";a.rel="noreferrer";}actions.appendChild(a);});
+    $$("[data-hero-world]").forEach(b=>b.classList.toggle("active",b.dataset.heroWorld===key));
+  };
+  if(document.startViewTransition && !matchMedia("(prefers-reduced-motion: reduce)").matches)document.startViewTransition(apply);else apply();
+}
+$$("[data-hero-world]").forEach(b=>b.addEventListener("click",()=>setHeroWorld(b.dataset.heroWorld)));
+
+const mailPrefs=new Set(["mexico","musica"]);
+const mailLabels={mexico:"México 2027",musica:"música nueva",hdm:"actividades HDM",lizzie:"Lizzie + archivo"};
+function refreshMailPreview(){
+  $$("[data-mail-pref]").forEach(b=>b.classList.toggle("active",mailPrefs.has(b.dataset.mailPref)));
+  const chosen=[...mailPrefs].map(k=>mailLabels[k]);
+  const subject=$("[data-mail-subject]");
+  if(subject)subject.textContent=chosen.length?chosen.slice(0,2).join(" + "):"Hilary Duff México";
+}
+$$("[data-mail-pref]").forEach(b=>b.addEventListener("click",()=>{
+  const key=b.dataset.mailPref;
+  if(mailPrefs.has(key))mailPrefs.delete(key);else mailPrefs.add(key);
+  refreshMailPreview();
+}));
+refreshMailPreview();
+
+$("[data-mail-form]")?.addEventListener("submit",e=>{
+  e.preventDefault();
+  const email=$("#mail-email")?.value.trim();if(!email)return;
+  localStorage.setItem("hdm-mail-demo",JSON.stringify({email,prefs:[...mailPrefs]}));
+  const note=$("[data-mail-note]");
+  if(note)note.textContent="Preferencias guardadas en este dispositivo. La lista real todavía no está abierta.";
+  e.currentTarget.reset();
+});
+
+if(matchMedia("(pointer:fine)").matches && !matchMedia("(prefers-reduced-motion: reduce)").matches){
+  let lastSpark=0;
+  window.addEventListener("pointermove",e=>{
+    const now=performance.now(); if(now-lastSpark<70)return; lastSpark=now;
+    if(!e.target.closest(".hero-v6,.newsletter-v6"))return;
+    const s=document.createElement("span");s.className="sparkle-trail";s.textContent=Math.random()>.5?"✦":"·";
+    s.style.left=e.clientX+"px";s.style.top=e.clientY+"px";
+    s.style.color=Math.random()>.5?"#ff4f9a":"#deff4a";
+    document.body.appendChild(s);setTimeout(()=>s.remove(),750);
+  },{passive:true});
+}
