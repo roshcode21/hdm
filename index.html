@@ -1,223 +1,320 @@
 <!doctype html>
-<html lang="es">
+<html lang="es-MX">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#f5f5f2">
-  <meta name="description" content="Hilary Duff México — Fan Club Oficial. México 2027, actividades y comunidad.">
+  <meta name="theme-color" content="#f3f2ee">
+  <meta name="description" content="Hilary Duff México — Fan Club Oficial. Noticias verificadas, música, México 2027 y HDM.">
   <meta property="og:title" content="Hilary Duff México">
-  <meta property="og:description" content="Fan Club Oficial · México 2027">
+  <meta property="og:description" content="Hilary Duff en México, ahora y desde aquí.">
   <meta property="og:type" content="website">
-  <title>Hilary Duff México</title>
+  <title>Hilary Duff México · HDM</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-  <header class="site-header">
-    <a class="identity" href="#inicio" aria-label="Hilary Duff México">
-      <span class="identity-mark">HDM</span>
-      <span class="identity-name">Hilary Duff México</span>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <header class="topbar">
+    <a class="brand" href="#inicio" aria-label="Hilary Duff México">
+      <span class="brand-hdm">HDM</span>
+      <span class="brand-name">Hilary Duff México</span>
     </a>
 
-    <nav class="desktop-nav" aria-label="Principal">
-      <a href="#mexico">México 2027</a>
+    <nav class="nav-main" aria-label="Navegación principal">
+      <a href="#ahora">Ahora</a>
+      <a href="#hilary">Hilary</a>
+      <a href="#mexico">México</a>
       <a href="#club">Club</a>
       <a href="#hdm">HDM</a>
     </nav>
 
-    <a class="ig-link" href="https://www.instagram.com/hilaryduffmexico/" target="_blank" rel="noreferrer">@hilaryduffmexico ↗</a>
-
-    <button class="menu-button" type="button" aria-expanded="false" aria-controls="mobile-menu">Menú</button>
-    <div class="mobile-menu" id="mobile-menu">
-      <a href="#mexico">México 2027</a>
-      <a href="#club">Club</a>
-      <a href="#hdm">HDM</a>
-      <a href="https://www.instagram.com/hilaryduffmexico/" target="_blank" rel="noreferrer">Instagram ↗</a>
-    </div>
+    <button class="search-open" type="button" data-search-open aria-label="Buscar en HDM">
+      <span>Buscar</span><kbd>/</kbd>
+    </button>
   </header>
 
-  <main>
+  <main id="contenido">
     <section class="hero" id="inicio">
-      <div class="hero-status">
-        <span class="dot"></span>
-        <span>the lucky me tour · México 2027</span>
+      <div class="hero-date">
+        <span>MIÉ 23 SEP 2026</span>
+        <span>CDMX</span>
       </div>
 
-      <div class="hero-main">
-        <div class="hero-copy">
-          <h1>Nos vemos<br>en febrero.</h1>
-          <p class="hero-dates">12 + 13 FEB · CDMX<br>15 FEB · GDL</p>
-
-          <div class="hero-question">
-            <p>¿A cuál vas?</p>
-            <div class="date-picker" data-picker>
-              <button data-date="cdmx12" type="button"><b>12</b><span>CDMX</span></button>
-              <button data-date="cdmx13" type="button"><b>13</b><span>CDMX</span></button>
-              <button data-date="gdl15" type="button"><b>15</b><span>GDL</span></button>
-              <button data-date="none" type="button"><b>?</b><span>Aún no sé</span></button>
-            </div>
+      <div class="hero-layout">
+        <div class="hero-story">
+          <div class="story-status"><i></i> ACTUALIZACIÓN</div>
+          <p class="story-kicker">THE LUCKY ME TOUR</p>
+          <h1><span>32</span> fechas nuevas.</h1>
+          <p class="story-copy">El tour se extiende por Europa, Latinoamérica y Estados Unidos en 2027. México sigue en febrero con dos fechas en CDMX y una en Guadalajara.</p>
+          <div class="story-actions">
+            <a class="button primary" href="#ahora">Qué cambió</a>
+            <a class="button ghost" href="https://www.hilaryduff.com/live" target="_blank" rel="noreferrer">Tour oficial ↗</a>
+          </div>
+          <div class="story-source">
+            <span>VERIFICADO</span>
+            <a href="https://via.ritzau.dk/pressemeddelelse/15179045/hilary-duff-udvider-den-anmelderroste-the-lucky-me-tour-pa-grund-af-stor-eftersporgsel-og-indtager-royal-arena-den-20-maj-2027-sammen-med-special-guest-rebecca-black?publisherId=13560723" target="_blank" rel="noreferrer">Live Nation · 23 SEP 2026 ↗</a>
           </div>
         </div>
 
-        <figure class="hero-photo">
-          <img
-            src="https://press.atlanticrecords.com/sites/g/files/g2000014001/files/styles/artist_detail/public/2026-02/Hilary%20Duff%20Album%20Press%20Photo%201%20-%20Credit%20Alfred%20Marroquin_0.jpg?itok=d3_kRNm5"
-            alt="Hilary Duff, fotografía promocional de 2026"
-            fetchpriority="high">
-          <figcaption>Foto promocional · Alfred Marroquin / Atlantic Records</figcaption>
+        <figure class="hero-image" data-tilt>
+          <img src="https://press.atlanticrecords.com/sites/g/files/g2000014001/files/styles/artist_detail/public/2026-02/Hilary%20Duff%20Album%20Press%20Photo%201%20-%20Credit%20Alfred%20Marroquin_0.jpg?itok=d3_kRNm5" alt="Hilary Duff en una fotografía promocional de 2026" fetchpriority="high">
+          <figcaption>ALFRED MARROQUIN · ATLANTIC RECORDS</figcaption>
+          <span class="image-tag">2026</span>
         </figure>
       </div>
 
-      <div class="update-line">
-        <span>21 SEP 2026</span>
-        <p>3 fechas confirmadas en México.</p>
-        <a href="#mexico">Ver fechas ↓</a>
+      <div class="quick-strip" aria-label="Accesos rápidos">
+        <span class="quick-label">A LA MANO</span>
+        <button type="button" data-jump="mexico">México 2027</button>
+        <button type="button" data-search-query="setlist">Setlist actual</button>
+        <button type="button" data-search-query="album">Nuevo álbum</button>
+        <button type="button" data-search-query="nuevo">Soy nuevo</button>
+        <button type="button" data-search-query="merch">Merch oficial</button>
+        <a href="https://www.instagram.com/hilaryduffmexico/" target="_blank" rel="noreferrer">Instagram ↗</a>
       </div>
     </section>
 
-    <section class="your-night" data-your-night hidden>
-      <div class="your-night-inner">
-        <p class="mini-label">TU FECHA</p>
+    <section class="radar section" id="ahora">
+      <div class="section-heading">
         <div>
-          <strong data-selected-date>12 FEB · CDMX</strong>
-          <span data-selected-venue>Palacio de los Deportes</span>
+          <span class="section-number">01</span>
+          <h2>Ahora</h2>
         </div>
-        <div class="countdown" aria-label="Cuenta regresiva">
-          <span><b data-days>000</b>d</span>
-          <span><b data-hours>00</b>h</span>
-          <span><b data-minutes>00</b>m</span>
-        </div>
-        <a href="https://www.ocesa.com.mx/todos-los-eventos/hilary-duff-boletos-ae1632382" target="_blank" rel="noreferrer">Boletos ↗</a>
-        <button type="button" data-change-date>Cambiar</button>
-      </div>
-    </section>
-
-    <section class="mexico-section" id="mexico">
-      <div class="section-top">
-        <p class="mini-label">MÉXICO 2027</p>
-        <p class="section-note">Fechas confirmadas por OCESA.</p>
+        <p>Lo que vale la pena saber hoy. Sin convertir cada story en una nota.</p>
       </div>
 
-      <div class="show-list">
-        <button class="show-row" type="button" data-select-show="cdmx12">
-          <span class="show-date">12.02</span>
-          <span class="show-city">Ciudad de México</span>
-          <span class="show-venue">Palacio de los Deportes</span>
-          <span class="show-action">Elegir fecha</span>
-        </button>
-        <button class="show-row" type="button" data-select-show="cdmx13">
-          <span class="show-date">13.02</span>
-          <span class="show-city">Ciudad de México</span>
-          <span class="show-venue">Palacio de los Deportes</span>
-          <span class="show-action">Elegir fecha</span>
-        </button>
-        <button class="show-row" type="button" data-select-show="gdl15">
-          <span class="show-date">15.02</span>
-          <span class="show-city">Guadalajara</span>
-          <span class="show-venue">Auditorio Telmex</span>
-          <span class="show-action">Elegir fecha</span>
-        </button>
-      </div>
-
-      <div class="mexico-tools">
-        <article>
-          <span class="tool-index">01</span>
-          <h3>Guía del show</h3>
-          <p>Horarios, accesos, transporte y todo lo que vaya confirmándose.</p>
-          <span class="soon">En preparación</span>
+      <div class="radar-grid">
+        <article class="radar-card lead">
+          <div class="card-topline">
+            <span>HOY</span>
+            <span class="verified">VERIFICADO</span>
+          </div>
+          <h3>El tour suma 32 fechas para 2027.</h3>
+          <p>Madrid abre la nueva etapa el 7 de mayo. También se suman Milán, Berlín, París, Ámsterdam, San Juan, São Paulo, Buenos Aires y Santiago, entre otras ciudades.</p>
+          <a href="https://via.ritzau.dk/pressemeddelelse/15179045/hilary-duff-udvider-den-anmelderroste-the-lucky-me-tour-pa-grund-af-stor-eftersporgsel-og-indtager-royal-arena-den-20-maj-2027-sammen-med-special-guest-rebecca-black?publisherId=13560723" target="_blank" rel="noreferrer">Fuente ↗</a>
         </article>
-        <article>
-          <span class="tool-index">02</span>
-          <h3>Fan project</h3>
-          <p>La información del proyecto para México aparecerá aquí cuando esté lista.</p>
-          <span class="soon">Próximamente</span>
+
+        <article class="radar-card mexico-card">
+          <div class="card-topline"><span>MÉXICO</span><span>FEB 2027</span></div>
+          <div class="mx-mini">
+            <div><b>12</b><span>CDMX</span><em>SOLD OUT</em></div>
+            <div><b>13</b><span>CDMX</span><em>SOLD OUT</em></div>
+            <div><b>15</b><span>GDL</span><em>EN VENTA</em></div>
+          </div>
+          <a href="#mexico">Ver México 2027 ↓</a>
         </article>
-        <article>
-          <span class="tool-index">03</span>
-          <h3>El día del concierto</h3>
-          <p>Updates rápidos, punto de encuentro y avisos del fanclub.</p>
-          <span class="soon">FEB 2027</span>
+
+        <article class="radar-card album-card">
+          <div class="card-topline"><span>ÁLBUM</span><span>20 FEB 2026</span></div>
+          <div class="album-glyph">...</div>
+          <h3>luck… or something</h3>
+          <p>11 canciones · 37:54</p>
+          <a href="https://open.spotify.com/album/71t4M602DGtkhsy1RtNAME" target="_blank" rel="noreferrer">Escuchar ↗</a>
+        </article>
+
+        <article class="radar-card setlist-card">
+          <div class="card-topline"><span>SETLIST</span><span>GLASGOW · 13 SEP</span></div>
+          <strong>22</strong>
+          <p>canciones en el setlist más reciente publicado por Live Nation.</p>
+          <button type="button" data-search-query="setlist">Ver setlist</button>
         </article>
       </div>
     </section>
 
-    <section class="club-section" id="club">
-      <div class="club-heading">
-        <p class="mini-label">CLUB</p>
-        <h2>HDM también<br>pasa fuera<br>del teléfono.</h2>
-      </div>
-
-      <div class="club-grid">
-        <article class="club-card listening">
-          <div class="card-meta">
-            <span>CDMX</span>
-            <span>FEB 2026</span>
-          </div>
-          <div class="listening-visual" aria-hidden="true">
-            <span class="disc-label">HDM</span>
-          </div>
-          <div class="card-copy">
-            <p class="eyebrow">Listening Party</p>
-            <h3>luck… or something</h3>
-            <p>50 lugares. Una tarde con el disco antes de que todo lo demás empezara.</p>
-          </div>
-        </article>
-
-        <article class="club-card participate">
-          <div class="card-meta">
-            <span>PRÓXIMO</span>
-            <span>HDM</span>
-          </div>
-          <div class="participate-copy">
-            <p class="eyebrow">Participa</p>
-            <h3>Lo siguiente se anuncia aquí.</h3>
-            <p>Dinámicas, encuentros, listening parties y proyectos para los shows de México.</p>
-          </div>
-          <a href="https://www.instagram.com/hilaryduffmexico/" target="_blank" rel="noreferrer">Seguir HDM ↗</a>
-        </article>
-
-        <article class="club-card send">
-          <div class="card-meta">
-            <span>FANS</span>
-            <span>MÉXICO</span>
-          </div>
-          <div class="send-copy">
-            <p class="eyebrow">¿Tienes algo que debería estar aquí?</p>
-            <h3>Fotos, recuerdos, historias.</h3>
-          </div>
-          <a href="mailto:contacto@hilaryduffmexico.com">Escríbenos ↗</a>
-        </article>
-      </div>
-    </section>
-
-    <section class="hdm-section" id="hdm">
-      <div class="hdm-panel">
+    <section class="hilary section dark" id="hilary">
+      <div class="section-heading inverse">
         <div>
-          <p class="mini-label">HILARY DUFF MÉXICO</p>
-          <h2>Fan Club Oficial<br>en México.</h2>
+          <span class="section-number">02</span>
+          <h2>Hilary</h2>
+        </div>
+        <p>Para volver, empezar o meterte más. Sin una biografía de Wikipedia.</p>
+      </div>
+
+      <div class="era-shell">
+        <div class="era-tabs" role="tablist" aria-label="Álbumes de estudio">
+          <button role="tab" aria-selected="false" data-era="santa"><span>2002</span>Santa Claus Lane</button>
+          <button role="tab" aria-selected="true" data-era="meta"><span>2003</span>Metamorphosis</button>
+          <button role="tab" aria-selected="false" data-era="self"><span>2004</span>Hilary Duff</button>
+          <button role="tab" aria-selected="false" data-era="dignity"><span>2007</span>Dignity</button>
+          <button role="tab" aria-selected="false" data-era="bibo"><span>2015</span>Breathe In. Breathe Out.</button>
+          <button role="tab" aria-selected="false" data-era="luck"><span>2026</span>luck… or something</button>
         </div>
 
-        <div class="hdm-info">
-          <p>Noticias, actividades y proyectos de fans para fans de Hilary Duff en México.</p>
-          <div class="hdm-links">
-            <a href="https://www.instagram.com/hilaryduffmexico/" target="_blank" rel="noreferrer">Instagram ↗</a>
-            <a href="https://www.hilaryduff.com/" target="_blank" rel="noreferrer">HilaryDuff.com ↗</a>
-            <a href="mailto:contacto@hilaryduffmexico.com">Contacto ↗</a>
-            <a href="mailto:staff@hilaryduffmexico.com">Prensa / alianzas ↗</a>
+        <article class="era-stage" data-era-stage data-era-theme="meta">
+          <div class="era-disc" aria-hidden="true">
+            <div class="era-hole"></div>
           </div>
+          <div class="era-copy">
+            <p class="era-year" data-era-year>2003</p>
+            <h3 data-era-title>Metamorphosis</h3>
+            <p data-era-note>El punto de entrada para una generación. “So Yesterday” y “Come Clean” siguen siendo parte central del repertorio.</p>
+            <div class="era-actions">
+              <a data-era-listen href="https://open.spotify.com/artist/2S9W9aSAd7e5mp8WqWxN2h" target="_blank" rel="noreferrer">Escuchar en Spotify ↗</a>
+              <button type="button" data-search-query="nuevo">¿Por dónde empiezo?</button>
+            </div>
+          </div>
+          <div class="era-index">
+            <span>6</span>
+            <small>álbumes de estudio</small>
+          </div>
+        </article>
+      </div>
+
+      <div class="starter">
+        <div class="starter-copy">
+          <span class="mono-label">START HERE</span>
+          <h3>¿Llegaste —o regresaste— en 2026?</h3>
+          <p>No necesitas empezar desde 2002. Elige el punto que ya conoces y sigue desde ahí.</p>
+        </div>
+        <div class="starter-routes">
+          <button data-route="lizzie"><span>Conozco a Lizzie</span><b>→</b></button>
+          <button data-route="dignity"><span>Me quedé en Dignity</span><b>→</b></button>
+          <button data-route="younger"><span>Vengo de Younger</span><b>→</b></button>
+          <button data-route="luck"><span>Llegué con luck…</span><b>→</b></button>
+        </div>
+        <div class="route-answer" data-route-answer aria-live="polite">
+          <span>ELIGE UNA RUTA</span>
+          <p>Te damos tres cosas para escuchar o ver después. Nada de tarea.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mexico section" id="mexico">
+      <div class="section-heading">
+        <div>
+          <span class="section-number">03</span>
+          <h2>México</h2>
+        </div>
+        <p>Boletos, venue, horarios y fan project cuando exista información confirmada.</p>
+      </div>
+
+      <div class="mexico-board">
+        <div class="count-card">
+          <span class="mono-label">PRIMER SHOW EN MÉXICO</span>
+          <strong data-mx-days>---</strong>
+          <p>días para el 12 de febrero</p>
+          <div class="count-line"><i data-count-progress></i></div>
+        </div>
+
+        <div class="dates-board">
+          <a href="https://www.ocesa.com.mx/todos-los-eventos/hilary-duff-boletos-ae1632382" target="_blank" rel="noreferrer">
+            <span class="date-big">12.02</span><span>Palacio de los Deportes · CDMX</span><em>SOLD OUT</em>
+          </a>
+          <a href="https://www.ocesa.com.mx/todos-los-eventos/hilary-duff-boletos-ae1632382" target="_blank" rel="noreferrer">
+            <span class="date-big">13.02</span><span>Palacio de los Deportes · CDMX</span><em>SOLD OUT</em>
+          </a>
+          <a href="https://www.ocesa.com.mx/todos-los-eventos/hilary-duff-boletos-ae1632382" target="_blank" rel="noreferrer">
+            <span class="date-big">15.02</span><span>Auditorio Telmex · GDL</span><em>BOLETOS ↗</em>
+          </a>
         </div>
       </div>
 
-      <div class="big-mark" aria-hidden="true">HDM</div>
+      <div class="guide-grid">
+        <article class="guide-card live">
+          <span>YA</span><h3>Boletos</h3><p>Fechas, venues y enlace oficial de venta.</p><a href="https://www.ocesa.com.mx/todos-los-eventos/hilary-duff-boletos-ae1632382" target="_blank" rel="noreferrer">OCESA ↗</a>
+        </article>
+        <article class="guide-card">
+          <span>DESPUÉS</span><h3>Horarios</h3><p>Puertas, show y cualquier cambio publicado por venue o promotora.</p><em>Aún sin datos</em>
+        </article>
+        <article class="guide-card">
+          <span>DESPUÉS</span><h3>Merch</h3><p>Qué llega a México, precios y dónde comprar dentro del venue.</p><em>Cuando se confirme</em>
+        </article>
+        <article class="guide-card">
+          <span>HDM</span><h3>Fan project</h3><p>Instrucciones claras cuando haya un proyecto definido.</p><em>Por anunciar</em>
+        </article>
+        <article class="guide-card">
+          <span>VENUE</span><h3>Accesos</h3><p>Cómo llegar, entradas, objetos permitidos y recomendaciones del recinto.</p><em>Más cerca del show</em>
+        </article>
+        <article class="guide-card">
+          <span>SHOW</span><h3>Setlist</h3><p>El repertorio más reciente, cambios y sorpresas del tour.</p><button type="button" data-search-query="setlist">Ver ahora</button>
+        </article>
+      </div>
+
+      <div class="mexico-memory">
+        <div class="memory-stamp">
+          <span>HDM</span><b>02</b><small>2026</small>
+        </div>
+        <div>
+          <span class="mono-label">CDMX · FEB 2026</span>
+          <h3>Listening Party</h3>
+          <p>50 lugares. Material hecho para esa tarde. Fotos y recuerdos del evento pueden vivir dentro de su propia historia, no en una “galería” separada.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="club section pink" id="club">
+      <div class="section-heading">
+        <div><span class="section-number">04</span><h2>Club</h2></div>
+        <p>La conversación sigue en Instagram. La web organiza lo que después cuesta encontrar.</p>
+      </div>
+
+      <div class="club-layout">
+        <a class="instagram-card" href="https://www.instagram.com/hilaryduffmexico/" target="_blank" rel="noreferrer">
+          <div class="ig-top"><span>INSTAGRAM</span><span>↗</span></div>
+          <strong>@hilaryduffmexico</strong>
+          <p>Noticias · dinámicas · stories · comentarios</p>
+          <div class="ig-bubbles" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+        </a>
+
+        <div class="club-actions">
+          <a href="mailto:contacto@hilaryduffmexico.com?subject=Quiero%20enviar%20algo%20a%20HDM">
+            <span>01</span><div><b>Enviar algo a HDM</b><small>Fotos, recuerdos, colecciones o una corrección.</small></div><em>→</em>
+          </a>
+          <a href="mailto:contacto@hilaryduffmexico.com?subject=Propuesta%20para%20HDM">
+            <span>02</span><div><b>Proponer una dinámica</b><small>Una idea para el fanclub o los shows de México.</small></div><em>→</em>
+          </a>
+          <a href="mailto:staff@hilaryduffmexico.com?subject=Prensa%20o%20alianza">
+            <span>03</span><div><b>Prensa / alianzas</b><small>Contacto para medios, marcas y colaboraciones.</small></div><em>→</em>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="hdm section" id="hdm">
+      <div class="hdm-lockup">
+        <span class="mono-label">HILARY DUFF MÉXICO</span>
+        <h2>Fan Club Oficial<br>en México.</h2>
+      </div>
+      <div class="hdm-details">
+        <p>HDM comparte noticias, organiza actividades y crea proyectos para fans de Hilary Duff en México.</p>
+        <div class="hdm-links">
+          <a href="https://www.instagram.com/hilaryduffmexico/" target="_blank" rel="noreferrer">Instagram ↗</a>
+          <a href="https://www.hilaryduff.com/" target="_blank" rel="noreferrer">Web oficial ↗</a>
+          <a href="mailto:contacto@hilaryduffmexico.com">Contacto ↗</a>
+          <a href="mailto:staff@hilaryduffmexico.com">Staff ↗</a>
+        </div>
+      </div>
+      <div class="hdm-giant" aria-hidden="true">HDM</div>
     </section>
   </main>
 
+  <nav class="mobile-nav" aria-label="Navegación móvil">
+    <a href="#inicio"><span>⌂</span>Inicio</a>
+    <a href="#hilary"><span>◉</span>Hilary</a>
+    <a href="#mexico"><span>MX</span>México</a>
+    <a href="#club"><span>◎</span>Club</a>
+    <button type="button" data-search-open><span>⌕</span>Buscar</button>
+  </nav>
+
+  <dialog class="search-dialog" data-search-dialog>
+    <form method="dialog" class="search-shell">
+      <div class="search-bar">
+        <span class="search-icon">⌕</span>
+        <input type="search" data-search-input autocomplete="off" placeholder="Prueba “boletos”, “setlist”, “nuevo álbum”…" aria-label="Buscar en HDM">
+        <button type="submit" aria-label="Cerrar">ESC</button>
+      </div>
+      <div class="search-hint">BUSCAR EN HDM</div>
+      <div class="search-results" data-search-results></div>
+    </form>
+  </dialog>
+
   <footer>
-    <span>Hilary Duff México</span>
+    <span>Hilary Duff México · 2026</span>
     <span>Fan Club Oficial · México</span>
-    <span>2026</span>
+    <a href="#inicio">↑ Arriba</a>
   </footer>
 
   <script src="./app.js"></script>
