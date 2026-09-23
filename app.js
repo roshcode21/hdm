@@ -1,134 +1,275 @@
 const $=(s,p=document)=>p.querySelector(s);
 const $$=(s,p=document)=>[...p.querySelectorAll(s)];
 
-const eras={
-  lizzie:{year:"2001",title:"Lizzie McGuire",copy:"Antes de los discos, estaba Lizzie. Dos temporadas, una película y una generación completa llegando a Hilary por ahí."},
-  meta:{year:"2003",title:"Metamorphosis",copy:"El disco que convirtió a Hilary en una estrella pop global. Si vienes de Lizzie, éste es el siguiente paso natural."},
-  self:{year:"2004",title:"Hilary Duff",copy:"Más guitarras, más peso en vivo y canciones que siguen reapareciendo cuando Hilary vuelve al escenario."},
-  dignity:{year:"2007",title:"Dignity",copy:"El giro electrónico. Con los años terminó convirtiéndose en uno de esos discos que los fans defienden con todo."},
-  bibo:{year:"2015",title:"Breathe In. Breathe Out.",copy:"El regreso de 2015. Sparks, My Kind y una etapa que hoy funciona como puente perfecto hacia el pop actual."},
-  luck:{year:"2026",title:"luck… or something",copy:"Once canciones, un tour mundial y Hilary haciendo música otra vez después de más de una década."}
+const portalData={
+  ahora:{
+    image:"https://press.atlanticrecords.com/sites/g/files/g2000014001/files/styles/artist_detail/public/2026-02/Hilary%20Duff%20Album%20Press%20Photo%201%20-%20Credit%20Alfred%20Marroquin_0.jpg?itok=d3_kRNm5",
+    alt:"Hilary Duff en 2026",
+    stamp:"23 SEP 2026",
+    mark:"HD",
+    kicker:"THE LUCKY ME TOUR",
+    title:"El tour sigue creciendo.",
+    copy:"La nueva etapa continúa en 2027. México tiene tres fechas confirmadas en febrero.",
+    links:[["Ver actualidad ↓","#pulso"],["Tour oficial ↗","https://www.hilaryduff.com/live"]]
+  },
+  lizzie:{
+    image:"https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/FC5C3AA105E2E4F7DA0510B918269D19663591203F49676D10AE2E2C976790CB/compose?format=webp&width=2560",
+    alt:"Lizzie McGuire con su alter ego animado",
+    stamp:"2001 — 2026",
+    mark:"25",
+    kicker:"LIZZIE McGUIRE",
+    title:"Veinticinco años.",
+    copy:"Dos temporadas, 65 episodios, una película y una parte enorme de la historia de Hilary.",
+    links:[["Entrar a Lizzie ↓","#lizzie"],["Disney+ ↗","https://www.disneyplus.com/es-mx/series/lizzie-mcguire/3RlptgsoNczX"]]
+  },
+  musica:{
+    image:"https://press.atlanticrecords.com/sites/g/files/g2000014001/files/styles/artist_detail/public/2026-02/Hilary%20Duff%20Album%20Press%20Photo%201%20-%20Credit%20Alfred%20Marroquin_0.jpg?itok=d3_kRNm5",
+    alt:"Hilary Duff",
+    stamp:"2002 — 2026",
+    mark:"06",
+    kicker:"MÚSICA",
+    title:"Seis discos de estudio.",
+    copy:"Metamorphosis, Dignity, Breathe In. Breathe Out. y una nueva era que ya vive junto al catálogo anterior.",
+    links:[["Explorar música ↓","#universo"],["Spotify ↗","https://open.spotify.com/artist/2S9W9aSAd7e5mp8WqWxN2h"]]
+  },
+  mexico:{
+    image:"https://press.atlanticrecords.com/sites/g/files/g2000014001/files/styles/artist_detail/public/2026-02/Hilary%20Duff%20Album%20Press%20Photo%201%20-%20Credit%20Alfred%20Marroquin_0.jpg?itok=d3_kRNm5",
+    alt:"Hilary Duff",
+    stamp:"FEB 2027",
+    mark:"MX",
+    kicker:"THE LUCKY ME TOUR · MÉXICO",
+    title:"Tres noches en febrero.",
+    copy:"12 y 13 en Ciudad de México. 15 en Guadalajara. La guía crecerá conforme se acerquen los shows.",
+    links:[["México 2027 ↓","#mexico"],["OCESA ↗","https://www.ocesa.com.mx/todos-los-eventos/hilary-duff-boletos-ae1632382"]]
+  }
 };
 
-const randomSongs=[
-  ["Come Clean","Metamorphosis · 2003"],
-  ["With Love","Dignity · 2007"],
-  ["My Kind","Breathe In. Breathe Out. · 2015"],
-  ["Future Tripping","luck… or something · 2026"],
-  ["Fly","Hilary Duff · 2004"],
-  ["Why Not","The Lizzie McGuire Movie · 2003"],
-  ["Mature","luck… or something · 2026"],
-  ["Someone’s Watching Over Me","Hilary Duff · 2004"]
-];
-
-function setEra(key){
-  const data=eras[key]; if(!data) return;
+function setPortal(key){
+  const data=portalData[key]; if(!data)return;
   const change=()=>{
-    $("[data-era-year]").textContent=data.year;
-    $("[data-era-title]").textContent=data.title;
-    $("[data-era-copy]").textContent=data.copy;
-    $$("[data-era]").forEach(b=>b.classList.toggle("active",b.dataset.era===key));
+    document.body.dataset.portal=key;
+    $("[data-portal-image]").src=data.image;
+    $("[data-portal-image]").alt=data.alt;
+    $("[data-portal-stamp]").textContent=data.stamp;
+    $("[data-portal-mark]").textContent=data.mark;
+    $("[data-portal-kicker]").textContent=data.kicker;
+    $("[data-portal-title]").textContent=data.title;
+    $("[data-portal-copy]").textContent=data.copy;
+    const links=$("[data-portal-links]");
+    links.innerHTML="";
+    data.links.forEach(([label,href])=>{
+      const a=document.createElement("a");
+      a.textContent=label;a.href=href;
+      if(href.startsWith("http")){a.target="_blank";a.rel="noreferrer";}
+      links.appendChild(a);
+    });
+    $$("[data-portal-tab]").forEach(b=>{
+      const active=b.dataset.portalTab===key;
+      b.classList.toggle("active",active);
+      b.setAttribute("aria-selected",String(active));
+    });
   };
   if(document.startViewTransition && !matchMedia("(prefers-reduced-motion: reduce)").matches){
     document.startViewTransition(change);
   }else change();
 }
-$$("[data-era]").forEach(b=>b.addEventListener("click",()=>setEra(b.dataset.era)));
+$$("[data-portal-tab]").forEach(b=>b.addEventListener("click",()=>setPortal(b.dataset.portalTab)));
 
-$("[data-random]")?.addEventListener("click",()=>{
+const albums={
+  santa:{year:"2002",title:"Santa Claus Lane",text:"El primer álbum de estudio de Hilary. Una entrada muy distinta al resto de su catálogo, pero parte del inicio discográfico.",songs:["Santa Claus Lane","I Heard Santa on the Radio","Tell Me a Story"],theme:"santa"},
+  meta:{year:"2003",title:"Metamorphosis",text:"El disco que convirtió a Hilary en una estrella pop global. “So Yesterday” y “Come Clean” siguen ocupando un lugar central en su repertorio.",songs:["So Yesterday","Come Clean","Why Not"],theme:"meta"},
+  self:{year:"2004",title:"Hilary Duff",text:"Más guitarras y una etapa más intensa. “Fly” y “Someone’s Watching Over Me” siguen siendo referencias esenciales de esos años.",songs:["Fly","Someone’s Watching Over Me","The Getaway"],theme:"self"},
+  dignity:{year:"2007",title:"Dignity",text:"El giro electrónico. Un disco que con los años se volvió una de las etapas más defendidas por los fans.",songs:["With Love","Stranger","Play With Fire"],theme:"dignity"},
+  bibo:{year:"2015",title:"Breathe In. Breathe Out.",text:"El regreso de 2015. Pop luminoso, colaboraciones y canciones que hoy funcionan como puente hacia la etapa actual.",songs:["Sparks","My Kind","Breathe In. Breathe Out."],theme:"bibo"},
+  luck:{year:"2026",title:"luck… or something",text:"Once canciones y el regreso completo a la música después de más de una década. El disco que sostiene la gira actual.",songs:["Weather For Tennis","Roommates","Future Tripping"],theme:"luck"}
+};
+function setAlbum(key){
+  const a=albums[key];if(!a)return;
+  const change=()=>{
+    const stage=$("[data-album-stage]");
+    stage.dataset.albumTheme=a.theme;
+    $("[data-album-year]").textContent=a.year;
+    $("[data-album-year-big]").textContent=a.year;
+    $("[data-album-title]").textContent=a.title;
+    $("[data-album-text]").textContent=a.text;
+    const songs=$("[data-album-songs]");songs.innerHTML="";
+    a.songs.forEach(s=>{const span=document.createElement("span");span.textContent=s;songs.appendChild(span);});
+    $$("[data-album]").forEach(b=>b.classList.toggle("active",b.dataset.album===key));
+  };
+  if(document.startViewTransition && !matchMedia("(prefers-reduced-motion: reduce)").matches){
+    document.startViewTransition(change);
+  }else change();
+}
+$$("[data-album]").forEach(b=>b.addEventListener("click",()=>setAlbum(b.dataset.album)));
+
+const randomSongs=[
+  ["Come Clean","Metamorphosis · 2003"],["With Love","Dignity · 2007"],
+  ["My Kind","Breathe In. Breathe Out. · 2015"],["Future Tripping","luck… or something · 2026"],
+  ["Fly","Hilary Duff · 2004"],["Why Not","Metamorphosis · 2003"],
+  ["Mature","luck… or something · 2026"],["Someone’s Watching Over Me","Hilary Duff · 2004"]
+];
+$("[data-random-song]")?.addEventListener("click",()=>{
   const [song,era]=randomSongs[Math.floor(Math.random()*randomSongs.length)];
-  const box=$("[data-random-result]");
-  box.innerHTML=`<small>HOY TOCA</small><strong>${song}</strong><span>${era}</span>`;
+  const box=$("[data-random-song-result]");
+  box.innerHTML=`<small>SELECCIÓN HDM</small><strong>${song}</strong><span>${era}</span>`;
 });
 
-function updateDays(){
+const universePanels={
+  music:()=>document.querySelector(".music-browser")?.outerHTML||"",
+  screen:()=>`
+    <div class="screen-panel">
+      <div class="screen-grid">
+        <a class="screen-card hero-screen" href="#lizzie">
+          <img src="https://disney.images.edge.bamgrid.com/ripcut-delivery/v2/variant/disney/FC5C3AA105E2E4F7DA0510B918269D19663591203F49676D10AE2E2C976790CB/compose?format=webp&width=2560" alt="">
+          <div><small>2001–2004</small><h3>Lizzie McGuire</h3><p>Serie + película · 25 años en 2026</p></div>
+        </a>
+        <div class="screen-card sc-purple"><div><small>2004</small><h3>A Cinderella Story</h3><p>Sam Montgomery</p></div></div>
+        <div class="screen-card sc-orange"><div><small>2004</small><h3>Raise Your Voice</h3><p>Terri Fletcher</p></div></div>
+        <div class="screen-card sc-blue"><div><small>2015–2021</small><h3>Younger</h3><p>Kelsey Peters</p></div></div>
+        <div class="screen-card sc-pink"><div><small>2022–2023</small><h3>How I Met Your Father</h3><p>Sophie Tompkins</p></div></div>
+      </div>
+    </div>`,
+  live:()=>`
+    <div class="live-panel">
+      <div class="live-count"><small class="micro">THE LUCKY ME TOUR</small><strong>2026<br>→27</strong><span>primera gira global completa en casi dos décadas</span></div>
+      <div class="live-list">
+        <a href="https://www.hilaryduff.com/live" target="_blank" rel="noreferrer"><b>Ahora</b><span>Fechas internacionales</span><em>TOUR OFICIAL ↗</em></a>
+        <a href="#mexico"><b>12 FEB</b><span>Ciudad de México</span><em>HDM ↓</em></a>
+        <a href="#mexico"><b>13 FEB</b><span>Ciudad de México</span><em>HDM ↓</em></a>
+        <a href="#mexico"><b>15 FEB</b><span>Guadalajara</span><em>HDM ↓</em></a>
+      </div>
+    </div>`,
+  more:()=>`
+    <div class="more-panel"><div class="more-grid">
+      <article class="more-card mc1"><small>2026</small><h3>TIME100</h3><p>Hilary fue incluida entre los Icons de TIME100 2026.</p><a href="https://time.com/collection/100-most-influential-people/2026/" target="_blank" rel="noreferrer">TIME ↗</a></article>
+      <article class="more-card mc2"><small>2026</small><h3>Reebok</h3><p>Se convirtió en embajadora de la marca en agosto.</p><a href="https://corporate.authentic.com/press-releases" target="_blank" rel="noreferrer">Ver anuncio ↗</a></article>
+      <article class="more-card mc3"><small>LIBROS</small><h3>Autora</h3><p>Su trabajo también incluye ficción juvenil y libros infantiles.</p><a href="https://www.hilaryduff.com/" target="_blank" rel="noreferrer">Web oficial ↗</a></article>
+      <article class="more-card mc4"><small>MODA / TOUR</small><h3>En el camino</h3><p>Vogue documentó el vestuario y la vida de gira en septiembre de 2026.</p><a href="https://www.vogue.com/slideshow/on-the-road-with-hilary-duff-lucky-me-tour" target="_blank" rel="noreferrer">Vogue ↗</a></article>
+    </div></div>`
+};
+let musicMarkup=$(".music-browser")?.outerHTML||"";
+universePanels.music=()=>musicMarkup;
+
+function setUniverse(key){
+  const panel=$("[data-universe-panel]");
+  const change=()=>{
+    panel.innerHTML=universePanels[key]();
+    $$("[data-universe-tab]").forEach(b=>{
+      const active=b.dataset.universeTab===key;
+      b.classList.toggle("active",active);b.setAttribute("aria-selected",String(active));
+    });
+    if(key==="music"){
+      $$("[data-album]",panel).forEach(b=>b.addEventListener("click",()=>setAlbumScoped(b.dataset.album,panel)));
+      $("[data-random-song]",panel)?.addEventListener("click",()=>randomSongScoped(panel));
+    }
+  };
+  if(document.startViewTransition && !matchMedia("(prefers-reduced-motion: reduce)").matches) document.startViewTransition(change); else change();
+}
+function setAlbumScoped(key,panel){
+  const a=albums[key];if(!a)return;
+  const stage=$("[data-album-stage]",panel);stage.dataset.albumTheme=a.theme;
+  $("[data-album-year]",panel).textContent=a.year;$("[data-album-year-big]",panel).textContent=a.year;
+  $("[data-album-title]",panel).textContent=a.title;$("[data-album-text]",panel).textContent=a.text;
+  const songs=$("[data-album-songs]",panel);songs.innerHTML="";a.songs.forEach(s=>{const e=document.createElement("span");e.textContent=s;songs.appendChild(e);});
+  $$("[data-album]",panel).forEach(b=>b.classList.toggle("active",b.dataset.album===key));
+}
+function randomSongScoped(panel){
+  const [song,era]=randomSongs[Math.floor(Math.random()*randomSongs.length)];
+  $("[data-random-song-result]",panel).innerHTML=`<small>SELECCIÓN HDM</small><strong>${song}</strong><span>${era}</span>`;
+}
+$$("[data-universe-tab]").forEach(b=>b.addEventListener("click",()=>setUniverse(b.dataset.universeTab)));
+
+function updateCountdown(){
   const target=new Date("2027-02-12T20:00:00-06:00").getTime();
   const days=Math.max(0,Math.ceil((target-Date.now())/86400000));
-  const el=$("[data-days]"); if(el) el.textContent=days;
+  const el=$("[data-days]");if(el)el.textContent=String(days);
 }
-updateDays(); setInterval(updateDays,60000);
+updateCountdown();setInterval(updateCountdown,60000);
+
+const shows={
+  cdmx12:{title:"12 FEB · CDMX",place:"Palacio de los Deportes"},
+  cdmx13:{title:"13 FEB · CDMX",place:"Palacio de los Deportes"},
+  gdl15:{title:"15 FEB · GDL",place:"Auditorio Telmex"}
+};
+function setShow(key){
+  const s=shows[key];if(!s)return;
+  localStorage.setItem("hdm-show",key);
+  $("[data-my-show-title]").textContent=s.title;
+  $("[data-my-show-place]").textContent=s.place;
+  $$("[data-show]").forEach(b=>b.classList.toggle("active",b.dataset.show===key));
+}
+$$("[data-show]").forEach(b=>b.addEventListener("click",()=>setShow(b.dataset.show)));
+const savedShow=localStorage.getItem("hdm-show");if(savedShow&&shows[savedShow])setShow(savedShow);
 
 const searchItems=[
   {cat:"MÉXICO",title:"Boletos y fechas 2027",desc:"12 y 13 CDMX · 15 GDL",keys:"boletos tickets mexico cdmx gdl guadalajara",target:"#mexico"},
-  {cat:"TOUR",title:"Setlist actual",desc:"Repertorio más reciente",keys:"setlist canciones tour repertorio",url:"https://www.livenation.com/artist/K8vZ9175rEf/hilary-duff-events"},
-  {cat:"HILARY",title:"Metamorphosis",desc:"2003",keys:"metamorphosis come clean so yesterday 2003",target:"#hilary",era:"meta"},
-  {cat:"HILARY",title:"Dignity",desc:"2007",keys:"dignity with love stranger play with fire 2007",target:"#hilary",era:"dignity"},
-  {cat:"HILARY",title:"luck… or something",desc:"2026",keys:"luck mature roommates future tripping album disco",target:"#hilary",era:"luck"},
-  {cat:"LIZZIE",title:"Lizzie McGuire · 25 años",desc:"2001–2026",keys:"lizzie gordo miranda paolo isabella disney 25",target:"#lizzie"},
-  {cat:"HDM",title:"Instagram",desc:"@hilaryduffmexico",keys:"instagram club comunidad hdm",url:"https://www.instagram.com/hilaryduffmexico/"},
-  {cat:"HDM",title:"Contacto",desc:"contacto@hilaryduffmexico.com",keys:"contacto mail correo",url:"mailto:contacto@hilaryduffmexico.com"},
-  {cat:"MERCH",title:"Tienda oficial",desc:"HilaryDuff.com",keys:"merch tienda playera hoodie cd vinilo",url:"https://shop.hilaryduff.com/collections/merch"}
+  {cat:"TOUR",title:"Setlist actual",desc:"Repertorio de the lucky me tour",keys:"setlist canciones tour repertorio",url:"https://www.livenation.com/artist/K8vZ9175rEf/hilary-duff-events"},
+  {cat:"MÚSICA",title:"luck… or something",desc:"2026 · 11 canciones",keys:"luck album disco mature roommates future tripping",target:"#universo",universe:"music",album:"luck"},
+  {cat:"MÚSICA",title:"Dignity",desc:"2007",keys:"dignity with love stranger play with fire 2007",target:"#universo",universe:"music",album:"dignity"},
+  {cat:"MÚSICA",title:"Metamorphosis",desc:"2003",keys:"metamorphosis come clean so yesterday 2003",target:"#universo",universe:"music",album:"meta"},
+  {cat:"PANTALLA",title:"Lizzie McGuire",desc:"25 años · Disney+",keys:"lizzie gordo miranda disney 25",target:"#lizzie"},
+  {cat:"PANTALLA",title:"Younger",desc:"Kelsey Peters",keys:"younger kelsey serie tv",target:"#universo",universe:"screen"},
+  {cat:"HDM",title:"Instagram",desc:"@hilaryduffmexico",keys:"instagram comunidad redes hdm",url:"https://www.instagram.com/hilaryduffmexico/"},
+  {cat:"HDM",title:"Contacto",desc:"contacto@hilaryduffmexico.com",keys:"contacto correo mail",url:"mailto:contacto@hilaryduffmexico.com"},
+  {cat:"OFICIAL",title:"HilaryDuff.com",desc:"Música, tour y tienda",keys:"oficial web shop live",url:"https://www.hilaryduff.com/"}
 ];
-
-const dialog=$("[data-search-dialog]");
-const input=$("[data-search-input]");
-const results=$("[data-search-results]");
-const normalize=v=>(v||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
-
+const searchDialog=$("[data-search-dialog]"),searchInput=$("[data-search-input]"),searchResults=$("[data-search-results]");
+const norm=v=>(v||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
 function renderSearch(q=""){
-  const query=normalize(q.trim());
-  const found=query?searchItems.filter(i=>normalize(i.cat+" "+i.title+" "+i.desc+" "+i.keys).includes(query)):searchItems.slice(0,6);
-  results.innerHTML="";
-  if(!found.length){
-    results.innerHTML='<div class="search-empty">No encontré eso todavía. Prueba otra palabra.</div>';return;
-  }
+  const query=norm(q.trim());
+  const found=query?searchItems.filter(i=>norm(i.cat+" "+i.title+" "+i.desc+" "+i.keys).includes(query)):searchItems.slice(0,7);
+  searchResults.innerHTML="";
+  if(!found.length){searchResults.innerHTML='<div class="search-empty">No encontré eso todavía. Prueba otra palabra.</div>';return;}
   found.forEach(item=>{
-    const b=document.createElement("button");
-    b.type="button";b.className="search-result";
+    const b=document.createElement("button");b.type="button";b.className="search-result";
     b.innerHTML=`<small>${item.cat}</small><b>${item.title}</b><span>${item.desc}</span><em>→</em>`;
     b.addEventListener("click",()=>{
-      dialog.close();
-      if(item.era)setEra(item.era);
-      if(item.target)$(item.target)?.scrollIntoView({behavior:"smooth"});
-      if(item.url){
-        if(item.url.startsWith("mailto:")) location.href=item.url;
-        else window.open(item.url,"_blank","noopener");
-      }
+      searchDialog.close();
+      if(item.universe)setUniverse(item.universe);
+      if(item.target)setTimeout(()=>$(item.target)?.scrollIntoView({behavior:"smooth"}),50);
+      if(item.album)setTimeout(()=>{const panel=$("[data-universe-panel]");setAlbumScoped(item.album,panel)},160);
+      if(item.url){if(item.url.startsWith("mailto:"))location.href=item.url;else window.open(item.url,"_blank","noopener");}
     });
-    results.appendChild(b);
+    searchResults.appendChild(b);
   });
 }
-function openSearch(query=""){
-  if(!dialog.open)dialog.showModal();
-  input.value=query;renderSearch(query);
-  requestAnimationFrame(()=>input.focus());
+function openSearch(q=""){
+  if(!searchDialog.open)searchDialog.showModal();
+  searchInput.value=q;renderSearch(q);requestAnimationFrame(()=>searchInput.focus());
 }
 $$("[data-search-open]").forEach(b=>b.addEventListener("click",()=>openSearch()));
 $$("[data-search-query]").forEach(b=>b.addEventListener("click",()=>openSearch(b.dataset.searchQuery)));
-input?.addEventListener("input",()=>renderSearch(input.value));
-document.addEventListener("keydown",e=>{
-  if(e.key==="/" && !/input|textarea/i.test(document.activeElement?.tagName||"")){e.preventDefault();openSearch();}
-});
-dialog?.addEventListener("click",e=>{
-  const r=dialog.getBoundingClientRect();
-  if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close();
-});
+searchInput?.addEventListener("input",()=>renderSearch(searchInput.value));
+document.addEventListener("keydown",e=>{if(e.key==="/"&&!/input|textarea/i.test(document.activeElement?.tagName||"")){e.preventDefault();openSearch();}});
+searchDialog?.addEventListener("click",e=>{const r=searchDialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)searchDialog.close();});
 renderSearch();
 
-if(matchMedia("(pointer:fine)").matches && !matchMedia("(prefers-reduced-motion: reduce)").matches){
-  const floats=$$("[data-float]");
-  let px=0,py=0,raf=0;
-  window.addEventListener("pointermove",e=>{
-    px=e.clientX/innerWidth-.5;py=e.clientY/innerHeight-.5;
-    if(!raf)raf=requestAnimationFrame(()=>{
-      floats.forEach(el=>{
-        const n=Number(el.dataset.float||5);
-        el.style.translate=`${px*n}px ${py*n}px`;
-      });
-      raf=0;
-    });
-  },{passive:true});
+$("[data-newsletter-form]")?.addEventListener("submit",e=>{
+  e.preventDefault();
+  const email=$("#newsletter-email")?.value.trim();
+  if(!email)return;
+  localStorage.setItem("hdm-newsletter-interest",email);
+  $("[data-newsletter-note]").textContent="Listo para la demo. Antes de lanzar el newsletter conectaremos un proveedor real para confirmar tu suscripción.";
+  e.currentTarget.reset();
+});
+
+let deferredPrompt=null;
+const installDialog=$("[data-install-dialog]");
+window.addEventListener("beforeinstallprompt",e=>{e.preventDefault();deferredPrompt=e;});
+$$("[data-install]").forEach(b=>b.addEventListener("click",async()=>{
+  if(deferredPrompt){
+    deferredPrompt.prompt();await deferredPrompt.userChoice;deferredPrompt=null;
+  }else installDialog?.showModal();
+}));
+installDialog?.addEventListener("click",e=>{const r=installDialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)installDialog.close();});
+
+if("serviceWorker" in navigator){
+  window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js").catch(()=>{}));
 }
 
-const sections=$$("section[data-tone]");
-const navLinks=$$(".mobile-nav a");
-const obs=new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      document.body.dataset.tone=entry.target.dataset.tone||"";
-      const id=entry.target.id;
-      navLinks.forEach(a=>a.classList.toggle("active",a.getAttribute("href")==="#"+id));
-    }
-  });
-},{rootMargin:"-45% 0px -45% 0px"});
-sections.forEach(s=>obs.observe(s));
+const sections=$$("section[id]");
+const mobileLinks=$$(".mobile-nav a");
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{if(entry.isIntersecting){const id=entry.target.id;mobileLinks.forEach(a=>a.classList.toggle("active",a.getAttribute("href")==="#"+id));}});
+},{rootMargin:"-42% 0px -48% 0px"});
+sections.forEach(s=>io.observe(s));
