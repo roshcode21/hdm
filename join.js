@@ -96,3 +96,12 @@ form.addEventListener("submit",e=>{
 
 try{localStorage.removeItem("hdm-registration-draft");localStorage.removeItem("hdm-registration-demo");}catch{}
 showStep(1,{scroll:false});
+document.addEventListener("pointerdown",e=>{
+  if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+  const aura=document.createElement("span");
+  aura.className="click-aura";
+  aura.style.left=e.clientX+"px";
+  aura.style.top=e.clientY+"px";
+  document.body.appendChild(aura);
+  setTimeout(()=>aura.remove(),520);
+},{passive:true});
