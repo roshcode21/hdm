@@ -1,115 +1,333 @@
-<!doctype html><html lang="es-MX"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#faf5f1"><meta name="description" content="Hilary Duff México: novedades, música, películas, series, conciertos y fan club.">
-<title>Hilary Duff México — música, noticias y fans</title><link rel="icon" href="./icon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="./styles.css?v=14a"></head><body><a href="#contenido" class="skip">Ir al contenido</a>
-<header class="header"><a class="brand" href="#inicio"><span class="brand-disc">HDM</span><span>Hilary Duff <b>México</b></span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menú"><i></i><i></i></button><nav id="main-nav" aria-label="Navegación principal"><a href="#novedades">Novedades</a><a href="#escuchar">Escuchar</a><a href="#musica">Música</a><a href="#films">Películas y series</a><a href="#mexico">México 2027</a><a href="#hdm">HDM</a><a class="nav-join" href="./unete.html">Únete ↗</a></nav></header>
-<main id="contenido">
-<section id="inicio" class="hero"><div class="hero-lights" aria-hidden="true"></div><div class="hero-text"><span class="eyebrow">FAN CLUB · MÉXICO</span><h1>Hilary Duff <em>México</em></h1><p>La música, las películas, las noticias y los conciertos. Todo Hilary, desde México.</p><div class="hero-buttons"><a class="btn dark" href="#novedades">Ver novedades ↓</a><a class="btn pale" href="#musica">Recorrer las eras ↗</a></div><div class="hero-live"><span>PRÓXIMAMENTE EN MÉXICO</span><strong>12 · 13 · 15 FEB 2027</strong><a href="#mexico">Ver las tres fechas →</a></div></div><figure class="hero-image"><img src="./assets/hero.webp" alt="Hilary Duff, fotografía de la era luck… or something" width="800" height="1000" fetchpriority="high"><figcaption>FOTOGRAFÍA · ERA LUCK… OR SOMETHING</figcaption><span class="photo-badge">HDM<span>✳</span>MX</span></figure><div class="hero-stroke" aria-hidden="true">hilary duff hilary duff hilary duff</div></section>
+<!doctype html>
+<html lang="es-MX">
+<head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+ <meta name="theme-color" content="#faf6f2">
+ <meta name="description" content="Hilary Duff México. Noticias, discos, personajes y conciertos. Un fan club hecho por fans, desde México.">
+ <meta property="og:title" content="Hilary Duff México">
+ <meta property="og:description" content="Hilary, sus discos, personajes y noticias. Y todo lo que se viene para México.">
+ <meta property="og:type" content="website">
+ <meta name="color-scheme" content="light">
+ <title>Hilary Duff México — HDM</title>
+ <link rel="icon" href="./icon.svg" type="image/svg+xml">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+ <link rel="preload" href="./assets/hdm/hero.webp" as="image" type="image/webp">
+ <link rel="stylesheet" href="./styles.css?v=15">
+ <script src="./app.js?v=15" defer></script>
+</head>
+<body>
+ <a class="skip-link" href="#contenido">Ir al contenido</a>
+ <header class="topbar">
+  <a class="topbrand" href="#inicio" aria-label="Hilary Duff México, inicio"><span class="topbrand-star">✳</span><span>hilary duff <b>méxico</b></span></a>
+  <nav class="toplinks" aria-label="Navegación principal">
+   <a href="#novedades">Novedades</a><a href="#escuchar">Escuchar</a><a href="#musica">Música</a><a href="#films">Pantalla</a><a href="#mexico">México 2027</a><a href="#hdm">HDM</a>
+  </nav>
+  <div class="topright"><a class="header-join" href="./unete.html">Únete ↗</a><button type="button" class="menu-open" data-menu-toggle aria-controls="mobile-menu" aria-expanded="false" aria-label="Abrir menú"><span></span><span></span></button></div>
+ </header>
+ <nav id="mobile-menu" class="mobile-menu" aria-label="Navegación móvil" hidden>
+  <div class="mobile-menu-top"><span>HILARY DUFF MÉXICO</span><button type="button" data-menu-close aria-label="Cerrar menú">×</button></div>
+  <a href="#novedades">Novedades <b>01</b></a>
+  <a href="#escuchar">Escuchar <b>02</b></a>
+  <a href="#musica">Música <b>03</b></a>
+  <a href="#films">Películas y series <b>04</b></a>
+  <a href="#mexico">México 2027 <b>05</b></a>
+  <a href="#hdm">HDM <b>06</b></a>
+  <a class="menu-join" href="./unete.html">Quiero unirme ↗</a>
+ </nav>
+ <main id="contenido">
+  <section id="inicio" class="hero" aria-labelledby="hero-title">
+    <div class="hero-pattern" aria-hidden="true"></div>
+    <div class="hero-copy">
+      <span class="eyebrow">FAN CLUB · MÉXICO <span aria-hidden="true">✳</span></span>
+      <h1 id="hero-title">Hilary<br><em>Duff</em><small>MÉXICO.</small></h1>
+      <p>Los discos de memoria. Las películas que volvemos a ver. Las noticias, la gira y los fans que estamos de este lado.</p>
+      <div class="hero-actions"><a href="#novedades" class="pill pill-dark">Ver novedades <span>↓</span></a><a href="#musica" class="pill pill-light">Ir a la música <span>↗</span></a></div>
+      <div class="hero-stamp"><span>PRÓXIMA CITA</span><b>12, 13 Y 15 FEB · 2027</b><a href="#mexico">México, allá vamos ↗</a></div>
+    </div>
+    <div class="hero-media">
+      <div class="hero-graphic" aria-hidden="true">✷</div>
+      <div class="hero-still"><img src="./assets/hdm/hero_wide.webp" onerror="this.onerror=null;this.src='./luck/4.jpg'" width="1500" height="1120" alt="Hilary Duff, sesión de luck… or something" loading="lazy" decoding="async" loading="eager" fetchpriority="high"></div>
+      <div class="hero-cut"><img src="./assets/hdm/luck-cut.webp" onerror="this.onerror=null;this.src='./luck/sinfondo.png'" width="1500" height="1700" alt="Hilary Duff, recorte fotográfico de la sesión luck… or something" loading="lazy" decoding="async" loading="eager" fetchpriority="high"></div>
+      <span class="hero-ticket"><b>HDM</b><i>♡</i><small>desde México</small></span>
+      <img class="hero-signature" src="./assets/hdm/signature.webp" onerror="this.onerror=null;this.src='./signature.webp'" alt="Firma de Hilary Duff" width="900" height="450" decoding="async">
+    </div>
+    <div class="song-marquee" aria-label="Canciones de Hilary Duff"><div aria-hidden="true"><span>SO YESTERDAY</span><i>✳</i><span>WITH LOVE</span><i>✳</i><span>ROOMMATES</span><i>✳</i><span>COME CLEAN</span><i>✳</i><span>WAKE UP</span><i>✳</i><span>WEATHER FOR TENNIS</span><i>✳</i><span>SO YESTERDAY</span><i>✳</i><span>WITH LOVE</span><i>✳</i><span>ROOMMATES</span><i>✳</i><span>COME CLEAN</span><i>✳</i><span>WAKE UP</span><i>✳</i><span>WEATHER FOR TENNIS</span><i>✳</i></div></div>
+  </section>
 
-<section id="novedades" class="block news"><div class="block-head"><div><p class="eyebrow">ACTUALIZADO 24 SEP 2026</p><h2>En las noticias.</h2></div><p>Entrevistas, estrenos, anuncios y lo que ocurre en México. Cada nota lleva a su fuente.</p></div>
-<div class="news-controls" aria-label="Filtrar noticias"><button class="active" type="button" data-filter="all" aria-pressed="true">Todo</button><button type="button" data-filter="gira">Gira</button><button type="button" data-filter="musica">Música</button><button type="button" data-filter="entrevistas">Entrevistas</button><button type="button" data-filter="mexico">México</button></div>
-<div class="news-feed">
-<a class="news-tile lead" data-category="gira" href="https://news.livenationentertainment.com/news/hilary-duff-expands-acclaimed-the-lucky-me-tour-due-to-incredible-demand" target="_blank" rel="noopener"><span class="news-art art-tour"><b>LUCKY <i>ME</i></b><small>2026 — 2027</small></span><span class="news-body"><small>23 SEP 2026 · GIRA · LIVE NATION</small><strong>La gira suma 32 fechas.</strong><span>Nuevos shows en Europa, Latinoamérica y Estados Unidos.</span><b>Ver anuncio ↗</b></span></a>
-<a class="news-tile" data-category="mexico" href="https://www.ocesa.com.mx/todos-los-eventos/hilary-duff-boletos-ae1632382" target="_blank" rel="noopener"><span class="news-art art-mexico"><strong>MX<span>27</span></strong><small>12 · 13 · 15 FEB</small></span><span class="news-body"><small>TOUR · OCESA</small><strong>Tres fechas en México.</strong><span>Dos noches en CDMX y una en Guadalajara.</span><b>Ver boletos ↗</b></span></a>
-<a class="news-tile" data-category="entrevistas" href="https://www.vogue.mx/articulo/hilary-duff-entrevista-2026" target="_blank" rel="noopener"><span class="news-art art-interview"><span class="news-mini-cutout"></span><strong>VOGUE</strong></span><span class="news-body"><small>4 MAR 2026 · ENTREVISTA · VOGUE MÉXICO</small><strong>Hilary habla de su regreso a la música.</strong><span>Una conversación sobre el álbum y esta nueva etapa.</span><b>Leer entrevista ↗</b></span></a>
-<a class="news-tile" data-category="musica" href="https://open.spotify.com/album/71t4M602DGtkhsy1RtNAME" target="_blank" rel="noopener"><span class="news-art art-album"><span class="cover-sprite cover-luck"></span></span><span class="news-body"><small>20 FEB 2026 · ÁLBUM · SPOTIFY</small><strong>luck… or something.</strong><span>11 canciones. El primer álbum de estudio en más de una década.</span><b>Escuchar álbum ↗</b></span></a>
-<a class="news-tile" data-category="musica" href="https://press.atlanticrecords.com/hilary-duff" target="_blank" rel="noopener"><span class="news-art art-press"><span>ATLANTIC</span><em>HD</em></span><span class="news-body"><small>MÚSICA · ATLANTIC RECORDS</small><strong>Fotos, portadas y material oficial.</strong><span>El material de prensa de la nueva era.</span><b>Ver materiales ↗</b></span></a>
-</div><div class="news-end"><span>La selección se actualiza editorialmente. Para el día a día, síguenos en Instagram.</span><a href="https://www.instagram.com/hilaryduffmexico/" target="_blank" rel="noopener">@hilaryduffmexico ↗</a></div></section>
+  <section id="novedades" class="news section-pad" aria-labelledby="news-title">
+    <div class="section-top"><span class="section-label">01 / ACTUALIDAD</span><div><h2 id="news-title">Noticias, <em>no relleno.</em></h2><p>Todo lo que está pasando con Hilary. Cada nota te lleva directamente a la fuente.</p></div><span class="updated">SELECCIÓN HDM · 24 SEP 2026</span></div>
+    <div class="news-filters" role="group" aria-label="Filtrar noticias"><button type="button" class="active" data-news-filter="all" aria-pressed="true">Todas</button><button type="button" data-news-filter="gira" aria-pressed="false">Gira</button><button type="button" data-news-filter="musica" aria-pressed="false">Música</button><button type="button" data-news-filter="entrevistas" aria-pressed="false">Entrevistas</button><button type="button" data-news-filter="mexico" aria-pressed="false">México</button><button type="button" data-news-filter="pantalla" aria-pressed="false">Pantalla</button></div>
+    <div class="news-grid" data-news-grid>
+      <a class="news-card news-feature" data-category="gira" href="https://news.livenationentertainment.com/news/hilary-duff-expands-acclaimed-the-lucky-me-tour-due-to-incredible-demand" target="_blank" rel="noopener noreferrer">
+        <span class="news-image"><img src="./assets/hdm/news_tour.webp" onerror="this.onerror=null;this.src='./luck/2.jpg'" width="1120" height="920" alt="Hilary Duff, fotografía de su etapa musical de 2026" loading="lazy" decoding="async" ></span>
+        <span class="news-text"><small>GIRA / 23 SEP 2026 / LIVE NATION</small><strong>the lucky me tour suma 32 fechas.</strong><span>El anuncio incluye nuevos conciertos en Europa, Latinoamérica y Estados Unidos.</span><b>Leer noticia <span aria-hidden="true">↗</span></b></span>
+      </a>
+      <a class="news-card" data-category="mexico" href="https://www.ocesa.com.mx/todos-los-eventos/hilary-duff-boletos-ae1632382" target="_blank" rel="noopener noreferrer">
+        <span class="news-image news-mx-art"><span>CDMX <b>×2</b></span><em>GDL <b>×1</b></em><i>2027 ✷</i></span>
+        <span class="news-text"><small>MÉXICO / OCESA</small><strong>Tres fechas. Dos ciudades.</strong><span>12 y 13 de febrero en CDMX. 15 de febrero en Guadalajara.</span><b>Consultar boletos ↗</b></span>
+      </a>
+      <a class="news-card" data-category="entrevistas" href="https://www.vogue.mx/articulo/hilary-duff-entrevista-2026" target="_blank" rel="noopener noreferrer">
+        <span class="news-image"><img src="./assets/hdm/news_vogue.webp" onerror="this.onerror=null;this.src='./luck/1.jpg'" width="1120" height="1350" alt="Hilary Duff, fotografía de 2026 para ilustrar una entrevista" loading="lazy" decoding="async" ></span>
+        <span class="news-text"><small>ENTREVISTA / 4 MAR 2026 / VOGUE MÉXICO</small><strong>Hilary habla del regreso al pop.</strong><span>Éxitos pasados, música nueva y empezar otra vez.</span><b>Leer entrevista ↗</b></span>
+      </a>
+      <a class="news-card" data-category="musica" href="https://open.spotify.com/album/71t4M602DGtkhsy1RtNAME" target="_blank" rel="noopener noreferrer">
+        <span class="news-image"><img src="./assets/hdm/news_album.webp" onerror="this.onerror=null;this.src='./luck/6.png'" width="1120" height="850" alt="Fotografía editorial compartida de luck… or something" loading="lazy" decoding="async" ></span>
+        <span class="news-text"><small>MÚSICA / 20 FEB 2026 / SPOTIFY</small><strong>luck… or something.</strong><span>Once canciones, incluyendo «Weather For Tennis» y «Roommates».</span><b>Ir al disco ↗</b></span>
+      </a>
+      <a class="news-card" data-category="pantalla" href="https://www.disneyplus.com/es-mx/explore/articles/lizzie-mcguire-anniversary" target="_blank" rel="noopener noreferrer">
+        <span class="news-image"><img src="./assets/hdm/lizzie_photo.webp" onerror="this.onerror=null;this.src='./Lizzie/1.jpg'" width="900" height="1050" alt="Hilary Duff como Lizzie McGuire" loading="lazy" decoding="async" ></span>
+        <span class="news-text"><small>PANTALLA / DISNEY+</small><strong>Lizzie cumplió 25. Sí, veinticinco.</strong><span>Disney+ repasa la serie y la película que siguen dando de qué hablar.</span><b>Ver especial ↗</b></span>
+      </a>
+      <a class="news-card" data-category="musica" href="https://www.youtube.com/watch?v=NAkaEDv8oks" target="_blank" rel="noopener noreferrer">
+        <span class="news-image"><img src="./assets/hdm/hero_wide.webp" onerror="this.onerror=null;this.src='./luck/4.jpg'" width="1500" height="1120" alt="Fotografía de Hilary Duff en 2026" loading="lazy" decoding="async" ></span>
+        <span class="news-text"><small>VIDEO / OFICIAL</small><strong>«Weather For Tennis» ya tiene video.</strong><span>Míralo aquí mismo más abajo o ábrelo en YouTube.</span><b>Ver video ↗</b></span>
+      </a>
+    </div>
+    <div class="news-foot"><p>Las historias del día a día también están en nuestro Instagram.</p><a href="https://www.instagram.com/hilaryduffmexico/" target="_blank" rel="noopener noreferrer">Ir a @hilaryduffmexico ↗</a></div>
+  </section>
 
-<section id="escuchar" class="block listen"><div class="block-head"><div><p class="eyebrow">REPRODUCTOR</p><h2>Escuchar aquí.</h2></div><p>Elige un disco. Puedes escucharlo sin salir de HDM.</p></div>
-<div class="listen-shell"><div class="listen-record"><span class="listen-vinyl"></span><span class="listen-cover cover-sprite cover-luck" data-listen-cover></span></div><div class="listen-meta"><span class="eyebrow">SELECCIÓN ACTUAL</span><h3 data-listen-title>luck… or something</h3><p>Abre el reproductor de Spotify y elige qué sigue.</p><label for="listen-select">CAMBIAR DISCO</label><select id="listen-select"><option value="santa">Santa Claus Lane</option><option value="meta">Metamorphosis</option><option value="self">Hilary Duff</option><option value="wanted">Most Wanted</option><option value="dignity">Dignity</option><option value="bibo">Breathe In. Breathe Out.</option><option value="luck" selected>luck… or something</option></select><div class="listen-player" data-listen-player><iframe title="Spotify · luck… or something" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" src="https://open.spotify.com/embed/album/71t4M602DGtkhsy1RtNAME?utm_source=generator&theme=0"></iframe></div><a class="listen-external" href="https://open.spotify.com/album/71t4M602DGtkhsy1RtNAME" target="_blank" rel="noopener" data-listen-external>Ir a Spotify ↗</a></div></div></section>
+  <section class="listen section-pad" id="escuchar" aria-labelledby="listen-title">
+    <div class="section-top listen-head"><span class="section-label">02 / MÚSICA Y VIDEO</span><div><h2 id="listen-title">Dale <em>play.</em></h2><p>El disco nuevo y «Weather For Tennis», juntos. Reproduce aquí sin salir de HDM.</p></div></div>
+    <div class="listen-grid">
+      <div class="listen-card listen-spotify"><span class="listen-kicker">EL DISCO NUEVO / SPOTIFY</span><div class="listen-art"><img src="./assets/hdm/luck-photo1.webp" onerror="this.onerror=null;this.src='./luck/3.jpg'" width="1550" height="1720" alt="Hilary Duff, sesión del álbum luck… or something" loading="lazy" decoding="async" ></div><div class="listen-main"><span class="listen-outline">2026 · 11 CANCIONES</span><h3>luck…<br>or something</h3><p>«Weather For Tennis» · «Roommates» · «Future Tripping»</p><div class="listen-action"><button class="play-button" data-embed="spotify" type="button">♫ Escuchar aquí</button><a href="https://open.spotify.com/album/71t4M602DGtkhsy1RtNAME" target="_blank" rel="noopener noreferrer">Abrir Spotify ↗</a></div></div><div class="player-container" data-player="spotify" hidden></div></div>
+      <div class="listen-card listen-video"><span class="listen-kicker">VIDEO OFICIAL / YOUTUBE</span><div class="video-poster"><img src="./assets/hdm/hero_wide.webp" onerror="this.onerror=null;this.src='./luck/4.jpg'" width="1500" height="1120" alt="Hilary Duff en la sesión de 2026" loading="lazy" decoding="async" ><span class="video-disc" aria-hidden="true">✳</span><button class="video-hit" type="button" data-embed="youtube" aria-label="Reproducir video oficial Weather For Tennis">▶</button></div><div class="listen-video-copy"><h3>Weather<br>For Tennis</h3><p>Video oficial</p><button type="button" class="video-text-btn" data-embed="youtube">▶ Ver aquí</button></div><div class="player-container" data-player="youtube" hidden></div></div>
+    </div>
+  </section>
 
-<section id="musica" class="music"><div class="music-intro"><p class="eyebrow">HILARY · DISCOGRAFÍA</p><h2>Una era a la vez.</h2><p>Desde Santa Claus Lane hasta luck… or something. Portadas, fotografías, canciones y detalles de cada lanzamiento.</p></div>
-<nav class="era-nav" aria-label="Navegar entre eras musicales"><a href="#era-santa" data-era-nav="santa"><span>2002</span>Santa Claus Lane</a><a href="#era-meta" data-era-nav="meta"><span>2003</span>Metamorphosis</a><a href="#era-self" data-era-nav="self"><span>2004</span>Hilary Duff</a><a href="#era-wanted" data-era-nav="wanted"><span>2005</span>Most Wanted</a><a href="#era-dignity" data-era-nav="dignity"><span>2007</span>Dignity</a><a href="#era-bibo" data-era-nav="bibo"><span>2015</span>Breathe In. Breathe Out.</a><a href="#era-luck" data-era-nav="luck"><span>2026</span>luck… or something</a></nav><div class="era-track"><article class="era era-santa" id="era-santa" style="--era-bg:#243d75;--era-fg:#e9ecf6;--era-accent:#ff5879;--cover-pos:0.0000%;--cutout-pos:0.0000%;--photo-a:0.0000%;--photo-b:7.6923%" aria-labelledby="h-santa">
-<div class="era-inner">
-<div class="era-head"><span class="era-order">01 / 07 · ÁLBUM NAVIDEÑO · REEDICIÓN EN 2003</span><span class="era-year">2002</span></div>
-<div class="era-grid">
-<div class="era-art" aria-hidden="true"><div class="era-halo"></div><div class="era-logo"></div><div class="era-cover"></div><div class="era-cutout"></div><div class="era-decor" aria-hidden="true">✳</div></div>
-<div class="era-content"><p class="eyebrow era-prefix">2002 / ÁLBUM NAVIDEÑO · REEDICIÓN EN 2003</p><h3 id="h-santa">Santa Claus Lane</h3><p class="era-description">Un primer disco lleno de regalos, scooters y fiestas de diciembre. La Hilary que acababa de llenar la televisión también tenía su propia Navidad. El universo visual de esta edición es un pequeño desorden de listones, señales y nieve.</p><div class="era-facts"><span>11 canciones · reedición en Spotify</span><span>Hollywood Records</span></div>
-<div class="era-note"><small>DETALLE DE LA ERA</small><p>La reedición incluye «I Heard Santa on the Radio» con Christina Milian.</p></div>
-<div class="era-links"><a href="https://open.spotify.com/search/Hilary%20Duff%20Santa%20Claus%20Lane" target="_blank" rel="noopener">Buscar en Spotify ↗</a><a href="#escuchar" data-listen-era="santa">En el reproductor ↓</a></div>
-</div>
-</div>
-<div class="era-photos" aria-label="Fotografías de la era"><div class="era-photo era-photo-a" role="img" aria-label="Fotografía promocional de la era Santa Claus Lane"></div><div class="era-photo era-photo-b" role="img" aria-label="Otra fotografía promocional de la era Santa Claus Lane"></div><span>FOTOGRAFÍAS DE LA ERA</span></div></div>
-</article><article class="era era-meta" id="era-meta" style="--era-bg:#111213;--era-fg:#fff9f5;--era-accent:#f1177b;--cover-pos:16.6667%;--cutout-pos:14.2857%;--photo-a:15.3846%;--photo-b:23.0769%" aria-labelledby="h-meta">
-<div class="era-inner">
-<div class="era-head"><span class="era-order">02 / 07 · ÁLBUM DE ESTUDIO</span><span class="era-year">2003</span></div>
-<div class="era-grid">
-<div class="era-art" aria-hidden="true"><div class="era-halo"></div><div class="era-logo"></div><div class="era-cover"></div><div class="era-cutout"></div><div class="era-decor" aria-hidden="true">✦</div></div>
-<div class="era-content"><p class="eyebrow era-prefix">2003 / ÁLBUM DE ESTUDIO</p><h3 id="h-meta">Metamorphosis</h3><p class="era-description">La firma luminosa, el fleco, las fotografías de estudio y esas canciones que llegaron a todos lados. Metamorphosis reunió So Yesterday, Come Clean y Why Not en el álbum con el que Hilary terminó de instalarse en el pop.</p><div class="era-facts"><span>13 canciones · 43:14</span><span>Hollywood Records</span></div>
-<div class="era-note"><small>DETALLE DE LA ERA</small><p>La portada y la firma conviven con una sesión de fotos mucho más eléctrica: justo esa diferencia inspira esta sección.</p></div>
-<div class="era-links"><a href="https://open.spotify.com/album/2zfZe8P8jg53kZaAfCdBYs" target="_blank" rel="noopener">Escuchar álbum ↗</a><a href="#escuchar" data-listen-era="meta">En el reproductor ↓</a></div>
-</div>
-</div>
-<div class="era-photos" aria-label="Fotografías de la era"><div class="era-photo era-photo-a" role="img" aria-label="Fotografía promocional de la era Metamorphosis"></div><div class="era-photo era-photo-b" role="img" aria-label="Otra fotografía promocional de la era Metamorphosis"></div><span>FOTOGRAFÍAS DE LA ERA</span></div></div>
-</article><article class="era era-self" id="era-self" style="--era-bg:#161116;--era-fg:#fff7f5;--era-accent:#fa1888;--cover-pos:33.3333%;--cutout-pos:28.5714%;--photo-a:30.7692%;--photo-b:38.4615%" aria-labelledby="h-self">
-<div class="era-inner">
-<div class="era-head"><span class="era-order">03 / 07 · ÁLBUM DE ESTUDIO</span><span class="era-year">2004</span></div>
-<div class="era-grid">
-<div class="era-art" aria-hidden="true"><div class="era-halo"></div><div class="era-logo"></div><div class="era-cover"></div><div class="era-cutout"></div><div class="era-decor" aria-hidden="true">★</div></div>
-<div class="era-content"><p class="eyebrow era-prefix">2004 / ÁLBUM DE ESTUDIO</p><h3 id="h-self">Hilary Duff</h3><p class="era-description">Negro, fucsia, botas y una Hilary con más guitarras. Entre Fly y Someone’s Watching Over Me, el álbum encontró otra manera de sonar y una imagen que ya no necesitaba parecerse a Lizzie.</p><div class="era-facts"><span>17 canciones · 59:07 · versión de Spotify</span><span>Hollywood Records</span></div>
-<div class="era-note"><small>DETALLE DE LA ERA</small><p>El wordmark original de la era es casi una pieza de diseño por sí solo.</p></div>
-<div class="era-links"><a href="https://open.spotify.com/album/5Nqi3q9QlLL75JTNcN1xu0" target="_blank" rel="noopener">Escuchar álbum ↗</a><a href="#escuchar" data-listen-era="self">En el reproductor ↓</a></div>
-</div>
-</div>
-<div class="era-photos" aria-label="Fotografías de la era"><div class="era-photo era-photo-a" role="img" aria-label="Fotografía promocional de la era Hilary Duff"></div><div class="era-photo era-photo-b" role="img" aria-label="Otra fotografía promocional de la era Hilary Duff"></div><span>FOTOGRAFÍAS DE LA ERA</span></div></div>
-</article><article class="era era-wanted" id="era-wanted" style="--era-bg:#1b1a1b;--era-fg:#f7f2ea;--era-accent:#dfc3b8;--cover-pos:50.0000%;--cutout-pos:42.8571%;--photo-a:46.1538%;--photo-b:53.8462%" aria-labelledby="h-wanted">
-<div class="era-inner">
-<div class="era-head"><span class="era-order">04 / 07 · RECOPILACIÓN</span><span class="era-year">2005</span></div>
-<div class="era-grid">
-<div class="era-art" aria-hidden="true"><div class="era-halo"></div><div class="era-logo"></div><div class="era-cover"></div><div class="era-cutout"></div><div class="era-decor" aria-hidden="true">◎</div></div>
-<div class="era-content"><p class="eyebrow era-prefix">2005 / RECOPILACIÓN</p><h3 id="h-wanted">Most Wanted</h3><p class="era-description">Ojos en primer plano, flashes y un repertorio para cantar sin consultar el orden. Most Wanted enlazó las canciones que ya conocíamos con Wake Up y Beat of My Heart. Aquí la recopilación tiene su propio espacio, sin confundirla con un álbum de estudio.</p><div class="era-facts"><span>13 canciones · 44:20 · versión de Spotify</span><span>Hollywood Records</span></div>
-<div class="era-note"><small>DETALLE DE LA ERA</small><p>«Our Lips Are Sealed» reúne a Hilary y Haylie.</p></div>
-<div class="era-links"><a href="https://open.spotify.com/album/0XRK6Yiz7aFspCEtPIDhFe" target="_blank" rel="noopener">Escuchar álbum ↗</a><a href="#escuchar" data-listen-era="wanted">En el reproductor ↓</a></div>
-</div>
-</div>
-<div class="era-photos" aria-label="Fotografías de la era"><div class="era-photo era-photo-a" role="img" aria-label="Fotografía promocional de la era Most Wanted"></div><div class="era-photo era-photo-b" role="img" aria-label="Otra fotografía promocional de la era Most Wanted"></div><span>FOTOGRAFÍAS DE LA ERA</span></div></div>
-</article><article class="era era-dignity" id="era-dignity" style="--era-bg:#350d2e;--era-fg:#ffefd7;--era-accent:#c39862;--cover-pos:66.6667%;--cutout-pos:57.1429%;--photo-a:61.5385%;--photo-b:69.2308%" aria-labelledby="h-dignity">
-<div class="era-inner">
-<div class="era-head"><span class="era-order">05 / 07 · ÁLBUM DE ESTUDIO</span><span class="era-year">2007</span></div>
-<div class="era-grid">
-<div class="era-art" aria-hidden="true"><div class="era-halo"></div><div class="era-logo"></div><div class="era-cover"></div><div class="era-cutout"></div><div class="era-decor" aria-hidden="true">✶</div></div>
-<div class="era-content"><p class="eyebrow era-prefix">2007 / ÁLBUM DE ESTUDIO</p><h3 id="h-dignity">Dignity</h3><p class="era-description">Más oscuro, más electrónico, menos previsible. Cuero, reflejos dorados y una colección de canciones que abrió espacio para Stranger, With Love y Play With Fire. Es la era donde el vestuario y la producción musical parecen hablar el mismo idioma.</p><div class="era-facts"><span>14 canciones · 49:18</span><span>Hollywood Records</span></div>
-<div class="era-note"><small>DETALLE DE LA ERA</small><p>With Love también tuvo su propia historia visual fuera del videoclip.</p></div>
-<div class="era-links"><a href="https://open.spotify.com/album/2hfSsyJYp8AYAWIMePvLTI" target="_blank" rel="noopener">Escuchar álbum ↗</a><a href="#escuchar" data-listen-era="dignity">En el reproductor ↓</a></div>
-</div>
-</div>
-<div class="era-photos" aria-label="Fotografías de la era"><div class="era-photo era-photo-a" role="img" aria-label="Fotografía promocional de la era Dignity"></div><div class="era-photo era-photo-b" role="img" aria-label="Otra fotografía promocional de la era Dignity"></div><span>FOTOGRAFÍAS DE LA ERA</span></div></div>
-</article><article class="era era-bibo" id="era-bibo" style="--era-bg:#e9eaf0;--era-fg:#16191b;--era-accent:#c02f65;--cover-pos:83.3333%;--cutout-pos:71.4286%;--photo-a:76.9231%;--photo-b:84.6154%" aria-labelledby="h-bibo">
-<div class="era-inner">
-<div class="era-head"><span class="era-order">06 / 07 · ÁLBUM DE ESTUDIO</span><span class="era-year">2015</span></div>
-<div class="era-grid">
-<div class="era-art" aria-hidden="true"><div class="era-halo"></div><div class="era-logo"></div><div class="era-cover"></div><div class="era-cutout"></div><div class="era-decor" aria-hidden="true">♡</div></div>
-<div class="era-content"><p class="eyebrow era-prefix">2015 / ÁLBUM DE ESTUDIO</p><h3 id="h-bibo">Breathe In. Breathe Out.</h3><p class="era-description">Blanco, líneas finas, pelo plateado y una sesión fotográfica que apenas necesitaba color. Después de varios años sin álbum, Sparks encabezó un repertorio pop que se movía entre pistas de baile y canciones bastante íntimas.</p><div class="era-facts"><span>12 canciones · 42:17 · edición estándar</span><span>RCA Records</span></div>
-<div class="era-note"><small>DETALLE DE LA ERA</small><p>El pequeño corazón del logo original hace más con menos que cualquier efecto de pantalla.</p></div>
-<div class="era-links"><a href="https://open.spotify.com/album/2hyPisCjBWeFQ90FLwhriT" target="_blank" rel="noopener">Escuchar álbum ↗</a><a href="#escuchar" data-listen-era="bibo">En el reproductor ↓</a></div>
-</div>
-</div>
-<div class="era-photos" aria-label="Fotografías de la era"><div class="era-photo era-photo-a" role="img" aria-label="Fotografía promocional de la era Breathe In. Breathe Out."></div><div class="era-photo era-photo-b" role="img" aria-label="Otra fotografía promocional de la era Breathe In. Breathe Out."></div><span>FOTOGRAFÍAS DE LA ERA</span></div></div>
-</article><article class="era era-luck" id="era-luck" style="--era-bg:#352632;--era-fg:#ffe0ec;--era-accent:#d8be76;--cover-pos:100.0000%;--cutout-pos:85.7143%;--photo-a:92.3077%;--photo-b:100.0000%" aria-labelledby="h-luck">
-<div class="era-inner">
-<div class="era-head"><span class="era-order">07 / 07 · ÁLBUM DE ESTUDIO</span><span class="era-year">2026</span></div>
-<div class="era-grid">
-<div class="era-art" aria-hidden="true"><div class="era-halo"></div><div class="era-logo"></div><div class="era-cover"></div><div class="era-cutout"></div><div class="era-decor" aria-hidden="true">◌</div></div>
-<div class="era-content"><p class="eyebrow era-prefix">2026 / ÁLBUM DE ESTUDIO</p><h3 id="h-luck">luck… or something</h3><p class="era-description">Una alfombra azul, cortinas y fotografías que parecen tomadas en una casa a la que querríamos volver. Las canciones hablan del presente de Hilary sin fingir que el tiempo no pasó. Roommates, Mature y Future Tripping son apenas tres puertas de entrada.</p><div class="era-facts"><span>11 canciones · 37:54</span><span>Atlantic Records</span></div>
-<div class="era-note"><small>DETALLE DE LA ERA</small><p>La sesión de esta era está hecha de texturas domésticas: terciopelo, mohair, alfombra y luz de ventana.</p></div>
-<div class="era-links"><a href="https://open.spotify.com/album/71t4M602DGtkhsy1RtNAME" target="_blank" rel="noopener">Escuchar álbum ↗</a><a href="#escuchar" data-listen-era="luck">En el reproductor ↓</a></div>
-</div>
-</div>
-<div class="era-photos" aria-label="Fotografías de la era"><div class="era-photo era-photo-a" role="img" aria-label="Fotografía promocional de la era luck… or something"></div><div class="era-photo era-photo-b" role="img" aria-label="Otra fotografía promocional de la era luck… or something"></div><span>FOTOGRAFÍAS DE LA ERA</span></div></div>
-</article></div></section>
+  <section class="catalog" id="musica" aria-labelledby="catalog-title">
+   <div class="catalog-heading section-pad"><span class="section-label">03 / LA DISCOGRAFÍA</span><h2 id="catalog-title">Del primer disco <em>al último.</em></h2><p>Siete paradas, siete identidades. Portadas, fotografías y detalles de cada lanzamiento.</p></div>
+   <div class="album-nav-wrap" data-disc-nav-wrap><nav class="album-nav" aria-label="Ir a un disco"><a href="#disco-santa" data-disc-nav="santa" aria-label="Ir a Santa Claus Lane">Santa Claus Lane</a><a href="#disco-meta" data-disc-nav="meta" aria-label="Ir a Metamorphosis">Metamorphosis</a><a href="#disco-self" data-disc-nav="self" aria-label="Ir a Hilary Duff">Hilary Duff</a><a href="#disco-wanted" data-disc-nav="wanted" aria-label="Ir a Most Wanted">Most Wanted</a><a href="#disco-dignity" data-disc-nav="dignity" aria-label="Ir a Dignity">Dignity</a><a href="#disco-bibo" data-disc-nav="bibo" aria-label="Ir a Breathe In. Breathe Out.">Breathe In. Breathe Out.</a><a href="#disco-luck" data-disc-nav="luck" aria-label="Ir a luck… or something">luck… or something</a></nav><div class="nav-arrows"><button type="button" data-album-prev aria-label="Disco anterior">←</button><button type="button" data-album-next aria-label="Disco siguiente">→</button></div></div>
+   <div class="discs"><article class="disc disc-santa" id="disco-santa" data-disc="santa">
+ <div class="disc-shimmer" aria-hidden="true"></div>
+ <div class="disc-number" aria-hidden="true">01</div>
+ <div class="disc-inner">
+   <div class="disc-copy">
+     <span class="disc-meta"><b>2002</b> <i aria-hidden="true">✳</i> POP / NAVIDAD</span>
+     <div class="disc-logo"><img src="./assets/hdm/santa-logo.webp" onerror="this.onerror=null;this.src='./Santa Claus Lane/logo.png'" width="650" height="230" alt="Santa Claus Lane · logo original" loading="lazy" decoding="async" ></div>
+     <h3>Todo empezó antes de las fiestas.</h3>
+     <p class="disc-text">Antes de Metamorphosis, hubo un disco navideño y una Hilary que ya estaba grabando su propio repertorio. Villancicos, canciones nuevas y colaboraciones que siguen apareciendo cada diciembre.</p>
+     <dl class="disc-facts"><div><dt>LANZAMIENTO</dt><dd>2002 · Primer álbum</dd></div><div><dt>EN ESTA VERSIÓN</dt><dd>11 canciones · versión disponible en Spotify</dd></div><div><dt>EN REPEAT</dt><dd>Santa Claus Lane · I Heard Santa on the Radio · Tell Me a Story</dd></div></dl>
+     <div class="disc-fun"><span>DETALLE PARA FANS ✦</span><p>Christina Milian aparece en «I Heard Santa on the Radio»; Haylie, en «Same Old Christmas».</p></div>
+     <div class="disc-actions"><a class="pill pill-dark" href="https://open.spotify.com/search/Hilary%20Duff%20Santa%20Claus%20Lane" target="_blank" rel="noopener noreferrer">Abrir en Spotify ↗</a>
+       
+     </div><div class="disc-embed" data-embed-for="santa" hidden></div>
+   </div>
+   <div class="disc-art" aria-label="Fotografías originales compartidas para Santa Claus Lane">
+     <div class="disc-halo" aria-hidden="true"></div>
+     <figure class="disc-photo disc-photo-a"><img src="./assets/hdm/santa-photo1.webp" onerror="this.onerror=null;this.src='./Santa Claus Lane/1.jpg'" width="1100" height="1530" alt="Santa Claus Lane · fotografía de archivo" loading="lazy" decoding="async" ><figcaption>2002 / ARCHIVO</figcaption></figure>
+     <figure class="disc-photo disc-photo-b"><img src="./assets/hdm/santa-photo2.webp" onerror="this.onerror=null;this.src='./Santa Claus Lane/2.jpg'" width="1100" height="1530" alt="Santa Claus Lane · sesión fotográfica" loading="lazy" decoding="async" ></figure>
+     <div class="disc-portrait"><img src="./assets/hdm/santa-cut.webp" onerror="this.onerror=null;this.src='./Santa Claus Lane/sinfondo.png'" width="1500" height="1700" alt="Santa Claus Lane · retrato recortado" loading="lazy" decoding="async" ></div>
+     <div class="disc-cover"><span>EL DISCO</span><img src="./assets/hdm/santa-cover.webp" onerror="this.onerror=null;this.src='./Santa Claus Lane/cover.jpg'" width="800" height="800" alt="Portada de Santa Claus Lane" loading="lazy" decoding="async" ></div>
+     <span class="disc-art-symbol" aria-hidden="true">✷</span>
+   </div>
+ </div>
+ </article>
+<article class="disc disc-meta" id="disco-meta" data-disc="meta">
+ <div class="disc-shimmer" aria-hidden="true"></div>
+ <div class="disc-number" aria-hidden="true">02</div>
+ <div class="disc-inner">
+   <div class="disc-copy">
+     <span class="disc-meta"><b>2003</b> <i aria-hidden="true">✳</i> POP / 2003</span>
+     <div class="disc-logo"><img src="./assets/hdm/meta-logo.webp" onerror="this.onerror=null;this.src='./Metamorphosis/logo_metamorphosis.png'" width="880" height="230" alt="Metamorphosis · logo original" loading="lazy" decoding="async" ></div>
+     <h3>So Yesterday. Y entonces, todo cambió.</h3>
+     <p class="disc-text">El disco que hizo sonar a Hilary en todas partes. «Come Clean» convivió con «So Yesterday» y «Why Not», y la televisión, las revistas y los reproductores de CD hicieron el resto.</p>
+     <dl class="disc-facts"><div><dt>LANZAMIENTO</dt><dd>2003 · Álbum de estudio</dd></div><div><dt>EN ESTA VERSIÓN</dt><dd>13 canciones · 43 min</dd></div><div><dt>EN REPEAT</dt><dd>So Yesterday · Come Clean · Little Voice</dd></div></dl>
+     <div class="disc-fun"><span>DETALLE PARA FANS ✦</span><p>«Why Not» también está ligada a la película de Lizzie. Hay canciones que saltan de una pantalla a un disco y se quedan ahí.</p></div>
+     <div class="disc-actions"><a class="pill pill-dark" href="https://open.spotify.com/album/2zfZe8P8jg53kZaAfCdBYs" target="_blank" rel="noopener noreferrer">Abrir en Spotify ↗</a>
+       <button class="pill pill-line" type="button" data-album-player="2zfZe8P8jg53kZaAfCdBYs" data-album-name="Metamorphosis">Escuchar aquí ♪</button>
+     </div><div class="disc-embed" data-embed-for="meta" hidden></div>
+   </div>
+   <div class="disc-art" aria-label="Fotografías originales compartidas para Metamorphosis">
+     <div class="disc-halo" aria-hidden="true"></div>
+     <figure class="disc-photo disc-photo-a"><img src="./assets/hdm/meta-photo1.webp" onerror="this.onerror=null;this.src='./Metamorphosis/2.jpg'" width="1100" height="1530" alt="Metamorphosis · fotografía de archivo" loading="lazy" decoding="async" ><figcaption>2003 / ARCHIVO</figcaption></figure>
+     <figure class="disc-photo disc-photo-b"><img src="./assets/hdm/meta-photo2.webp" onerror="this.onerror=null;this.src='./Metamorphosis/3.jpg'" width="1100" height="1530" alt="Metamorphosis · sesión fotográfica" loading="lazy" decoding="async" ></figure>
+     <div class="disc-portrait"><img src="./assets/hdm/meta-cut.webp" onerror="this.onerror=null;this.src='./Metamorphosis/sinfondo.png'" width="1500" height="1700" alt="Metamorphosis · retrato recortado" loading="lazy" decoding="async" ></div>
+     <div class="disc-cover"><span>EL DISCO</span><img src="./assets/hdm/meta-cover.webp" onerror="this.onerror=null;this.src='./Metamorphosis/cover.png'" width="800" height="800" alt="Portada de Metamorphosis" loading="lazy" decoding="async" ></div>
+     <span class="disc-art-symbol" aria-hidden="true">✳</span>
+   </div>
+ </div>
+ </article>
+<article class="disc disc-self" id="disco-self" data-disc="self">
+ <div class="disc-shimmer" aria-hidden="true"></div>
+ <div class="disc-number" aria-hidden="true">03</div>
+ <div class="disc-inner">
+   <div class="disc-copy">
+     <span class="disc-meta"><b>2004</b> <i aria-hidden="true">✳</i> POP ROCK / 2004</span>
+     <div class="disc-logo"><img src="./assets/hdm/self-logo.webp" onerror="this.onerror=null;this.src='./Hilary Duff/logo.png'" width="650" height="230" alt="Hilary Duff · logo original" loading="lazy" decoding="async" ></div>
+     <h3>Un disco que lleva su nombre. Y más guitarras.</h3>
+     <p class="disc-text">«Fly», «Weird», «The Getaway» y una dirección más cercana al pop rock. La portada cambió de actitud y las canciones también. Este disco tiene mucho más que el sencillo con el que suele recordarse.</p>
+     <dl class="disc-facts"><div><dt>LANZAMIENTO</dt><dd>2004 · Álbum de estudio</dd></div><div><dt>EN ESTA VERSIÓN</dt><dd>17 canciones · 59 min</dd></div><div><dt>EN REPEAT</dt><dd>Fly · The Getaway · Someone’s Watching Over Me</dd></div></dl>
+     <div class="disc-fun"><span>DETALLE PARA FANS ✦</span><p>«Someone’s Watching Over Me» también tuvo vida en la película Raise Your Voice.</p></div>
+     <div class="disc-actions"><a class="pill pill-dark" href="https://open.spotify.com/album/5Nqi3q9QlLL75JTNcN1xu0" target="_blank" rel="noopener noreferrer">Abrir en Spotify ↗</a>
+       <button class="pill pill-line" type="button" data-album-player="5Nqi3q9QlLL75JTNcN1xu0" data-album-name="Hilary Duff">Escuchar aquí ♪</button>
+     </div><div class="disc-embed" data-embed-for="self" hidden></div>
+   </div>
+   <div class="disc-art" aria-label="Fotografías originales compartidas para Hilary Duff">
+     <div class="disc-halo" aria-hidden="true"></div>
+     <figure class="disc-photo disc-photo-a"><img src="./assets/hdm/self-photo1.webp" onerror="this.onerror=null;this.src='./Hilary Duff/2.jpg'" width="1100" height="1530" alt="Hilary Duff · fotografía de archivo" loading="lazy" decoding="async" ><figcaption>2004 / ARCHIVO</figcaption></figure>
+     <figure class="disc-photo disc-photo-b"><img src="./assets/hdm/self-photo2.webp" onerror="this.onerror=null;this.src='./Hilary Duff/4.jpg'" width="1100" height="1530" alt="Hilary Duff · sesión fotográfica" loading="lazy" decoding="async" ></figure>
+     <div class="disc-portrait"><img src="./assets/hdm/self-cut.webp" onerror="this.onerror=null;this.src='./Hilary Duff/sinfondo.png'" width="1500" height="1700" alt="Hilary Duff · retrato recortado" loading="lazy" decoding="async" ></div>
+     <div class="disc-cover"><span>EL DISCO</span><img src="./assets/hdm/self-cover.webp" onerror="this.onerror=null;this.src='./Hilary Duff/cover.jpg'" width="800" height="800" alt="Portada de Hilary Duff" loading="lazy" decoding="async" ></div>
+     <span class="disc-art-symbol" aria-hidden="true">✹</span>
+   </div>
+ </div>
+ </article>
+<article class="disc disc-wanted" id="disco-wanted" data-disc="wanted">
+ <div class="disc-shimmer" aria-hidden="true"></div>
+ <div class="disc-number" aria-hidden="true">04</div>
+ <div class="disc-inner">
+   <div class="disc-copy">
+     <span class="disc-meta"><b>2005</b> <i aria-hidden="true">✳</i> POP / 2005</span>
+     <div class="disc-logo"><img src="./assets/hdm/wanted-logo.webp" onerror="this.onerror=null;this.src='./Most Wanted/logo_white_full.png'" width="650" height="230" alt="Most Wanted · logo original" loading="lazy" decoding="async" ></div>
+     <h3>Wake Up. Otra vez. Y a todo volumen.</h3>
+     <p class="disc-text">Una compilación que no se limitó a reunir éxitos. Trajo canciones nuevas, nuevas mezclas y uno de los sencillos más reconocibles de esta etapa. Su imagen también es completamente distinta.</p>
+     <dl class="disc-facts"><div><dt>LANZAMIENTO</dt><dd>2005 · Compilación</dd></div><div><dt>EN ESTA VERSIÓN</dt><dd>13 canciones · 44 min</dd></div><div><dt>EN REPEAT</dt><dd>Wake Up · Beat of My Heart · The Getaway</dd></div></dl>
+     <div class="disc-fun"><span>DETALLE PARA FANS ✦</span><p>«Our Lips Are Sealed» reúne a Hilary y Haylie Duff en el mismo álbum.</p></div>
+     <div class="disc-actions"><a class="pill pill-dark" href="https://open.spotify.com/album/0XRK6Yiz7aFspCEtPIDhFe" target="_blank" rel="noopener noreferrer">Abrir en Spotify ↗</a>
+       <button class="pill pill-line" type="button" data-album-player="0XRK6Yiz7aFspCEtPIDhFe" data-album-name="Most Wanted">Escuchar aquí ♪</button>
+     </div><div class="disc-embed" data-embed-for="wanted" hidden></div>
+   </div>
+   <div class="disc-art" aria-label="Fotografías originales compartidas para Most Wanted">
+     <div class="disc-halo" aria-hidden="true"></div>
+     <figure class="disc-photo disc-photo-a"><img src="./assets/hdm/wanted-photo1.webp" onerror="this.onerror=null;this.src='./Most Wanted/1.jpg'" width="1100" height="1530" alt="Most Wanted · fotografía de archivo" loading="lazy" decoding="async" ><figcaption>2005 / ARCHIVO</figcaption></figure>
+     <figure class="disc-photo disc-photo-b"><img src="./assets/hdm/wanted-photo2.webp" onerror="this.onerror=null;this.src='./Most Wanted/2.jpg'" width="1100" height="1530" alt="Most Wanted · sesión fotográfica" loading="lazy" decoding="async" ></figure>
+     <div class="disc-portrait"><img src="./assets/hdm/wanted-cut.webp" onerror="this.onerror=null;this.src='./Most Wanted/sinfondo.png'" width="1500" height="1700" alt="Most Wanted · retrato recortado" loading="lazy" decoding="async" ></div>
+     <div class="disc-cover"><span>EL DISCO</span><img src="./assets/hdm/wanted-cover.webp" onerror="this.onerror=null;this.src='./Most Wanted/cover.jpeg'" width="800" height="800" alt="Portada de Most Wanted" loading="lazy" decoding="async" ></div>
+     <span class="disc-art-symbol" aria-hidden="true">✶</span>
+   </div>
+ </div>
+ </article>
+<article class="disc disc-dignity" id="disco-dignity" data-disc="dignity">
+ <div class="disc-shimmer" aria-hidden="true"></div>
+ <div class="disc-number" aria-hidden="true">05</div>
+ <div class="disc-inner">
+   <div class="disc-copy">
+     <span class="disc-meta"><b>2007</b> <i aria-hidden="true">✳</i> ELECTROPOP / 2007</span>
+     <div class="disc-logo"><span class="disc-custom-title">Dignity</span></div>
+     <h3>With Love. Pero esta vez no todo era tan inocente.</h3>
+     <p class="disc-text">Cambió el sonido, cambió el vestuario y llegó una Hilary mucho más nocturna. «Stranger», «With Love» y «Play With Fire» abrieron un capítulo de sintetizadores, tensión y brillo.</p>
+     <dl class="disc-facts"><div><dt>LANZAMIENTO</dt><dd>2007 · Álbum de estudio</dd></div><div><dt>EN ESTA VERSIÓN</dt><dd>14 canciones · 49 min</dd></div><div><dt>EN REPEAT</dt><dd>Stranger · With Love · Play With Fire</dd></div></dl>
+     <div class="disc-fun"><span>DETALLE PARA FANS ✦</span><p>«With Love» tuvo una campaña de perfume propia. Pocas canciones vienen acompañadas de un aroma.</p></div>
+     <div class="disc-actions"><a class="pill pill-dark" href="https://open.spotify.com/album/2hfSsyJYp8AYAWIMePvLTI" target="_blank" rel="noopener noreferrer">Abrir en Spotify ↗</a>
+       <button class="pill pill-line" type="button" data-album-player="2hfSsyJYp8AYAWIMePvLTI" data-album-name="Dignity">Escuchar aquí ♪</button>
+     </div><div class="disc-embed" data-embed-for="dignity" hidden></div>
+   </div>
+   <div class="disc-art" aria-label="Fotografías originales compartidas para Dignity">
+     <div class="disc-halo" aria-hidden="true"></div>
+     <figure class="disc-photo disc-photo-a"><img src="./assets/hdm/dignity-photo1.webp" onerror="this.onerror=null;this.src='./Dignity/2.jpg'" width="1100" height="1530" alt="Dignity · fotografía de archivo" loading="lazy" decoding="async" ><figcaption>2007 / ARCHIVO</figcaption></figure>
+     <figure class="disc-photo disc-photo-b"><img src="./assets/hdm/dignity-photo2.webp" onerror="this.onerror=null;this.src='./Dignity/4.jpg'" width="1100" height="1530" alt="Dignity · sesión fotográfica" loading="lazy" decoding="async" ></figure>
+     <div class="disc-portrait"><img src="./assets/hdm/dignity-cut.webp" onerror="this.onerror=null;this.src='./Dignity/sinfondo.png'" width="1500" height="1700" alt="Dignity · retrato recortado" loading="lazy" decoding="async" ></div>
+     <div class="disc-cover"><span>EL DISCO</span><img src="./assets/hdm/dignity-cover.webp" onerror="this.onerror=null;this.src='./Dignity/cover.jpg'" width="800" height="800" alt="Portada de Dignity" loading="lazy" decoding="async" ></div>
+     <span class="disc-art-symbol" aria-hidden="true">✦</span>
+   </div>
+ </div>
+ </article>
+<article class="disc disc-bibo" id="disco-bibo" data-disc="bibo">
+ <div class="disc-shimmer" aria-hidden="true"></div>
+ <div class="disc-number" aria-hidden="true">06</div>
+ <div class="disc-inner">
+   <div class="disc-copy">
+     <span class="disc-meta"><b>2015</b> <i aria-hidden="true">✳</i> POP / 2015</span>
+     <div class="disc-logo"><img src="./assets/hdm/bibo-logo.webp" onerror="this.onerror=null;this.src='./Bibo/logo_name.png'" width="650" height="230" alt="Breathe In. Breathe Out. · logo original" loading="lazy" decoding="async" ></div>
+     <h3>Primero respira. Luego, Sparks.</h3>
+     <p class="disc-text">Después de varios años sin un álbum de estudio, Hilary volvió con un sonido distinto, el silbido de «Sparks» y canciones como «My Kind» y «One in a Million». Más ligera a la vista; no necesariamente en todo lo que cuenta.</p>
+     <dl class="disc-facts"><div><dt>LANZAMIENTO</dt><dd>2015 · Álbum de estudio</dd></div><div><dt>EN ESTA VERSIÓN</dt><dd>12 canciones · 42 min</dd></div><div><dt>EN REPEAT</dt><dd>Sparks · My Kind · One in a Million</dd></div></dl>
+     <div class="disc-fun"><span>DETALLE PARA FANS ✦</span><p>La edición deluxe suma «Belong» y «Rebel Hearts» al disco original.</p></div>
+     <div class="disc-actions"><a class="pill pill-dark" href="https://open.spotify.com/album/2hyPisCjBWeFQ90FLwhriT" target="_blank" rel="noopener noreferrer">Abrir en Spotify ↗</a>
+       <button class="pill pill-line" type="button" data-album-player="2hyPisCjBWeFQ90FLwhriT" data-album-name="Breathe In. Breathe Out.">Escuchar aquí ♪</button>
+     </div><div class="disc-embed" data-embed-for="bibo" hidden></div>
+   </div>
+   <div class="disc-art" aria-label="Fotografías originales compartidas para Breathe In. Breathe Out.">
+     <div class="disc-halo" aria-hidden="true"></div>
+     <figure class="disc-photo disc-photo-a"><img src="./assets/hdm/bibo-photo1.webp" onerror="this.onerror=null;this.src='./Bibo/3.jpg'" width="1100" height="1530" alt="Breathe In. Breathe Out. · fotografía de archivo" loading="lazy" decoding="async" ><figcaption>2015 / ARCHIVO</figcaption></figure>
+     <figure class="disc-photo disc-photo-b"><img src="./assets/hdm/bibo-photo2.webp" onerror="this.onerror=null;this.src='./Bibo/4.jpg'" width="1100" height="1530" alt="Breathe In. Breathe Out. · sesión fotográfica" loading="lazy" decoding="async" ></figure>
+     <div class="disc-portrait"><img src="./assets/hdm/bibo-cut.webp" onerror="this.onerror=null;this.src='./Bibo/sinfondo.png'" width="1500" height="1700" alt="Breathe In. Breathe Out. · retrato recortado" loading="lazy" decoding="async" ></div>
+     <div class="disc-cover"><span>EL DISCO</span><img src="./assets/hdm/bibo-cover.webp" onerror="this.onerror=null;this.src='./Bibo/cover.jpg'" width="800" height="800" alt="Portada de Breathe In. Breathe Out." loading="lazy" decoding="async" ></div>
+     <span class="disc-art-symbol" aria-hidden="true">♡</span>
+   </div>
+ </div>
+ </article>
+<article class="disc disc-luck" id="disco-luck" data-disc="luck">
+ <div class="disc-shimmer" aria-hidden="true"></div>
+ <div class="disc-number" aria-hidden="true">07</div>
+ <div class="disc-inner">
+   <div class="disc-copy">
+     <span class="disc-meta"><b>2026</b> <i aria-hidden="true">✳</i> POP / 2026</span>
+     <div class="disc-logo"><span class="disc-custom-title">luck… or something</span></div>
+     <h3>Roommates, tenis y muchas cosas que contar.</h3>
+     <p class="disc-text">Un álbum nuevo después de más de una década. Tiene humor, intimidad y canciones que no necesitan fingir que estamos en 2003. «Mature» abrió la conversación; el resto del disco tiene mucho más que decir.</p>
+     <dl class="disc-facts"><div><dt>LANZAMIENTO</dt><dd>2026 · Álbum de estudio</dd></div><div><dt>EN ESTA VERSIÓN</dt><dd>11 canciones · 37 min</dd></div><div><dt>EN REPEAT</dt><dd>Weather For Tennis · Roommates · Future Tripping</dd></div></dl>
+     <div class="disc-fun"><span>DETALLE PARA FANS ✦</span><p>«Mature» salió en 2025; el álbum completo llegó el 20 de febrero de 2026.</p></div>
+     <div class="disc-actions"><a class="pill pill-dark" href="https://open.spotify.com/album/71t4M602DGtkhsy1RtNAME" target="_blank" rel="noopener noreferrer">Abrir en Spotify ↗</a>
+       <button class="pill pill-line" type="button" data-album-player="71t4M602DGtkhsy1RtNAME" data-album-name="luck… or something">Escuchar aquí ♪</button>
+     </div><div class="disc-embed" data-embed-for="luck" hidden></div>
+   </div>
+   <div class="disc-art" aria-label="Fotografías originales compartidas para luck… or something">
+     <div class="disc-halo" aria-hidden="true"></div>
+     <figure class="disc-photo disc-photo-a"><img src="./assets/hdm/luck-photo1.webp" onerror="this.onerror=null;this.src='./luck/3.jpg'" width="1100" height="1530" alt="luck… or something · fotografía de archivo" loading="lazy" decoding="async" ><figcaption>2026 / ARCHIVO</figcaption></figure>
+     <figure class="disc-photo disc-photo-b"><img src="./assets/hdm/luck-photo2.webp" onerror="this.onerror=null;this.src='./luck/2.jpg'" width="1100" height="1530" alt="luck… or something · sesión fotográfica" loading="lazy" decoding="async" ></figure>
+     <div class="disc-portrait"><img src="./assets/hdm/luck-cut.webp" onerror="this.onerror=null;this.src='./luck/sinfondo.png'" width="1500" height="1700" alt="luck… or something · retrato recortado" loading="lazy" decoding="async" ></div>
+     <div class="disc-cover"><span>EL DISCO</span><img src="./assets/hdm/luck-cover.webp" onerror="this.onerror=null;this.src='./luck/cover.jpeg'" width="800" height="800" alt="Portada de luck… or something" loading="lazy" decoding="async" ></div>
+     <span class="disc-art-symbol" aria-hidden="true">✴</span>
+   </div>
+ </div>
+ </article></div>
+  </section>
 
-<section id="films" class="block films"><div class="block-head"><div><p class="eyebrow">EN PANTALLA</p><h2>Hilary, en personaje.</h2></div><p>Una selección de cine y televisión. Elige un personaje para abrir su ficha.</p></div>
-<nav class="film-nav" aria-label="Filtrar películas y series"><button data-film-filter="all" class="active" aria-pressed="true">Todos</button><button data-film-filter="pelicula">Películas</button><button data-film-filter="serie">Series</button><button data-film-filter="lizzie">Lizzie</button></nav>
-<div class="film-grid"><button class="film-card" type="button" data-film="0" data-film-type="lizzie" aria-label="Ver Lizzie McGuire"><span>2001 · Serie · Disney Channel</span><strong>Lizzie McGuire</strong><small>Lizzie McGuire</small><span class="film-open">VER ↗</span></button><button class="film-card" type="button" data-film="1" data-film-type="pelicula" aria-label="Ver Kelly Collins"><span>2002 · Película · Disney</span><strong>Kelly Collins</strong><small>La cadete Kelly</small><span class="film-open">VER ↗</span></button><button class="film-card" type="button" data-film="2" data-film-type="pelicula" aria-label="Ver Natalie Connors"><span>2003 · Película</span><strong>Natalie Connors</strong><small>Agent Cody Banks</small><span class="film-open">VER ↗</span></button><button class="film-card" type="button" data-film="3" data-film-type="lizzie" aria-label="Ver Lizzie / Isabella"><span>2003 · Película</span><strong>Lizzie / Isabella</strong><small>The Lizzie McGuire Movie</small><span class="film-open">VER ↗</span></button><button class="film-card" type="button" data-film="4" data-film-type="pelicula" aria-label="Ver Lorraine Baker"><span>2003 · Película</span><strong>Lorraine Baker</strong><small>Cheaper by the Dozen</small><span class="film-open">VER ↗</span></button><button class="film-card" type="button" data-film="5" data-film-type="pelicula" aria-label="Ver Sam Montgomery"><span>2004 · Película</span><strong>Sam Montgomery</strong><small>A Cinderella Story</small><span class="film-open">VER ↗</span></button><button class="film-card" type="button" data-film="6" data-film-type="pelicula" aria-label="Ver Terri Fletcher"><span>2004 · Película</span><strong>Terri Fletcher</strong><small>Raise Your Voice</small><span class="film-open">VER ↗</span></button><button class="film-card" type="button" data-film="7" data-film-type="pelicula" aria-label="Ver Holly Hamilton"><span>2005 · Película</span><strong>Holly Hamilton</strong><small>The Perfect Man</small><span class="film-open">VER ↗</span></button><button class="film-card" type="button" data-film="8" data-film-type="pelicula" aria-label="Ver Tanzie Marchetta"><span>2006 · Película</span><strong>Tanzie Marchetta</strong><small>Material Girls</small><span class="film-open">VER ↗</span></button><button class="film-card" type="button" data-film="9" data-film-type="pelicula" aria-label="Ver Yonica Babyyeah"><span>2008 · Película</span><strong>Yonica Babyyeah</strong><small>War, Inc.</small><span class="film-open">VER ↗</span></button><button class="film-card" type="button" data-film="10" data-film-type="serie" aria-label="Ver Olivia Burke"><span>2009 · Serie</span><strong>Olivia Burke</strong><small>Gossip Girl</small><span class="film-open">VER ↗</span></button><button class="film-card" type="button" data-film="11" data-film-type="pelicula" aria-label="Ver Lane Daniels"><span>2010 · Película para TV</span><strong>Lane Daniels</strong><small>Beauty & the Briefcase</small><span class="film-open">VER ↗</span></button><button class="film-card" type="button" data-film="12" data-film-type="serie" aria-label="Ver Kelsey Peters"><span>2015 · Serie</span><strong>Kelsey Peters</strong><small>Younger</small><span class="film-open">VER ↗</span></button><button class="film-card" type="button" data-film="13" data-film-type="serie" aria-label="Ver Sophie"><span>2022 · Serie</span><strong>Sophie</strong><small>How I Met Your Father</small><span class="film-open">VER ↗</span></button></div><div class="film-detail" data-film-detail hidden><button type="button" class="film-close" data-film-close aria-label="Cerrar ficha">×</button><span data-film-year></span><h3 data-film-title></h3><p data-film-project></p><a href="https://www.imdb.com/es-es/name/nm0240381/" target="_blank" rel="noopener">Ver filmografía completa ↗</a></div>
-<div class="lizzie-interlude" id="lizzie"><div class="lizzie-art" aria-hidden="true"><div class="lizzie-cutout"></div><div class="lizzie-paper"></div></div><div><p class="eyebrow">2001 → 2026</p><h3>25 años de <i>Lizzie.</i></h3><p>La serie, la caricatura, Miranda, Gordo y un viaje a Roma que todavía tiene mucho que contar.</p><button type="button" data-film="0" class="btn dark">Abrir ficha de Lizzie ↗</button></div></div></section>
+  <section class="films section-pad" id="films" aria-labelledby="film-title">
+    <div class="section-top"><span class="section-label">04 / PELÍCULAS Y SERIES</span><div><h2 id="film-title">Cambio de <em>personaje.</em></h2><p>De Lizzie a Yonica. Escoge una película o serie y escucha el clic del videoclub imaginario.</p></div></div>
+    <nav class="film-filters" aria-label="Filtrar películas y series"><button type="button" data-film-filter="all" class="active" aria-pressed="true">Todos</button><button type="button" data-film-filter="pelicula" aria-pressed="false">Películas</button><button type="button" data-film-filter="serie" aria-pressed="false">Series</button><button type="button" data-film-filter="disney" aria-pressed="false">Disney Channel</button></nav>
+    <div class="film-jukebox">
+      <div class="film-list-wrap"><span class="film-list-label">ELIGE UN TÍTULO <span class="desktop-only">· ESTA LISTA TIENE SU PROPIO SCROLL</span></span><div class="film-list" data-film-list role="group" aria-label="Elegir película o serie">
+       <button class="active" type="button" data-film="lizzie" data-kind="serie disney"><span>2001</span><strong>Lizzie McGuire</strong><i>↗</i></button>
+       <button type="button" data-film="kelly" data-kind="pelicula disney"><span>2002</span><strong>La cadete Kelly</strong><i>↗</i></button>
+       <button type="button" data-film="natalie" data-kind="pelicula"><span>2003</span><strong>Agente Cody Banks</strong><i>↗</i></button>
+       <button type="button" data-film="isabella" data-kind="pelicula disney"><span>2003</span><strong>Lizzie McGuire: Estrella pop</strong><i>↗</i></button>
+       <button type="button" data-film="sam" data-kind="pelicula"><span>2004</span><strong>A Cinderella Story</strong><i>↗</i></button>
+       <button type="button" data-film="terri" data-kind="pelicula"><span>2004</span><strong>Raise Your Voice</strong><i>↗</i></button>
+       <button type="button" data-film="holly" data-kind="pelicula"><span>2005</span><strong>The Perfect Man</strong><i>↗</i></button>
+       <button type="button" data-film="tanzie" data-kind="pelicula"><span>2006</span><strong>Material Girls</strong><i>↗</i></button>
+       <button type="button" data-film="yonica" data-kind="pelicula"><span>2008</span><strong>War, Inc.</strong><i>↗</i></button>
+       <button type="button" data-film="olivia" data-kind="serie"><span>2009</span><strong>Gossip Girl</strong><i>↗</i></button>
+       <button type="button" data-film="kelsey" data-kind="serie"><span>2015</span><strong>Younger</strong><i>↗</i></button>
+       <button type="button" data-film="sophie" data-kind="serie"><span>2022</span><strong>How I Met Your Father</strong><i>↗</i></button>
+      </div></div>
+      <article class="film-stage" data-film-stage data-film-theme="lizzie" aria-live="polite"><div class="film-stage-graphic" data-film-art><img src="./assets/hdm/lizzie_art.webp" onerror="this.onerror=null;this.src='./Lizzie/sinfondo.png'" width="1600" height="1080" alt="Lizzie McGuire y su universo animado" loading="lazy" decoding="async" ></div><div class="film-stage-copy"><span data-film-kicker>2001 · SERIE</span><h3 data-film-persona>Lizzie McGuire</h3><p class="film-project" data-film-project>Lizzie McGuire</p><p data-film-description>Miranda, Gordo y esa versión animada de Lizzie que decía lo que ella pensaba.</p><div class="film-extra" data-film-extra>Si aparece Paolo, ya sabes cómo termina.</div><a class="pill pill-light" data-film-link href="https://www.disneyplus.com/es-mx/explore/articles/lizzie-mcguire-anniversary" target="_blank" rel="noopener noreferrer">Conoce más ↗</a></div><span class="film-label-watermark" data-film-watermark aria-hidden="true">LIZZIE</span></article>
+    </div>
+  </section>
 
-<section id="mexico" class="block mexico"><div class="block-head white"><div><p class="eyebrow">THE LUCKY ME TOUR</p><h2>Nos vemos en México.</h2></div><p>Tu fecha, el recinto y la información que necesitas antes del concierto.</p></div><div class="event-tabs" role="group" aria-label="Elige una fecha"><button class="active" data-show="cdmx12">12 FEB <b>CDMX</b></button><button data-show="cdmx13">13 FEB <b>CDMX</b></button><button data-show="gdl15">15 FEB <b>GDL</b></button></div><div class="event-focus"><div class="event-timer"><small>FALTAN</small><strong data-days>–</strong><span>DÍAS</span></div><div class="event-data"><span data-show-date>VIERNES 12 FEBRERO 2027</span><h3 data-show-venue>Palacio de los Deportes</h3><p data-show-city>Ciudad de México</p><p class="event-time">Horario anunciado · <b data-show-time>19:30</b></p><div class="event-buttons"><a class="btn light" data-tickets href="https://www.ocesa.com.mx/todos-los-eventos/hilary-duff-boletos-ae1632382" target="_blank" rel="noopener">Ver boletos ↗</a><button class="btn outline" data-calendar>Agregar al calendario ↓</button></div><p class="event-small">La hora puede cambiar. Revisa las indicaciones oficiales antes del show.</p></div></div><div class="event-extra"><article><small>01 / ANTES DEL SHOW</small><strong>Boletos y acceso</strong><p>Consulta reglas, horarios y restricciones directamente con el organizador.</p><a href="https://www.ticketmaster.com.mx/hilary-duff-tickets/artist/882305" target="_blank" rel="noopener">Información de Ticketmaster ↗</a></article><article><small>02 / HDM</small><strong>Fan projects</strong><p>Las actividades que preparemos como fan club se publicarán aquí y en Instagram.</p><a href="https://www.instagram.com/hilaryduffmexico/" target="_blank" rel="noopener">Sigue los avisos ↗</a></article></div></section>
+  <section class="lizzie-special" id="lizzie" aria-labelledby="lizzie-title">
+    <div class="lizzie-decor" aria-hidden="true">✿</div>
+    <div class="lizzie-copy"><span class="section-label">INTERMEDIO / 25 AÑOS</span><h2 id="lizzie-title">Oh, <em>Lizzie.</em></h2><p>Un alter ego animado, Miranda, Gordo y un viaje a Roma. Veinticinco años después seguimos encontrando razones para volver a verla.</p><div class="lizzie-chips"><span>2001 ✳</span><span>GORDO + MIRANDA</span><span>NO MORE PAOLOS</span></div><a class="pill pill-dark" href="https://www.disneyplus.com/es-mx/explore/articles/lizzie-mcguire-anniversary" target="_blank" rel="noopener noreferrer">Especial del 25 aniversario ↗</a></div>
+    <div class="lizzie-visual"><div class="lizzie-circle" aria-hidden="true"></div><figure class="lizzie-hero-art"><img src="./assets/hdm/lizzie_art.webp" onerror="this.onerror=null;this.src='./Lizzie/sinfondo.png'" width="1600" height="1080" alt="Arte de Lizzie McGuire" loading="lazy" decoding="async" ></figure><figure class="lizzie-mini"><img src="./assets/hdm/lizzie_photo.webp" onerror="this.onerror=null;this.src='./Lizzie/1.jpg'" width="900" height="1050" alt="Fotografía de Lizzie McGuire" loading="lazy" decoding="async" ></figure><span class="lizzie-spark" aria-hidden="true">✳</span><span class="lizzie-script">hey now!</span></div>
+  </section>
 
-<section id="hdm" class="about"><div class="about-ribbon" aria-hidden="true">HDM ✦ HDM ✦ HDM ✦ HDM ✦ HDM ✦ HDM ✦</div><div class="about-copy"><p class="eyebrow">SOBRE EL FAN CLUB</p><h2>Hilary Duff<br><em>México.</em></h2><p>Comenzamos a encontrarnos por internet a mediados de los 2000. Han cambiado los discos, las plataformas y las ciudades donde nos reunimos. Seguimos aquí para compartir las noticias y, sobre todo, vivirlas con otros fans.</p><a href="https://www.instagram.com/hilaryduffmexico/" target="_blank" rel="noopener">La conversación sigue en Instagram ↗</a></div><div class="about-visual"><span>DESDE<br>LOS 2000</span><b>H D M</b><i>✳</i></div></section>
-<section class="join-cta"><div class="cta-orbit" aria-hidden="true"><i>H</i><i>D</i><i>M</i></div><div><p class="eyebrow">EL FAN CLUB</p><h2>Tu lugar en HDM.</h2><p>Regístrate para participar en actividades, convocatorias y proyectos para los conciertos.</p><a class="btn dark" href="./unete.html">Unirme al fan club ↗</a><small>Inscripción y newsletter son cosas diferentes.</small></div></section>
-<section id="newsletter" class="newsletter"><div class="newsletter-sample" aria-hidden="true"><div class="newsletter-sheet"><small>HDM · NUEVO MENSAJE</small><h3>Noticias, música y fechas.</h3><span>DE HILARY DUFF MÉXICO</span><i>✶</i></div></div><div class="newsletter-copy"><p class="eyebrow">SUSCRIPCIÓN</p><h2>Nos vemos en tu bandeja de entrada.</h2><p>Entérate de los anuncios de Hilary, los proyectos del fan club y las novedades de México 2027.</p><form data-newsletter-form><label for="newsletter-email" class="sr-only">Correo</label><input id="newsletter-email" type="email" autocomplete="email" placeholder="Tu correo electrónico" required><button type="submit">Quiero recibirlo →</button></form><small data-newsletter-status>Esta es una demostración. No estamos recopilando direcciones todavía.</small></div></section>
-</main>
-<footer><div class="footer-top"><a class="footer-big" href="#inicio">Hilary Duff <em>México</em></a><div class="footer-columns"><div><b>EXPLORAR</b><a href="#novedades">Novedades</a><a href="#escuchar">Escuchar</a><a href="#musica">Música</a><a href="#films">Películas y series</a><a href="#mexico">México 2027</a></div><div><b>HDM</b><a href="./unete.html">Únete al fan club</a><a href="#newsletter">Newsletter</a><a href="https://www.instagram.com/hilaryduffmexico/" target="_blank" rel="noopener">Instagram ↗</a></div><div><b>CONTACTO</b><a href="mailto:contacto@hilaryduffmexico.com">Escríbenos ↗</a><span>Hecho por fans en México.</span></div></div></div><div class="footer-bottom"><span>HILARY DUFF MÉXICO © 2026</span><span>FAN CLUB · MÉXICO</span><a href="#inicio">Volver arriba ↑</a></div></footer>
-<script src="./app.js?v=14a" defer></script></body></html>
+  <section class="mexico section-pad" id="mexico" aria-labelledby="mexico-title">
+    <div class="mexico-glow" aria-hidden="true"></div>
+    <div class="section-top"><span class="section-label">05 / THE LUCKY ME TOUR</span><div><h2 id="mexico-title">Nos vemos <em>en México.</em></h2><p>Elige tu fecha. Aquí guardamos tu concierto y reunimos lo confirmado por fuentes oficiales.</p></div></div>
+    <div class="date-tabs" role="group" aria-label="Selecciona tu concierto">
+      <button type="button" data-show="cdmx12" class="active" aria-pressed="true"><span>VIERNES 12 FEB</span><strong>CDMX</strong><small>Palacio de los Deportes</small></button>
+      <button type="button" data-show="cdmx13" aria-pressed="false"><span>SÁBADO 13 FEB</span><strong>CDMX</strong><small>Palacio de los Deportes</small></button>
+      <button type="button" data-show="gdl15" aria-pressed="false"><span>LUNES 15 FEB</span><strong>GDL</strong><small>Auditorio Telmex</small></button>
+    </div>
+    <div class="concert-guide"><div class="concert-time"><span>FALTAN</span><strong data-show-days>—</strong><small>DÍAS</small><div data-show-date>12 FEB 2027 · CDMX</div></div><div class="concert-details"><span>GUÍA PARA TU FECHA</span><h3 data-show-venue>Palacio de los Deportes</h3><p data-show-city>Ciudad de México</p><div class="concert-actions"><a href="https://www.ocesa.com.mx/todos-los-eventos/hilary-duff-boletos-ae1632382" target="_blank" rel="noopener noreferrer" class="pill pill-light">Boletos y detalles ↗</a><button class="pill pill-stroke" type="button" data-save-date>Agregar al calendario ＋</button></div><div class="concert-note"><b>POR CONFIRMAR</b><span>Publicaremos accesos, merch y fan projects aquí conforme tengamos información. Consulta siempre el evento oficial.</span></div></div></div>
+  </section>
+
+  <section class="hdm section-pad" id="hdm" aria-labelledby="hdm-title">
+    <div class="hdm-about"><span class="section-label">06 / QUIÉNES SOMOS</span><h2 id="hdm-title">Hilary Duff <em>México.</em></h2><p>Antes de las stories ya andábamos por aquí. HDM creció entre noticias, fotografías, discos y fans que buscaban a otros fans en México. Las plataformas han cambiado. Seguimos haciendo lo que nos gusta: compartir lo que pasa con Hilary y encontrarnos alrededor de su música.</p><div class="hdm-stats"><span><b>DESDE 2005*</b><small>Y TODAVÍA AQUÍ</small></span><span><b>FEB 2026</b><small>LISTENING PARTY · CDMX</small></span><span><b>2027</b><small>VOLVEMOS A ENCONTRARNOS</small></span></div><small class="hdm-year-note">*Historia del club por confirmar con el archivo original.</small></div>
+    <div class="hdm-about-art"><div class="hdm-logo-frame"><img src="./assets/hdm/hdm_logo.webp" onerror="this.onerror=null;this.src='./Logo_white.png'" width="1600" height="1600" alt="Logotipo original de Hilary Duff México" loading="lazy" decoding="async" ></div><div class="hdm-photo-accent"><img src="./assets/hdm/news_tour.webp" onerror="this.onerror=null;this.src='./luck/2.jpg'" width="1120" height="920" alt="Hilary Duff durante su etapa de 2026" loading="lazy" decoding="async" ></div><span class="hdm-asterisk" aria-hidden="true">✳</span></div>
+  </section>
+
+  <section class="join-cta" id="unete" aria-labelledby="join-title"><div class="join-logo"><img src="./assets/hdm/hdm_logo.webp" onerror="this.onerror=null;this.src='./Logo_white.png'" width="1600" height="1600" alt="Logotipo original del fan club Hilary Duff México" loading="lazy" decoding="async" ></div><div class="join-copy"><span class="section-label">EL FAN CLUB</span><h2 id="join-title">¿Ya formas parte<br>de <em>HDM?</em></h2><p>Actividades, proyectos para los conciertos y otros fans con los que compartir todo esto. El registro tiene su propia página.</p><a class="pill pill-lime" href="./unete.html">Quiero unirme ↗</a></div><span class="join-decor" aria-hidden="true">♡</span></section>
+
+  <section class="newsletter section-pad" id="newsletter" aria-labelledby="newsletter-title">
+    <div class="newsletter-left"><span class="section-label">HDM POR CORREO</span><h2 id="newsletter-title"><em>Wake Up.</em><br>Hay correo.</h2><p>Anuncios, música nueva, lo de México y las convocatorias del club. Déjanos tu correo para recibir nuestras próximas publicaciones.</p><form data-newsletter-form><label for="email-address" class="sr-only">Correo electrónico</label><input id="email-address" name="email" type="email" placeholder="tu@correo.com" autocomplete="email" required><button type="submit">Suscribirme →</button></form><small class="newsletter-note" data-newsletter-note>Esta es una demostración. La suscripción estará disponible cuando conectemos el servicio de correos.</small></div>
+    <div class="newsletter-right" aria-hidden="true"><div class="mail-paper"><div class="mail-topline"><span>HILARY DUFF MÉXICO</span><b>HDM ↗</b></div><strong>Wake Up.</strong><p>Para los que no se pierden ni una.</p><div class="mail-stamp">MÚSICA ✳ MÉXICO ✳ PANTALLA</div></div><span class="mail-star">✳</span><span class="mail-little-star">✦</span></div>
+  </section>
+ </main>
+ <footer class="footer"><div class="footer-top"><div class="footer-mark"><img src="./assets/hdm/hdm_logo.webp" onerror="this.onerror=null;this.src='./Logo_white.png'" width="1600" height="1600" alt="Hilary Duff México" loading="lazy" decoding="async" ></div><div class="footer-note">Un fan club. Mucha música.<br>Y bastantes años de historias.</div></div><div class="footer-main"><div><h3>EXPLORA</h3><a href="#novedades">Noticias</a><a href="#escuchar">Escuchar aquí</a><a href="#musica">Discos</a><a href="#films">Películas y series</a><a href="#mexico">México 2027</a></div><div><h3>HDM</h3><a href="#hdm">Nosotros</a><a href="./unete.html">Únete al club</a><a href="#newsletter">Correos HDM</a><a href="mailto:contacto@hilaryduffmexico.com">Contacto ↗</a></div><div><h3>EN REDES</h3><a href="https://www.instagram.com/hilaryduffmexico/" target="_blank" rel="noopener noreferrer">Instagram ↗</a><a href="https://open.spotify.com/artist/2S9W9aSAd7e5mp8WqWxN2h" target="_blank" rel="noopener noreferrer">Spotify de Hilary ↗</a><a href="https://www.youtube.com/watch?v=NAkaEDv8oks" target="_blank" rel="noopener noreferrer">Weather For Tennis ↗</a></div></div><div class="footer-end"><span>HILARY DUFF MÉXICO · 2026</span><span>FAN CLUB HECHO POR FANS</span><a href="#inicio">VOLVER ARRIBA ↑</a></div></footer>
+ <div class="click-layer" aria-hidden="true"></div>
+</body></html>
