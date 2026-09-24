@@ -12,7 +12,7 @@ DEST.mkdir(parents=True, exist_ok=True)
 CONFIG={
   "santa":("Santa Claus Lane","sinfondo.png","cover.jpg","logo.png",["1.jpg","2.jpg"]),
   "meta":("Metamorphosis","sinfondo.png","cover.png","logo_metamorphosis.png",["2.jpg","3.jpg"]),
-  "self":("Hilary Duff","sinfondo.png","cover.jpg","logo.png",["2.jpg","4.jpg"]),
+  "self":("Hilary Duff","sinfondo.png","cover.jpg","logo_black.png",["2.jpg","4.jpg"]),
   "wanted":("Most Wanted","sinfondo.png","cover.jpeg","logo_white_full.png",["1.jpg","2.jpg"]),
   "dignity":("Dignity","sinfondo.png","cover.jpg",None,["2.jpg","4.jpg"]),
   "bibo":("Bibo","sinfondo.png","cover.jpg","logo_name.png",["3.jpg","4.jpg"]),
