@@ -163,7 +163,7 @@ renderSearch();
 
 /* mobile nav active state */
 const mobileLinks=$$(".mobile-nav a");
-const sectionMap={inicio:"#inicio",novedades:"#novedades",escuchar:"#novedades",musica:"#musica",pantalla:"#pantalla",lizzie:"#pantalla",mexico:"#mexico",hdm:"#mexico",newsletter:"#mexico"};
+const sectionMap={inicio:"#inicio",novedades:"#novedades",escuchar:"#novedades",musica:"#musica",pantalla:"#pantalla",lizzie:"#pantalla",mexico:"#mexico",hdm:"#hdm",newsletter:"#hdm"};
 const navObserver=new IntersectionObserver(entries=>{
   for(const entry of entries){
     if(!entry.isIntersecting)continue;
