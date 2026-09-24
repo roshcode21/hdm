@@ -5,6 +5,9 @@ on:
     paths:
       - 'scripts/optimize.py'
       - '.github/workflows/optimize-assets.yml'
+concurrency:
+  group: optimize-hdm-assets
+  cancel-in-progress: true
 permissions:
   contents: write
 jobs:
@@ -28,5 +31,7 @@ jobs:
           git add assets/hdm/
           if ! git diff --staged --quiet; then
             git commit -m "Publish optimized HDM era artwork [skip ci]"
+            git fetch origin main
+            git rebase origin/main
             git push
           fi
