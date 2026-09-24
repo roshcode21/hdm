@@ -27,7 +27,7 @@ def convert(source,destination,max_width,max_height,quality=88):
     # Never upscale small source originals.
     im.thumbnail((max_width,max_height),Image.Resampling.LANCZOS)
     im.save(destination,format="WEBP",quality=quality,method=6,
-            alpha_quality=100 if has_alpha else None)
+            **({"alpha_quality":100} if has_alpha else {}))
     return [im.width,im.height,int(destination.stat().st_size)]
 
 manifest={}
