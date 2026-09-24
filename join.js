@@ -5,7 +5,6 @@ const steps=$$("[data-step]");
 const stepButtons=$$("[data-step-jump]");
 let step=1;
 let maxVisited=1;
-let saveTimer=0;
 
 function value(name){
   const el=form.elements[name];
@@ -28,7 +27,6 @@ function showStep(n,{scroll=true}={}){
   $("[data-join-progress]").textContent=step+" / 4";
 
   if(step===4)renderSummary();
-  queueDraft();
 
   if(scroll)scrollTo({top:0,behavior:"smooth"});
 }
@@ -65,44 +63,11 @@ function renderSummary(){
     ["MÉXICO 2027",value("mexico2027")||"—"],
     ["INTERESES",interests.join(" · ")||"Sólo membresía"]
   ];
-  $("[data-summary]").innerHTML=rows.map(([label,text])=>"<div><span>"+label+"</span><b>"+text+"</b></div>").join("");
-}
-
-function saveDraft(){
-  saveTimer=0;
-  const data={};
-  new FormData(form).forEach((v,k)=>{data[k]=v;});
-  data.interests=$$("input[name='interests']:checked").map(i=>i.value);
-  data._step=step;
-  data._maxVisited=maxVisited;
-  localStorage.setItem("hdm-registration-draft",JSON.stringify(data));
-}
-
-function queueDraft(){
-  clearTimeout(saveTimer);
-  saveTimer=setTimeout(saveDraft,300);
-}
-form.addEventListener("input",queueDraft);
-form.addEventListener("change",queueDraft);
-
-function restoreDraft(){
-  const raw=localStorage.getItem("hdm-registration-draft");
-  if(!raw)return 1;
-  try{
-    const data=JSON.parse(raw);
-    Object.entries(data).forEach(([k,v])=>{
-      if(k==="interests"||k.startsWith("_"))return;
-      const el=form.elements[k];
-      if(el&&typeof v==="string")el.value=v;
-    });
-    if(Array.isArray(data.interests)){
-      $$("input[name='interests']").forEach(i=>i.checked=data.interests.includes(i.value));
-    }
-    maxVisited=Math.max(1,Math.min(4,Number(data._maxVisited)||1));
-    return Math.max(1,Math.min(4,Number(data._step)||1));
-  }catch{
-    return 1;
-  }
+  const summary=$("[data-summary]");summary.textContent="";
+  rows.forEach(([label,val])=>{
+    const item=document.createElement("div"),caption=document.createElement("span"),value=document.createElement("b");
+    caption.textContent=label;value.textContent=val;item.append(caption,value);summary.appendChild(item);
+  });
 }
 
 const birth=form.elements.birthdate;
@@ -125,17 +90,9 @@ form.addEventListener("submit",e=>{
   e.preventDefault();
   if(!validateCurrent())return;
 
-  const data=Object.fromEntries(new FormData(form).entries());
-  data.interests=$$("input[name='interests']:checked").map(i=>i.value);
-
-  localStorage.setItem("hdm-registration-demo",JSON.stringify(data));
-  localStorage.removeItem("hdm-registration-draft");
-
-  $("[data-registration-note]").textContent="Inscripción de prueba guardada sólo en este dispositivo. El registro real se conectará antes del lanzamiento.";
-  const submit=$(".reg-submit");
-  submit.textContent="Inscripción guardada ✓";
-  submit.disabled=true;
+  $("[data-registration-note]").textContent="El formulario es una vista previa: no se han enviado ni guardado tus datos.";
+  const submit=$(".reg-submit");submit.textContent="Vista previa terminada ✓";submit.disabled=true;
 });
 
-const initial=restoreDraft();
-showStep(initial,{scroll:false});
+try{localStorage.removeItem("hdm-registration-draft");localStorage.removeItem("hdm-registration-demo");}catch{}
+showStep(1,{scroll:false});
