@@ -1,0 +1,280 @@
+{
+  "santa": {
+    "cut": {
+      "path": "assets/hdm/santa-cut.webp",
+      "width": 1086,
+      "height": 1448,
+      "bytes": 325076
+    },
+    "cover": {
+      "path": "assets/hdm/santa-cover.webp",
+      "width": 850,
+      "height": 850,
+      "bytes": 208290
+    },
+    "logo": {
+      "path": "assets/hdm/santa-logo.webp",
+      "width": 650,
+      "height": 650,
+      "bytes": 45542
+    },
+    "photo1": {
+      "path": "assets/hdm/santa-photo1.webp",
+      "width": 300,
+      "height": 400,
+      "bytes": 30554
+    },
+    "photo2": {
+      "path": "assets/hdm/santa-photo2.webp",
+      "width": 300,
+      "height": 400,
+      "bytes": 31688
+    }
+  },
+  "meta": {
+    "cut": {
+      "path": "assets/hdm/meta-cut.webp",
+      "width": 1024,
+      "height": 1536,
+      "bytes": 192622
+    },
+    "cover": {
+      "path": "assets/hdm/meta-cover.webp",
+      "width": 300,
+      "height": 300,
+      "bytes": 29440
+    },
+    "logo": {
+      "path": "assets/hdm/meta-logo.webp",
+      "width": 1500,
+      "height": 379,
+      "bytes": 117708
+    },
+    "photo1": {
+      "path": "assets/hdm/meta-photo1.webp",
+      "width": 1384,
+      "height": 1720,
+      "bytes": 249044
+    },
+    "photo2": {
+      "path": "assets/hdm/meta-photo2.webp",
+      "width": 1312,
+      "height": 1720,
+      "bytes": 510800
+    }
+  },
+  "self": {
+    "cut": {
+      "path": "assets/hdm/self-cut.webp",
+      "width": 732,
+      "height": 1160,
+      "bytes": 216254
+    },
+    "cover": {
+      "path": "assets/hdm/self-cover.webp",
+      "width": 850,
+      "height": 850,
+      "bytes": 287868
+    },
+    "logo": {
+      "path": "assets/hdm/self-logo.webp",
+      "width": 1200,
+      "height": 191,
+      "bytes": 6842
+    },
+    "photo1": {
+      "path": "assets/hdm/self-photo1.webp",
+      "width": 1415,
+      "height": 1720,
+      "bytes": 305898
+    },
+    "photo2": {
+      "path": "assets/hdm/self-photo2.webp",
+      "width": 1282,
+      "height": 1720,
+      "bytes": 186584
+    }
+  },
+  "wanted": {
+    "cut": {
+      "path": "assets/hdm/wanted-cut.webp",
+      "width": 1122,
+      "height": 1402,
+      "bytes": 352294
+    },
+    "cover": {
+      "path": "assets/hdm/wanted-cover.webp",
+      "width": 640,
+      "height": 622,
+      "bytes": 69188
+    },
+    "logo": {
+      "path": "assets/hdm/wanted-logo.webp",
+      "width": 616,
+      "height": 214,
+      "bytes": 13416
+    },
+    "photo1": {
+      "path": "assets/hdm/wanted-photo1.webp",
+      "width": 1400,
+      "height": 1570,
+      "bytes": 253576
+    },
+    "photo2": {
+      "path": "assets/hdm/wanted-photo2.webp",
+      "width": 1284,
+      "height": 1720,
+      "bytes": 277476
+    }
+  },
+  "dignity": {
+    "cut": {
+      "path": "assets/hdm/dignity-cut.webp",
+      "width": 1086,
+      "height": 1448,
+      "bytes": 684136
+    },
+    "cover": {
+      "path": "assets/hdm/dignity-cover.webp",
+      "width": 850,
+      "height": 850,
+      "bytes": 109386
+    },
+    "photo1": {
+      "path": "assets/hdm/dignity-photo1.webp",
+      "width": 1366,
+      "height": 1720,
+      "bytes": 310160
+    },
+    "photo2": {
+      "path": "assets/hdm/dignity-photo2.webp",
+      "width": 1147,
+      "height": 1720,
+      "bytes": 535692
+    }
+  },
+  "bibo": {
+    "cut": {
+      "path": "assets/hdm/bibo-cut.webp",
+      "width": 1268,
+      "height": 1241,
+      "bytes": 226666
+    },
+    "cover": {
+      "path": "assets/hdm/bibo-cover.webp",
+      "width": 850,
+      "height": 850,
+      "bytes": 58342
+    },
+    "logo": {
+      "path": "assets/hdm/bibo-logo.webp",
+      "width": 777,
+      "height": 56,
+      "bytes": 1588
+    },
+    "photo1": {
+      "path": "assets/hdm/bibo-photo1.webp",
+      "width": 1164,
+      "height": 1328,
+      "bytes": 270220
+    },
+    "photo2": {
+      "path": "assets/hdm/bibo-photo2.webp",
+      "width": 1096,
+      "height": 1720,
+      "bytes": 88274
+    }
+  },
+  "luck": {
+    "cut": {
+      "path": "assets/hdm/luck-cut.webp",
+      "width": 1294,
+      "height": 1216,
+      "bytes": 416744
+    },
+    "cover": {
+      "path": "assets/hdm/luck-cover.webp",
+      "width": 447,
+      "height": 447,
+      "bytes": 26098
+    },
+    "photo1": {
+      "path": "assets/hdm/luck-photo1.webp",
+      "width": 1080,
+      "height": 1418,
+      "bytes": 194358
+    },
+    "photo2": {
+      "path": "assets/hdm/luck-photo2.webp",
+      "width": 1248,
+      "height": 832,
+      "bytes": 149508
+    }
+  },
+  "hero": {
+    "path": "assets/hdm/hero.webp",
+    "width": 1080,
+    "height": 1418,
+    "bytes": 205334
+  },
+  "hero_wide": {
+    "path": "assets/hdm/hero_wide.webp",
+    "width": 1200,
+    "height": 896,
+    "bytes": 148196
+  },
+  "news_tour": {
+    "path": "assets/hdm/news_tour.webp",
+    "width": 1120,
+    "height": 747,
+    "bytes": 108488
+  },
+  "news_vogue": {
+    "path": "assets/hdm/news_vogue.webp",
+    "width": 1080,
+    "height": 1310,
+    "bytes": 71956
+  },
+  "news_album": {
+    "path": "assets/hdm/news_album.webp",
+    "width": 1120,
+    "height": 618,
+    "bytes": 83288
+  },
+  "lizzie_art": {
+    "path": "assets/hdm/lizzie_art.webp",
+    "width": 1600,
+    "height": 973,
+    "bytes": 266162
+  },
+  "lizzie_photo": {
+    "path": "assets/hdm/lizzie_photo.webp",
+    "width": 800,
+    "height": 1000,
+    "bytes": 216534
+  },
+  "lizzie_extra": {
+    "path": "assets/hdm/lizzie_extra.webp",
+    "width": 493,
+    "height": 495,
+    "bytes": 50172
+  },
+  "mask": {
+    "path": "assets/hdm/mask.webp",
+    "width": 1000,
+    "height": 1079,
+    "bytes": 184744
+  },
+  "hdm_logo": {
+    "path": "assets/hdm/hdm_logo.webp",
+    "width": 1600,
+    "height": 1600,
+    "bytes": 242910
+  },
+  "signature": {
+    "path": "assets/hdm/signature.webp",
+    "width": 532,
+    "height": 450,
+    "bytes": 22158
+  }
+}
