@@ -1,5 +1,5 @@
-const CACHE="hdm-v13-fluid";
-const CORE=["./","./index.html","./styles.css","./app.js","./manifest.webmanifest","./icon.svg"];
+const CACHE="hdm-v14-reinvented";
+const CORE=["./","./index.html","./styles.css","./app.js","./unete.html","./join.css","./join.js","./manifest.webmanifest","./icon.svg"];
 
 self.addEventListener("install",event=>{
   self.skipWaiting();
@@ -20,13 +20,13 @@ self.addEventListener("fetch",event=>{
   const url=new URL(req.url);
   if(url.origin!==location.origin)return;
 
+  if(/\.(png|jpe?g|webp|gif|mp4|woff2?|ttf|otf)$/i.test(url.pathname))return;
+
   event.respondWith(
-    fetch(req)
-      .then(res=>{
-        const copy=res.clone();
-        caches.open(CACHE).then(cache=>cache.put(req,copy));
-        return res;
-      })
-      .catch(()=>caches.match(req).then(cached=>cached||caches.match("./index.html")))
+    fetch(req).then(res=>{
+      const copy=res.clone();
+      caches.open(CACHE).then(cache=>cache.put(req,copy));
+      return res;
+    }).catch(()=>caches.match(req).then(hit=>hit||caches.match("./index.html")))
   );
 });
